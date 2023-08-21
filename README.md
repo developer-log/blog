@@ -54,7 +54,8 @@ You also can use next terminal commands:
 This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a68523065d86a218797d349fbbbd).
 
 - **commit** \
-  We have hook on commit. It runs eslint and stylelint on every committed file.\
-  Also we use commitlint for linting commit messages;
+  We use commitlint for linting commit messages;
+- **pre-commit** \
+  On pre-commit hook husky runs eslint and stylelint on every committed file;
 - **push** \
   We have hook on push. It runs unit and end to end tests;
