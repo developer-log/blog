@@ -8,6 +8,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "prepare": "husky install",
+    "lint:staged": "lint-staged",
     "lint:eslint": "eslint --fix",
     "lint:stylelint": "stylelint",
     "test:unit:run": "ava",
