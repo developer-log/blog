@@ -17,13 +17,6 @@ module.exports = {
   ignorePatterns: [ "pnpm-lock.yaml" ],
   "overrides": [
     {
-      files: [ "**/*.md", "**/*.md" ],
-      processor: "markdown/markdown",
-      extends: [
-        "plugin:markdown/recommended",
-      ]
-    },
-    {
       files: [ "*.yaml", "*.yml" ],
       parser: "yaml-eslint-parser",
     },
@@ -54,7 +47,6 @@ module.exports = {
     "compat",
     "ava",
     "editorconfig",
-    "markdown",
     "simple-import-sort",
   ],
   "rules": {

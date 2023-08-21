@@ -6,5 +6,12 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/i18n",
     "nuxt-icon",
-  ]
+  ],
+  content: {},
+  css: [
+    "normalize.css/normalize.css"
+  ],
+  devServer: {
+    port: 8100,
+  }
 });

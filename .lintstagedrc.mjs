@@ -1,4 +1,4 @@
 export default {
   "*.vue": "pnpm lint:stylelint",
-  "*.{ts,js,vue,yaml,yml,md}": "pnpm lint:eslint",
+  "*.{ts,js,vue,yaml,yml}": "pnpm lint:eslint",
 }
