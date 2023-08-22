@@ -1,0 +1,10 @@
+list:
+  - name: Github
+    icon: github
+    url: https://github.com/tokiory
+  - name: Telegram
+    icon: telegram
+    url: https://t.me/developer_log
+  - name: Codepen
+    icon: codepen
+    url: https://codepen.io/tokiory
