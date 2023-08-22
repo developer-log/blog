@@ -4,6 +4,7 @@ module.exports = {
     "es2021": true,
     "node": true
   },
+
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -14,6 +15,7 @@ module.exports = {
     "plugin:ava/recommended",
     "plugin:editorconfig/all",
   ],
+
   ignorePatterns: [ "pnpm-lock.yaml" ],
   "overrides": [
     {
@@ -35,11 +37,13 @@ module.exports = {
       }
     }
   ],
+
   "parserOptions": {
     "ecmaVersion": "latest",
     "parser": "@typescript-eslint/parser",
     "sourceType": "module"
   },
+
   "plugins": [
     "@typescript-eslint",
     "vue",
@@ -49,6 +53,7 @@ module.exports = {
     "editorconfig",
     "simple-import-sort",
   ],
+
   "rules": {
     "quotes": [
       "error",
@@ -63,5 +68,9 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     "object-curly-spacing": [ "error", "always" ],
     "array-bracket-spacing": [ "error", "always" ],
+    "vue/component-name-in-template-casing": [ "error", "kebab-case", {
+      "registeredComponentsOnly": false,
+      "ignores": []
+    } ],
   }
 };
