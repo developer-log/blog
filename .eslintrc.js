@@ -68,7 +68,7 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     "object-curly-spacing": [ "error", "always" ],
     "array-bracket-spacing": [ "error", "always" ],
-    "vue/component-name-in-template-casing": [ "error", "kebab-case", {
+    "vue/component-name-in-template-casing": [ "error", "PascalCase", {
       "registeredComponentsOnly": false,
       "ignores": []
     } ],

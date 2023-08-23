@@ -1,10 +1,10 @@
 <template>
-  <nuxt-layout>
-    <nuxt-page />
-  </nuxt-layout>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-import "@/styles/index.scss";
+import "@style/index.scss";
 import "@fontsource-variable/montserrat";
 </script>

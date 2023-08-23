@@ -7,11 +7,11 @@ interface NuxtContentMeta {
   _path: string;
 }
 
-interface PostItem extends NuxtContentMeta {
+export interface PostItemContent extends NuxtContentMeta {
   title: string;
   description: string;
   tags: Tag[];
   date: string;
 }
 
-export type PostContent = PostItem[];
+export type PostContent = PostItemContent[];

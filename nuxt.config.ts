@@ -5,10 +5,11 @@ const locales = [ "en", "ru" ];
 
 const alias: NuxtConfig["alias"] = {
   "@t": "./types",
-  "@c": "./composables",
   "@s": "./server",
+  "@style": "./styles",
   "@l": "./localization",
   "@test": "./tests",
+  "@composable": "./composables",
 };
 
 const modules: NuxtConfig["modules"] = [

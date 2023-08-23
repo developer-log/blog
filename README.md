@@ -49,6 +49,14 @@ You also can use next terminal commands:
     - `test:end:setup`: Setup browsers for testing
 
 ## Additional 🤓
+### Adaptive 🤳
+- **Minimal Value**: 355px;
+- **Maximum value**: 4096px;
+
+#### Conventions
+1. We're building mobile-first layout
+2. We're using `adaptive-from` mixin, it's located in [`styles/prebuild/breakpoint.scss`](styles/prebuild/breakpoint.scss)
+
 ### Git hooks 🤞
 This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a68523065d86a218797d349fbbbd).
 

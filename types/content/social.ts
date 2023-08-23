@@ -4,6 +4,12 @@ interface SocialItem {
   name: string;
 }
 
-export interface SocialContent {
-  list: SocialItem[]
+interface SocialLinks {
+  telegram: string;
+  codepen: string;
+  github: string;
+}
+
+export interface SocialContent extends SocialLinks {
+  list: SocialItem[];
 }
