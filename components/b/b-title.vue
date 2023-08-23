@@ -38,12 +38,14 @@ const preset: Record<NonNullable<TitleProperties["level"]>, CSS> = {
 const styles = computed(() => {
   if (properties.level) {
     return preset[properties.level];
+  } else if (properties.fz) {
+    return {
+      fontSize: properties.fz,
+      fontWeight: properties.wght,
+    };
+  } else {
+    return preset["1"];
   }
-
-  return {
-    fontSize: properties.fz,
-    fontWeight: properties.wght,
-  };
 });
 </script>
 
