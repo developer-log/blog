@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 interface ButtonProperties {
-  theme: "primary" | "secondary"
+  theme?: "primary" | "secondary"
 }
 withDefaults(defineProps<ButtonProperties>(), {
   theme: "primary",

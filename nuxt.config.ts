@@ -9,7 +9,6 @@ const alias: NuxtConfig["alias"] = {
   "@style": "./styles",
   "@l": "./localization",
   "@test": "./tests",
-  "@composable": "./composables",
 };
 
 
@@ -89,6 +88,11 @@ const i18n: NuxtConfig["i18n"] = {
 };
 
 const vite: NuxtConfig["vite"] = {
+  vue: {
+    script: {
+      defineModel: true,
+    }
+  },
   css: {
     preprocessorOptions: {
       scss: {
