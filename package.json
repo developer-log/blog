@@ -14,7 +14,9 @@
     "test:unit:run": "ava",
     "test:end:run": "playwright test",
     "test:end:gui": "playwright test --ui",
-    "test:end:setup": "playwright install"
+    "test:end:setup": "playwright install",
+    "deploy:dev": "vercel",
+    "deploy:prod": "vercel --prod"
   },
   "resolutions": {
     "micromark": "3.1.0",

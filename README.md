@@ -47,6 +47,9 @@ You also can use next terminal commands:
     - `test:end:run`: Run end to end tests in CLI
     - `test:end:ui`: Run end to end tests in GUI
     - `test:end:setup`: Setup browsers for testing
+- `deploy`: Commands for deploying
+  - `deploy:dev`: Deploy to the development server
+  - `deploy:prod`: Deploy to the production server
 
 ## Additional 🤓
 ### Languages 👅

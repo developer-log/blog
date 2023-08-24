@@ -53,7 +53,12 @@ onMounted(() => {
   console.error(message);
 });
 
-const onGoToHome = () => clearError({ redirect: "/" });
+const onGoToHome = async () => {
+  await clearError({ redirect: "/" });
+
+  // https://github.com/nuxt/nuxt/issues/13309
+  window.location.reload();
+};
 const onReloadPage = () => window.location.reload();
 </script>
 
