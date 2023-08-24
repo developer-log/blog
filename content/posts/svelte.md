@@ -266,7 +266,7 @@ Svelte позволяет нам отрисовывать разный шабл�
   import Button from './Button.svelte';
 </script>
 
-<Button />
+<Autton />
 ```
 
 # Пропсы

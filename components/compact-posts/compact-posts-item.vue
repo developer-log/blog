@@ -1,5 +1,5 @@
 <template>
-  <BLink
+  <ALink
     :href="_path"
     class="post"
   >
@@ -9,9 +9,9 @@
         size="16"
         name="uil:align-left"
       />
-      <BText class="info__title">
+      <AText class="info__title">
         {{ title }}
-      </BText>
+      </AText>
     </div>
     <div class="post__nav nav">
       <ul
@@ -22,9 +22,9 @@
           :key="tag"
           class="nav__item"
         >
-          <BTag class="nav__tag">
+          <ATag class="nav__tag">
             {{ tag }}
-          </BTag>
+          </ATag>
         </li>
       </ul>
       <Icon
@@ -32,7 +32,7 @@
         name="uil:angle-right"
       />
     </div>
-  </BLink>
+  </ALink>
 </template>
 
 <script setup lang="ts">

@@ -1,38 +1,38 @@
 <template>
   <main class="home">
     <section class="home__content content">
-      <BTitle class="content__title">
+      <ATitle class="content__title">
         Лог разработчика
-      </BTitle>
+      </ATitle>
       <div class="content__subtitle subtitle">
         <Icon
           size="24"
           name="uil:document-layout-left"
           class="subtitle__icon"
         />
-        <BText class="subtitle__text">
+        <AText class="subtitle__text">
           Лог разработчика глазами разработчика
-        </BText>
+        </AText>
       </div>
-      <BText class="content__text">
+      <AText class="content__text">
         "Лог разработчика" – блог опытного фронтэнд-разработчика, предлагающий туториалы, заметки и статьи о современных веб-технологиях и методах разработки. Автор делится своим опытом и знаниями, представляя доступные руководства по погружению в мир разработки от основ до продвинутых техник. Особенность блога – понятное изложение сложных тем для широкой аудитории. Будьте в курсе новейших тенденций и улучшайте свои навыки вместе с "Логом разработчика".
-      </BText>
-      <BLink
+      </AText>
+      <ALink
         :href="social!.telegram"
         target="_blank"
         class="content__link"
       >
-        <BButton
+        <AButton
           theme="primary"
           class="content__telegram"
         >
           Перейти в телеграм
-        </BButton>
-      </BLink>
+        </AButton>
+      </ALink>
       <div class="content__posts posts">
-        <BTitle level="2">
+        <ATitle level="2">
           Перейти к чтению
-        </BTitle>
+        </ATitle>
         <CompactPosts
           class="posts__list"
           :posts="posts!"

@@ -4,13 +4,13 @@
     :class="{active: isHeaderMenuActive}"
   >
     <div class="header__wrapper">
-      <BLink
+      <ALink
         class="header__logo"
         to="/"
         @click="isHeaderMenuActive = false"
       >
-        <BLogo />
-      </BLink>
+        <ALogo />
+      </ALink>
       <nav class="header__navigation nav">
         <ul class="nav__list">
           <li
@@ -18,12 +18,12 @@
             :key="item"
             class="nav__item"
           >
-            <BLink
+            <ALink
               :to="item.url"
               class="nav__link"
             >
               {{ item.name }}
-            </BLink>
+            </ALink>
           </li>
         </ul>
       </nav>
@@ -33,7 +33,7 @@
           :key="item"
           class="social__item"
         >
-          <BLink
+          <ALink
             :href="item.url"
             target="_blank"
             class="social__link"
@@ -42,7 +42,7 @@
               size="24"
               :name="item.icon"
             />
-          </BLink>
+          </ALink>
         </li>
       </ul>
       <HeaderBurger

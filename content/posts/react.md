@@ -242,8 +242,8 @@ const Form = () => {
   const onSecondButtonClick = () => console.log('The second button clicked!');
   return (
     <form>
-      <Button onClick={onFirstButtonClick}>The first button</Button>
-      <Button onClick={onSecondButtonClick}>The second button</Button>
+      <Autton onClick={onFirstButtonClick}>The first button</Autton>
+      <Autton onClick={onSecondButtonClick}>The second button</Autton>
     </form>
   );
 }

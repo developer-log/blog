@@ -3,22 +3,22 @@
     v-if="model"
     class="banner"
   >
-    <BCard class="banner__wrapper">
+    <ACard class="banner__wrapper">
       <div class="banner__description description">
-        <BText class="description__text">
+        <AText class="description__text">
           Мы используем cookie. Это позволяет нам анализировать взаимодействие посетителей с сайтом и делать его лучше.
-        </BText>
-        <BText class="description__text">
+        </AText>
+        <AText class="description__text">
           Продолжая пользоваться сайтом, вы соглашаетесь с использованием файлов cookie.
-        </BText>
+        </AText>
       </div>
-      <BButton
+      <AButton
         class="banner__button"
         @click="handleAccept"
       >
         Принять
-      </BButton>
-    </BCard>
+      </AButton>
+    </ACard>
   </div>
 </template>
 

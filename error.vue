@@ -5,35 +5,35 @@
       src="/tokiory-cat-rain-colorized.svg"
     />
     <template v-if="code === 404">
-      <BTitle class="error__title">
+      <ATitle class="error__title">
         Страница не найдена
-      </BTitle>
-      <BText class="error__text">
+      </ATitle>
+      <AText class="error__text">
         Мы долго искали данную страницу, но так и не смогли найти ее
-      </BText>
-      <BText class="error__text">
+      </AText>
+      <AText class="error__text">
         Возможно вы указали неверный адрес, ну или страницу украли злые барсуки 🦡
-      </BText>
-      <BButton
+      </AText>
+      <AButton
         class="error__button"
         @click="onGoToHome"
       >
         Перейти на главную
-      </BButton>
+      </AButton>
     </template>
     <template v-else>
-      <BTitle class="error__title">
+      <ATitle class="error__title">
         Произошла чудовищная ошибка
-      </BTitle>
-      <BText class="error__text">
+      </ATitle>
+      <AText class="error__text">
         Команда котов-инженеров уже занимается этим вопросом 🐈 🐈‍⬛ 🐈
-      </BText>
-      <BButton
+      </AText>
+      <AButton
         class="error__button"
         @click="onReloadPage"
       >
         Перезагрузить страницу
-      </BButton>
+      </AButton>
     </template>
   </div>
 </template>

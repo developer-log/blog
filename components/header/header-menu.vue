@@ -10,17 +10,17 @@
         class="menu__item item"
         @click="() => navigate(item.url)"
       >
-        <BLink
+        <ALink
           :to="item.url"
           class="item__link"
         >
-          <BTitle
+          <ATitle
             class="item__title"
             level="3"
           >
             {{ item.name }}
-          </BTitle>
-        </BLink>
+          </ATitle>
+        </ALink>
       </li>
     </ul>
   </div>

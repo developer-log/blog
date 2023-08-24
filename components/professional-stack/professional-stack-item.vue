@@ -1,21 +1,21 @@
 <template>
-  <BCard class="stack-item">
-    <BText class="stack-item__title">
+  <ACard class="stack-item">
+    <AText class="stack-item__title">
       {{ title }}
-    </BText>
-    <BText
+    </AText>
+    <AText
       class="stack-item__description"
       secondary
     >
       {{ description }}
-    </BText>
-    <BText
+    </AText>
+    <AText
       class="stack-item__term"
       secondary
     >
       {{ timeInUse }}
-    </BText>
-  </BCard>
+    </AText>
+  </ACard>
 </template>
 
 <script setup lang="ts">

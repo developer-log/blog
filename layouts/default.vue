@@ -3,7 +3,7 @@
     id="layout"
     class="default-layout"
   >
-    <BHeader />
+    <AHeader />
     <slot />
   </div>
 </template>

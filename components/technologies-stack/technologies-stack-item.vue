@@ -1,19 +1,19 @@
 <template>
-  <BLink
+  <ALink
     :href="url"
     class="technology"
   >
-    <BCard class="technology__card">
-      <BText class="technology__title">
+    <ACard class="technology__card">
+      <AText class="technology__title">
         {{ title }}
-      </BText>
-      <BText
+      </AText>
+      <AText
         class="technology__value"
       >
         {{ value }}
-      </BText>
-    </BCard>
-  </BLink>
+      </AText>
+    </ACard>
+  </ALink>
 </template>
 
 <script setup lang="ts">
