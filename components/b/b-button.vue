@@ -22,6 +22,10 @@ withDefaults(defineProps<ButtonProperties>(), {
   border: 1px solid var(--color-neutral-5);
   border-radius: 6px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &.primary {
     background: var(--color-red-normal);
     border-color: var(--color-red-dark);

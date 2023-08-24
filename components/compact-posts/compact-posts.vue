@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostContent } from "@t/content";
+import type { PostContent } from "@t/content";
 
 interface CompactPostsProperties {
   posts: PostContent,

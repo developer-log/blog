@@ -1,4 +1,4 @@
-interface TechnologiesStackItem {
+export interface TechnologiesStackItemContent {
   title: string;
   value: string;
   url: string;
@@ -6,5 +6,5 @@ interface TechnologiesStackItem {
 
 
 export interface TechnologiesStackContent {
-  list: TechnologiesStackItem[]
+  list: TechnologiesStackItemContent[]
 }

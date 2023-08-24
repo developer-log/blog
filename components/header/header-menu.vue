@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { Navigation } from "@t/navigation";
+import type { Navigation } from "@t/navigation";
 
 import useScrollLock from "@/composables/use-scroll-lock";
 import nav from "@/data/navigation";

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import { NuxtLinkProps } from "#app";
+import type { NuxtLinkProps } from "#app";
 const properties = withDefaults(defineProps<NuxtLinkProps>(), {
   noPrefetch: undefined,
   prefetch: false,

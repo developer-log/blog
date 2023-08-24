@@ -32,7 +32,11 @@ withDefaults(defineProps<WaterfallProperties>(), {
       content: "";
       width: 200px;
       height: 200px;
-      translate: 100% calc(100% + 200px);
+      left: 50%;
+      transform-origin: left;
+      transform: translateX(-50%);
+      //translate: 100% calc(100% + 200px);
+      //translate: 150px 0;
       scale: 1;
       border-radius: 100%;
       animation: 5s ease-in-out heartbeat infinite alternate;

@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostItemContent } from "@t/content/post";
+import type { PostItemContent } from "@t/content/post";
 defineProps<PostItemContent>();
 </script>
 

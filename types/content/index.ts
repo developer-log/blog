@@ -1,5 +1,5 @@
 export { PostContent, PostItemContent } from "./post";
-export { ProfessionalStackContent } from "./professional-stack";
+export { ProfessionalStackContent, ProfessionalStackItemContent } from "./professional-stack";
 export { ProjectContent } from "./project";
 export { SocialContent } from "./social";
-export { TechnologiesStackContent } from "./technologies-stack";
+export { TechnologiesStackContent, TechnologiesStackItemContent } from "./technologies-stack";

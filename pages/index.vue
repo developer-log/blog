@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostItemContent, SocialContent } from "@t/content";
+import type { PostItemContent, SocialContent } from "@t/content";
 
 import { queryContent, useAsyncData } from "#imports";
 
@@ -81,11 +81,7 @@ const { data: social } = useAsyncData("social", () => {
 }
 
 .content {
-  padding: 32px 16px;
-
-  @include from-xl {
-    padding: 32px 32px 32px 92px;
-  }
+  @include content-padding;
 
   &__title {
     font-size: 32px;

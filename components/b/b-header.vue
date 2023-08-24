@@ -58,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import { SocialContent } from "@t/content";
+import type { SocialContent } from "@t/content";
 
 import navigation from "@/data/navigation";
 import { ref } from "#imports";
@@ -72,7 +72,6 @@ const { data: social } = await useAsyncData("social", () => {
 
 <style lang="scss" scoped>
 .header {
-  padding: 20px 16px;
   background: rgba(255, 255, 255, 0.87);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-neutral-4);
@@ -80,10 +79,7 @@ const { data: social } = await useAsyncData("social", () => {
   overflow: hidden;
   top: 0;
   @include zi(header);
-
-  @include from-xl {
-    padding: 20px 92px;
-  }
+  @include layout-padding;
 
 
   &.active {
