@@ -155,6 +155,10 @@ const { data: social } = await useAsyncData("social", () => {
     display: flex;
     gap: 24px;
   }
+
+  &__link {
+    color: inherit;
+  }
 }
 
 .social {
@@ -163,6 +167,10 @@ const { data: social } = await useAsyncData("social", () => {
 
   @include from-md {
     display: flex;
+  }
+
+  &__link {
+    color: inherit;
   }
 }
 </style>

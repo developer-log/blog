@@ -17,13 +17,15 @@ const properties = withDefaults(defineProps<NuxtLinkProps>(), {
 
 <style scoped lang="scss">
 .link {
+  color: var(--color-red-dark);
+
   &:hover {
-    color: var(--color-red-dark);
+    color: var(--color-red-dark-hover);
     cursor: pointer;
   }
 
   &:active {
-    color: var(--color-red-dark-hover);
+    color: var(--color-red-dark-active);
   }
 }
 </style>

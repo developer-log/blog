@@ -26,11 +26,11 @@ const preset: Record<NonNullable<TitleProperties["level"]>, CSS> = {
     fontWeight: "800",
   },
   "2": {
-    fontSize: "var(--fz-title-h1)",
+    fontSize: "var(--fz-title-h2)",
     fontWeight: "700",
   },
   "3": {
-    fontSize: "var(--fz-title-h1)",
+    fontSize: "var(--fz-title-h3)",
     fontWeight: "600",
   }
 };

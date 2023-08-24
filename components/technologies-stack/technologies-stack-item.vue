@@ -24,6 +24,7 @@ defineProps<TechnologiesStackItemContent>();
 <style lang="scss" scoped>
 .technology {
   display: block;
+  color: inherit;
 
   &__card {
     padding: 8px;

@@ -1,12 +1,23 @@
 type ProjectProvider = "github" | "gitlab" | "codepen" | "bitbucket";
 
+interface Stack {
+  primary: string[];
+  additional: string[];
+}
+
+interface Link {
+  type: ProjectProvider;
+  url: string;
+}
+
 interface ProjectItem {
   name: string;
   description: {
     short: string;
-    long: string;
+    long: string[];
   };
-  links: Partial<Record<ProjectProvider, string>>;
+  stack: Stack;
+  links: Link[];
 }
 
 export interface ProjectContent {
