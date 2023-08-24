@@ -49,9 +49,17 @@ You also can use next terminal commands:
     - `test:end:setup`: Setup browsers for testing
 
 ## Additional 🤓
+### Languages 👅
+Languages dictionaries are located in `@l`. Following languages are supported now:
+
+- Russian (Main language);
+- English;
+- Belarusian;
+- Korean;
+
 ### Adaptive 🤳
-- **Minimal Value**: 355px;
-- **Maximum value**: 4096px;
+- **Minimal Value**: 400px;
+- **Maximum value**: 2048px;
 
 #### Conventions
 1. We're building mobile-first layout

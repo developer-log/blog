@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import type { NuxtConfig } from "nuxt/config";
 
-const locales = [ "en", "ru" ];
+const locales = [ "en", "ru", "ko" ];
 
 const alias: NuxtConfig["alias"] = {
   "@t": "./types",
@@ -23,6 +23,7 @@ const typescript: NuxtConfig["typescript"] = {
 
 const app: NuxtConfig["app"] = {
   head: {
+    title: "Лог разработчика",
     // eslint-disable-next-line unicorn/text-encoding-identifier-case
     charset: "utf-8",
     link: [
