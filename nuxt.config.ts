@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { NuxtConfig } from "nuxt/config";
+import type { NuxtConfig } from "nuxt/config";
 
 const locales = [ "en", "ru" ];
 
@@ -10,6 +10,68 @@ const alias: NuxtConfig["alias"] = {
   "@l": "./localization",
   "@test": "./tests",
   "@composable": "./composables",
+};
+
+
+const typescript: NuxtConfig["typescript"] = {
+  tsConfig: {
+    compilerOptions: {
+      importsNotUsedAsValues: "error",
+    }
+  }
+};
+
+const app: NuxtConfig["app"] = {
+  head: {
+    // eslint-disable-next-line unicorn/text-encoding-identifier-case
+    charset: "utf-8",
+    link: [
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/favicon/apple-touch-icon.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon/favicon-16x16.png",
+      },
+      {
+        rel: "manifest",
+        href: "/favicon/site.webmanifest",
+      },
+      {
+        rel: "mask-icon",
+        href: "/favicon/safari-pinned-tab.svg",
+        color: "#ee5899",
+      },
+      {
+        rel: "shortcut icon",
+        href: "/favicon/favicon.ico",
+      },
+    ],
+    meta: [
+      {
+        name: "msapplication-TileColor",
+        content: "#ee5899",
+      },
+      {
+        name: "msapplication-Config",
+        content: "/favicon/browserconfig.xml",
+      },
+      {
+        name: "theme-color",
+        content: "#fdeef5",
+      }
+    ]
+  }
 };
 
 const modules: NuxtConfig["modules"] = [
@@ -58,9 +120,11 @@ export default defineNuxtConfig({
   devServer: {
     port: 8100,
   },
+  app,
   modules,
   vite,
   alias,
   i18n,
   content,
+  typescript,
 });
