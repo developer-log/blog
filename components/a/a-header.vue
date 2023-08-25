@@ -58,16 +58,11 @@
 </template>
 
 <script setup lang="ts">
-import type { SocialContent } from "@t/content";
-
+import { social } from "@/data/content";
 import navigation from "@/data/navigation";
 import { ref } from "#imports";
-import { queryContent, useAsyncData } from "#imports";
 
 const isHeaderMenuActive = ref(false);
-const { data: social } = await useAsyncData("social", () => {
-  return queryContent<SocialContent>("social").findOne();
-});
 </script>
 
 <style lang="scss" scoped>

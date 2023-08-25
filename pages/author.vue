@@ -38,16 +38,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ProfessionalStackContent, TechnologiesStackContent } from "@t/content";
-
-import { queryContent, useAsyncData } from "#imports";
-
-const { data: professionalStackContent } = await useAsyncData("professional-stack", () => {
-  return queryContent<ProfessionalStackContent>("professional-stack").findOne();
-});
-const { data: technologiesStackContent } = await useAsyncData("technologies-stack", () => {
-  return queryContent<TechnologiesStackContent>("technologies-stack").findOne();
-});
+import {
+  professionalStack as professionalStackContent,
+  technologiesStack as technologiesStackContent
+} from "@/data/content";
 </script>
 
 <style lang="scss" scoped>

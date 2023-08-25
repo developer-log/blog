@@ -120,12 +120,10 @@
 <script setup lang="ts">
 import type { ProjectContent } from "@t/content";
 
-import { computed, queryContent, ref, useAsyncData } from "#imports";
+import { projects } from "@/data/content";
+import { computed, ref } from "#imports";
 
 const activeProject = ref<ProjectContent["list"][number]>();
-const { data: projects } = useAsyncData("projects", () => {
-  return queryContent<ProjectContent>("projects").findOne();
-});
 
 const isStackVisible = computed(() => {
   if (activeProject.value?.stack) {

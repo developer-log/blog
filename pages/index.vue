@@ -57,8 +57,9 @@
 </template>
 
 <script setup lang="ts">
-import type { PostItemContent, SocialContent } from "@t/content";
+import type { PostItemContent } from "@t/content";
 
+import { social } from "@/data/content";
 import { queryContent, useAsyncData } from "#imports";
 
 const { data: posts } = useAsyncData("posts", async () => {
@@ -67,10 +68,6 @@ const { data: posts } = useAsyncData("posts", async () => {
     return Date.parse(b.date) - Date.parse(a.date);
   });
   return posts;
-});
-
-const { data: social } = useAsyncData("social", () => {
-  return queryContent<SocialContent>("social").findOne();
 });
 </script>
 
