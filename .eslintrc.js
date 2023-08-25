@@ -55,6 +55,7 @@ module.exports = {
   ],
 
   "rules": {
+    "sort-imports": "off",
     "quotes": [
       "error",
       "double"
@@ -63,7 +64,33 @@ module.exports = {
       "error",
       "always"
     ],
-    "simple-import-sort/imports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            // Internal
+            "^\\u0000",
+            "#imports",
+            "#app",
+
+            // Imports from @
+            "^@(/.*|$)",
+
+            // Relative imports
+            "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$",
+            "^\\.\\.(?!/?$)", "^\\.\\./?$",
+
+            // Types
+            "^@(t|/types)(/.*|$)",
+
+            // Styles
+            "^@(s|/styles)(/.*|$)",
+            "^.+\\.s?css$"
+          ]
+        ]
+      }
+    ],
     "simple-import-sort/exports": "error",
     "vue/multi-word-component-names": "off",
     "object-curly-spacing": [ "error", "always" ],
