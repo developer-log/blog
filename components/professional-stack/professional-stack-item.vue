@@ -7,21 +7,23 @@
       class="stack-item__description"
       secondary
     >
-      {{ description }}
+      {{ t(description) }}
     </AText>
     <AText
       class="stack-item__term"
       secondary
     >
-      {{ timeInUse }}
+      {{ t(`time.year.${timeInUse.amount}`, timeInUse.count) }}
     </AText>
   </ACard>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "#imports";
 import type { ProfessionalStackItemContent } from "@t/content";
 
 defineProps<ProfessionalStackItemContent>();
+const { t } = useI18n();
 </script>
 
 <style lang="scss" scoped>

@@ -1,11 +1,11 @@
 <template>
-  <ALink
+  <NuxtLink
     :href="url"
     class="technology"
   >
     <ACard class="technology__card">
       <AText class="technology__title">
-        {{ title }}
+        {{ t(title) }}
       </AText>
       <AText
         class="technology__value"
@@ -13,12 +13,15 @@
         {{ value }}
       </AText>
     </ACard>
-  </ALink>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "#imports";
 import type { TechnologiesStackItemContent } from "@t/content";
 defineProps<TechnologiesStackItemContent>();
+
+const { t } = useI18n();
 </script>
 
 <style lang="scss" scoped>

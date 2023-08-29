@@ -2,15 +2,15 @@ import type { Navigation } from "@t/navigation";
 
 export default [
   {
-    name: "Статьи",
+    name: "header.article",
     url: "/posts",
   },
   {
-    name: "Автор",
+    name: "header.author",
     url: "/author",
   },
   {
-    name: "Проекты",
+    name: "header.project",
     url: "/projects",
   },
 ] satisfies Navigation;

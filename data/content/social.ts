@@ -1,4 +1,8 @@
 export default {
+  collab: {
+    tokiory: "https://t.me/tokiory",
+    awamishi: "https://t.me/awamishi",
+  },
   telegram: "https://t.me/developer_log",
   github: "https://github.com/tokiory",
   codepen: "https://codepen.io/tokiory",

@@ -1,5 +1,5 @@
 <template>
-  <ALink
+  <NuxtLink
     :href="_path"
     class="post"
   >
@@ -32,7 +32,7 @@
         name="uil:angle-right"
       />
     </div>
-  </ALink>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -41,8 +41,6 @@ defineProps<PostItemContent>();
 </script>
 
 <style lang="scss" scoped>
-$adaptive-row-from: md;
-
 .post {
   padding: 12px;
   color: var(--color-neutral-13);
@@ -55,11 +53,6 @@ $adaptive-row-from: md;
 
   &:hover {
     color: inherit;
-  }
-
-  @include breakpoint($adaptive-row-from) {
-    flex-direction: row;
-    align-items: center;
   }
 
 }
@@ -79,21 +72,34 @@ $adaptive-row-from: md;
   align-items: center;
   gap: 8px;
 
+  &__tag-link {
+    color: inherit;
+  }
+
   &__angle {
     display: none;
-
-    @include breakpoint($adaptive-row-from) {
-      display: block;
-    }
   }
 
   &__list {
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+}
 
-    @include from-md {
+@include from-md {
+  .post {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav {
+    &__list {
       gap: 12px;
+    }
+
+    &__angle {
+      display: block;
     }
   }
 }

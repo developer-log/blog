@@ -2,20 +2,20 @@
   <main class="projects">
     <ul class="projects__menu menu">
       <li
-        v-for="(item, idx) in projects?.list"
+        v-for="(item, idx) in projects.list"
         :key="idx"
         class="menu__item"
-        @click="activeProject = item"
+        @click="activeProjectIndex = idx"
       >
         <ACard
-          :class="{active: activeProject === item}"
+          :class="{active: activeProjectIndex === idx}"
           class="menu__card"
         >
           <AText class="menu__title">
             {{ item.name }}
           </AText>
           <AText class="menu__description">
-            {{ item.description.short }}
+            {{ $t(item.description.short) }}
           </AText>
         </ACard>
       </li>
@@ -32,7 +32,7 @@
         :key="idx"
         class="view__description"
       >
-        {{ item }}
+        {{ $t(item) }}
       </AText>
       <div
         v-if="isStackVisible"
@@ -42,7 +42,7 @@
           level="2"
           class="stack__title"
         >
-          Стек
+          {{ $t("page.projects.stack") }}
         </ATitle>
         <ul class="stack__list stack__list_primary">
           <li
@@ -81,7 +81,7 @@
           level="2"
           class="links__title"
         >
-          Ссылки
+          {{ $t("page.projects.links") }}
         </ATitle>
         <ul class="links__list">
           <li
@@ -89,12 +89,12 @@
             :key="item"
             class="links__item"
           >
-            <ALink
+            <NuxtLink
               class="links__link"
               :href="item.url"
             >
               {{ item.url }}
-            </ALink>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -105,25 +105,28 @@
     >
       <NuxtImg
         class="empty__cat"
-        src="/tokiory-cat-question.svg"
+        src="/tokiory/question.svg"
       />
       <ATitle class="empty__title">
-        Выберите один из проектов
+        {{ $t("page.projects.chooseTitle") }}
       </ATitle>
       <AText class="empty__text">
-        Для того чтобы продолжить, вам нужно выбрать один из проектов из списка.
+        {{ $t("page.projects.chooseDescription") }}
       </AText>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import type { ProjectContent } from "@t/content";
-
-import { projects } from "@/data/content";
 import { computed, ref } from "#imports";
+import { projects } from "@/data/content";
 
-const activeProject = ref<ProjectContent["list"][number]>();
+const activeProjectIndex = ref<number>();
+
+const activeProject = computed(() => {
+  return projects.list?.[activeProjectIndex.value!];
+});
+
 
 const isStackVisible = computed(() => {
   if (activeProject.value?.stack) {
@@ -141,14 +144,11 @@ const isLinksVisible = computed(() => {
 
 <style lang="scss" scoped>
 .projects {
-  @include content-padding;
+  @include spacing-content;
   display: flex;
   flex-direction: column;
   gap: 24px;
-
-  @include from-xl {
-    flex-direction: row;
-  }
+  min-height: calc(100vh - var(--size-header));
 }
 
 .menu {
@@ -174,13 +174,6 @@ const isLinksVisible = computed(() => {
     border-radius: 2px;       /* закругления плашки */
   }
 
-  @include from-xl {
-    padding: 0 12px;
-    width: 415px;
-    flex-direction: column;
-    overflow: auto;
-  }
-
   &__item {
     width: 100%;
     min-width: 300px;
@@ -199,6 +192,12 @@ const isLinksVisible = computed(() => {
   &__card {
     height: 100%;
     padding: 18px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--color-red-dark);
+    }
+
     &.active {
       border-color: var(--color-red-normal);
     }
@@ -211,7 +210,7 @@ const isLinksVisible = computed(() => {
   }
 
   &__description {
-    @include adaptive-margin(top, 12px);
+    @include spacing-adaptive(top, 12px);
   }
 }
 
@@ -268,14 +267,6 @@ const isLinksVisible = computed(() => {
   height: 100%;
   width: calc(100% - 16px);
 
-  @include from-sm {
-    flex-grow: 1;
-  }
-
-  @include from-xl {
-    width: calc(100% - 92px);
-  }
-
   &__cat {
     max-width: 184px;
     width: 100%;
@@ -290,13 +281,39 @@ const isLinksVisible = computed(() => {
     margin-top: 12px;
     text-align: center;
   }
+}
 
-  @media screen and (min-height: 670px) {
+@include from-sm {
+  .empty {
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-height: 670px) {
+  .empty {
+    padding-top: 24px;
+    padding-bottom: 10vh;
+
     &__cat {
       max-width: 280px;
     }
-    padding-top: 24px;
-    padding-bottom: 10vh;
+  }
+}
+
+@include from-xl {
+  .projects {
+    flex-direction: row;
+  }
+
+  .empty {
+    width: calc(100% - 92px);
+  }
+
+  .menu {
+    padding: 0 12px;
+    width: 415px;
+    flex-direction: column;
+    overflow: auto;
   }
 }
 </style>

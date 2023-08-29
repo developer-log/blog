@@ -8,9 +8,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Properties as CSS } from "csstype";
-
 import { computed } from "#imports";
+
+import type { Properties as CSS } from "csstype";
 
 interface TitleProperties {
   level?: "1" | "2" | "3";

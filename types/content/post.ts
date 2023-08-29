@@ -1,16 +1,13 @@
-interface Tag {
-  name: string;
-}
-
 interface NuxtContentMeta {
   _id: string;
   _path: string;
 }
 
+
 export interface PostItemContent extends NuxtContentMeta {
   title: string;
   description: string;
-  tags: Tag[];
+  tags: string[];
   date: string;
 }
 

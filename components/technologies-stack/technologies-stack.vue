@@ -33,12 +33,12 @@ withDefaults(defineProps<TechnologiesStackProperties>(), {
   display: flex;
   flex-direction: column;
   gap: 12px 20px;
+}
 
-  @include from-md {
-    &.grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
+@include from-md {
+  .technologies-list.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

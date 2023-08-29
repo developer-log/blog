@@ -1,6 +1,9 @@
 export interface ProfessionalStackItemContent {
   title: string;
-  timeInUse: string;
+  timeInUse: {
+    amount: string;
+    count: number;
+  };
   description: string;
 }
 

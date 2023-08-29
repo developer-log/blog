@@ -36,12 +36,12 @@ withDefaults(defineProps<ProfessionalStackProperties>(), {
   &__item {
     height: 100%;
   }
+}
 
-  @include from-md {
-    &.grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
+@include from-md {
+  .stack-list.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>

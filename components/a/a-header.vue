@@ -4,13 +4,13 @@
     :class="{active: isHeaderMenuActive}"
   >
     <div class="header__wrapper">
-      <ALink
+      <NuxtLink
         class="header__logo"
-        to="/"
+        :to="{path: localePath('/')}"
         @click="isHeaderMenuActive = false"
       >
         <ALogo />
-      </ALink>
+      </NuxtLink>
       <nav class="header__navigation nav">
         <ul class="nav__list">
           <li
@@ -18,12 +18,12 @@
             :key="item"
             class="nav__item"
           >
-            <ALink
-              :to="item.url"
+            <NuxtLink
+              :to="{path: localePath(item.url), external: true}"
               class="nav__link"
             >
-              {{ item.name }}
-            </ALink>
+              {{ capitalize($t(item.name)) }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
@@ -33,8 +33,9 @@
           :key="item"
           class="social__item"
         >
-          <ALink
-            :href="item.url"
+          <NuxtLink
+            external
+            :to="item.url"
             target="_blank"
             class="social__link"
           >
@@ -42,7 +43,7 @@
               size="24"
               :name="item.icon"
             />
-          </ALink>
+          </NuxtLink>
         </li>
       </ul>
       <HeaderBurger
@@ -58,11 +59,14 @@
 </template>
 
 <script setup lang="ts">
+import { ref, useLocalePath } from "#imports";
 import { social } from "@/data/content";
 import navigation from "@/data/navigation";
-import { ref } from "#imports";
+
+import { capitalize } from "vue";
 
 const isHeaderMenuActive = ref(false);
+const localePath = useLocalePath();
 </script>
 
 <style lang="scss" scoped>
@@ -74,7 +78,7 @@ const isHeaderMenuActive = ref(false);
   overflow: hidden;
   top: 0;
   @include zi(header);
-  @include layout-padding;
+  @include spacing-layout;
 
 
   &.active {
@@ -93,7 +97,7 @@ const isHeaderMenuActive = ref(false);
       right: -100px;
       bottom: 0;
       mask-repeat: no-repeat;
-      mask-image: url(/tokiory-cat-outlined.svg);
+      mask-image: url(/tokiory/outline.svg);
     }
   }
 
@@ -124,6 +128,7 @@ const isHeaderMenuActive = ref(false);
     background: none;
     border: none;
     padding: 8px;
+    color: inherit;
     @include zi(header-burger);
 
 
@@ -153,6 +158,10 @@ const isHeaderMenuActive = ref(false);
 
   &__link {
     color: inherit;
+
+    &:hover {
+      color: var(--color-red-dark-hover);
+    }
   }
 }
 
@@ -166,6 +175,10 @@ const isHeaderMenuActive = ref(false);
 
   &__link {
     color: inherit;
+
+    &:hover {
+      color: var(--color-red-dark-hover);
+    }
   }
 }
 </style>

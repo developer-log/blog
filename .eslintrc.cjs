@@ -94,10 +94,11 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "vue/multi-word-component-names": "off",
     "object-curly-spacing": [ "error", "always" ],
-    "array-bracket-spacing": [ "error", "always" ],
+    "array-bracket-spacing": [ "error", "always", { "objectsInArrays": false }],
     "vue/component-name-in-template-casing": [ "error", "PascalCase", {
       "registeredComponentsOnly": false,
       "ignores": []
-    } ],
+    }],
+    "comma-spacing": [ "error", { "before": false, "after": true }],
   }
 };

@@ -5,14 +5,19 @@
   >
     <AHeader />
     <slot />
+    <AFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useI18n, useSeoMeta } from "#imports";
-const { t } = useI18n();
+import { useI18n, useSeoMeta, watch } from "#imports";
+const { t, locale } = useI18n();
 
-useSeoMeta({
+const setMeta = () => useSeoMeta({
   title: t("title"),
 });
+
+setMeta();
+
+watch(locale, setMeta);
 </script>

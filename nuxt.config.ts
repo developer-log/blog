@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import type { NuxtConfig } from "nuxt/config";
 
-const locales = [ "en", "ru", "ko" ];
+const locales = [ "en", "ru", "ko", "be", "kk" ];
 
 const alias: NuxtConfig["alias"] = {
   "@t": "./types",
@@ -75,6 +75,7 @@ const app: NuxtConfig["app"] = {
 };
 
 const modules: NuxtConfig["modules"] = [
+  "nuxt-content-assets",
   "@nuxt/content",
   "@nuxt/image",
   "@nuxtjs/i18n",
@@ -85,6 +86,9 @@ const i18n: NuxtConfig["i18n"] = {
   locales,
   defaultLocale: "ru",
   strategy: "no_prefix",
+  detectBrowserLanguage: {
+    useCookie: true,
+  },
 };
 
 const vite: NuxtConfig["vite"] = {
@@ -108,7 +112,7 @@ const content: NuxtConfig["content"] = {
   locales,
   defaultLocale: "ru",
   highlight: {
-    theme: "solarized-light",
+    theme: "github-light",
   },
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore

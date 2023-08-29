@@ -21,6 +21,7 @@ withDefaults(defineProps<ButtonProperties>(), {
   padding: 12px 36px;
   border: 1px solid var(--color-neutral-5);
   border-radius: 6px;
+  @include base-transition;
 
   &:hover {
     cursor: pointer;

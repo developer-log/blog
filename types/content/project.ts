@@ -10,16 +10,16 @@ interface Link {
   url: string;
 }
 
-interface ProjectItem {
+export interface ProjectItemContent {
   name: string;
   description: {
     short: string;
     long: string[];
   };
-  stack: Stack;
-  links: Link[];
+  stack?: Stack;
+  links?: Link[];
 }
 
 export interface ProjectContent {
-  list: ProjectItem[];
+  list: ProjectItemContent[];
 }

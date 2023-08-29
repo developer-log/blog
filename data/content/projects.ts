@@ -1,4 +1,6 @@
-export default {
+import type { ProjectContent } from "@t/content";
+
+const projects: ProjectContent = {
   list: [
     {
       name: "Developer Log",
@@ -17,10 +19,10 @@ export default {
         ]
       },
       description: {
-        short: "Один из моих самых больших проектов",
+        short: "projects.developerLog.short",
         long: [
-          "Developer Log - Один из моих самых крупных проектов. Я делал его больше для себя, нежели для других людей, ибо не нашел нормальной платформы, где мог бы делиться знаниями.\n",
-          "На разработку данного блога я потратил чуть больше года (данная версия - уже 3-я итерация), основная аудитория приходит на данный блог из других порталов. Данный проект является накоплением моих знаний из разных отраслей.\n",
+          "projects.developerLog.long.1",
+          "projects.developerLog.long.2",
         ]
       },
       links: [
@@ -34,6 +36,8 @@ export default {
       name: "Capybara",
       stack: {
         primary: [
+          "rust",
+          "tauri",
           "typescript",
           "react",
           "sass"
@@ -47,12 +51,14 @@ export default {
         ]
       },
       description: {
-        short: "Кросс-платформенное приложение для код-ревью",
+        short: "projects.capybara.short",
         long: [
-          "Capybara - кроссплатформенное приложение для код-ревью, которое создано для того чтобы облегчить сам процесс код-ревью.\n",
-          "Приложение имеет интеграцию с Github и Gitlab, а также может работать автономно с локальным репозиторием.\n",
+          "projects.capybara.long.1",
+          "projects.capybara.long.2",
         ]
       }
     }
   ]
 };
+
+export default projects;

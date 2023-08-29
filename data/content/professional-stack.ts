@@ -2,23 +2,23 @@ export default {
   list: [
     {
       title: "Javascript",
-      timeInUse: "Больше 4-х лет",
-      description: "Первый язык программирования"
+      timeInUse: { amount: "more", count: 4 },
+      description: "stack.purpose.first"
     },
     {
       title: "Typescript",
-      timeInUse: "Больше 4-х лет",
-      description: "Основной язык программирования"
+      timeInUse: { amount: "more", count: 4 },
+      description: "stack.purpose.main"
     },
     {
       title: "Go",
-      timeInUse: "Меньше года",
-      description: "Язык программирования, который я использую для бэкенда"
+      timeInUse: { amount: "less", count: 1 },
+      description: "stack.purpose.backend"
     },
     {
       title: "Zig",
-      timeInUse: "Меньше года",
-      description: "Язык программирования, который я изучаю просто так 🌝"
+      timeInUse: { amount: "less", count: 1 },
+      description: "stack.purpose.fun"
     }
   ]
 };

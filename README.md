@@ -27,6 +27,7 @@
 - [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;
 - [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
 - [@nuxt/image](https://nuxt.com/modules/image) - Adds a11y image component;
+- [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
 - [@nuxt/content](https://content.nuxtjs.org) - Adds content to the nuxt;
 
 ## Commands 🙌
@@ -35,21 +36,25 @@ If you can, you can use Webstorm commands via `Ctrl + Ctrl` keybinding
 You also can use next terminal commands:
 
 - `app`: Commands for app
-    - `pnpm app:dev`: Run development server
-    - `pnpm app:build`: Build the project
+    - `app:dev`: Run development server;
+    - `app:build`: Build the project;
+    - `app:run`: Run production server;
+- `docker`: Commands for docker containerization
+  - `docker:build`: Build the project in a docker container;
+  - `docker:run`: Run docker container with the app;
 - `lint`: Commands for linters
-  - `lint:eslint`: Run ESLint
-  - `lint:stylelint`: Run Stylelint
+  - `lint:eslint`: Run ESLint;
+  - `lint:stylelint`: Run Stylelint;
 - `test`: Commands for testing
-  - `test:unit`: Commands for unit tests
-    - `test:unit:run`: Run unit tests in CLI
-  - `test:end`: Commands for end to end tests
-    - `test:end:run`: Run end to end tests in CLI
-    - `test:end:ui`: Run end to end tests in GUI
-    - `test:end:setup`: Setup browsers for testing
+  - `test:unit`: Commands for unit tests;
+    - `test:unit:run`: Run unit tests in CLI;
+  - `test:end`: Commands for end to end tests;
+    - `test:end:run`: Run end to end tests in CLI;
+    - `test:end:ui`: Run end to end tests in GUI;
+    - `test:end:setup`: Setup browsers for testing;
 - `deploy`: Commands for deploying
-  - `deploy:dev`: Deploy to the development server
-  - `deploy:prod`: Deploy to the production server
+  - `deploy:dev`: Deploy to the development server;
+  - `deploy:prod`: Deploy to the production server;
 
 ## Additional 🤓
 ### Languages 👅

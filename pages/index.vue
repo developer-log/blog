@@ -2,7 +2,7 @@
   <main class="home">
     <section class="home__content content">
       <ATitle class="content__title">
-        Лог разработчика
+        {{ $t('page.home.title') }}
       </ATitle>
       <div class="content__subtitle subtitle">
         <Icon
@@ -11,13 +11,13 @@
           class="subtitle__icon"
         />
         <AText class="subtitle__text">
-          Лог разработчика глазами разработчика
+          {{ $t('page.home.description') }}
         </AText>
       </div>
       <AText class="content__text">
-        "Лог разработчика" – блог опытного фронтэнд-разработчика, предлагающий туториалы, заметки и статьи о современных веб-технологиях и методах разработки. Автор делится своим опытом и знаниями, представляя доступные руководства по погружению в мир разработки от основ до продвинутых техник. Особенность блога – понятное изложение сложных тем для широкой аудитории. Будьте в курсе новейших тенденций и улучшайте свои навыки вместе с "Логом разработчика".
+        {{ $t('page.home.hero') }}
       </AText>
-      <ALink
+      <NuxtLink
         :href="social!.telegram"
         target="_blank"
         class="content__link"
@@ -26,12 +26,12 @@
           theme="primary"
           class="content__telegram"
         >
-          Перейти в телеграм
+          {{ $t('page.home.telegramButton') }}
         </AButton>
-      </ALink>
+      </NuxtLink>
       <div class="content__posts posts">
         <ATitle level="2">
-          Перейти к чтению
+          {{ $t('page.home.subtitle') }}
         </ATitle>
         <CompactPosts
           class="posts__list"
@@ -57,13 +57,24 @@
 </template>
 
 <script setup lang="ts">
+import { queryContent, useAsyncData } from "#imports";
+import { social } from "@/data/content";
 import type { PostItemContent } from "@t/content";
 
-import { social } from "@/data/content";
-import { queryContent, useAsyncData } from "#imports";
+const { data: posts } = useAsyncData(async () => {
+  const fields: Array<keyof PostItemContent> = [
+    "_id",
+    "_path",
+    "title",
+    "date",
+    "tags",
+    "description",
+  ];
 
-const { data: posts } = useAsyncData("posts", async () => {
-  const posts = await queryContent<PostItemContent>().limit(5).find();
+  const posts = await queryContent<PostItemContent>()
+    .only(fields)
+    .limit(5)
+    .find();
   posts.sort((a, b) => {
     return Date.parse(b.date) - Date.parse(a.date);
   });
@@ -78,19 +89,11 @@ const { data: posts } = useAsyncData("posts", async () => {
 }
 
 .content {
-  @include content-padding;
+  @include spacing-content;
 
   &__title {
     font-size: 32px;
     font-weight: 800;
-
-    @include from-md {
-      font-size: 48px;
-    }
-
-    @include from-xxl {
-      font-size: 72px;
-    }
   }
 
   &__subtitle {
@@ -128,16 +131,30 @@ const { data: posts } = useAsyncData("posts", async () => {
   display: none;
   align-items: center;
 
-  @include from-xl {
-    display: flex;
-  }
-
   &__item {
     width: 200px;
+  }
+}
 
-    @include from-xxl {
-      width: 250px;
-    }
+@include from-md {
+  .content__title {
+      font-size: 48px;
+  }
+}
+
+@include from-xl {
+  .waterfall {
+    display: flex;
+  }
+}
+
+@include from-xxl {
+  .content__title {
+    font-size: 72px;
+  }
+
+  .waterfall__item {
+    width: 250px;
   }
 }
 </style>

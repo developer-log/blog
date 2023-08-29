@@ -23,8 +23,8 @@
 </template>
 
 <script lang="ts" setup>
-import useLS from "@/composables/use-ls";
 import { defineModel } from "#imports";
+import useLS from "@/composables/use-ls";
 
 const model = defineModel<boolean>();
 const ls = useLS();
@@ -45,11 +45,6 @@ const handleAccept = () => {
   left: 16px;
   right: 16px;
 
-  @include from-xl {
-    left: 2vw;
-    right: 2vw;
-  }
-
   &__wrapper {
     max-width: 1388px;
     width: 100%;
@@ -60,18 +55,10 @@ const handleAccept = () => {
     flex-direction: column;
     gap: 24px;
     padding: 24px;
-
-    @include from-xl {
-      flex-direction: row;
-    }
   }
 
   &__button {
     width: 100%;
-
-    @include from-xl {
-      width: fit-content;
-    }
   }
 }
 
@@ -80,12 +67,27 @@ const handleAccept = () => {
   flex-direction: column;
   gap: 12px;
 
-  @include from-xl {
+  &__text {
+    display: inline;
+  }
+}
+
+@include from-xl {
+  .description {
     display: block;
   }
 
-  &__text {
-    display: inline;
+  .banner {
+    left: 2vw;
+    right: 2vw;
+
+    &__wrapper {
+      flex-direction: row;
+    }
+
+    &__button {
+      width: fit-content;
+    }
   }
 }
 </style>

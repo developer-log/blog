@@ -5,6 +5,11 @@ ul {
 }
 
 a {
-  color: inherit;
+  color: var(--color-red-dark);
   text-decoration: none;
+
+  &:hover {
+    @include base-transition;
+    color: var(--color-red-dark-hover);
+  }
 }

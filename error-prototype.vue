@@ -2,7 +2,7 @@
   <div class="error">
     <NuxtImg
       class="error__cat"
-      src="/tokiory-cat-rain-colorized.svg"
+      src="/tokiory/cry.svg"
     />
     <template v-if="code === 404">
       <ATitle class="error__title">
@@ -39,8 +39,8 @@
 </template>
 
 <script lang="ts" setup>
-import { clearError, NuxtError } from "#app";
 import { onMounted, Ref, useError } from "#imports";
+import { clearError, NuxtError } from "#app";
 
 const error = useError() as Ref<NuxtError>;
 

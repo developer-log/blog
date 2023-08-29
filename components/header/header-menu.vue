@@ -10,7 +10,7 @@
         class="menu__item item"
         @click="() => navigate(item.url)"
       >
-        <ALink
+        <NuxtLink
           :to="item.url"
           class="item__link"
         >
@@ -20,18 +20,18 @@
           >
             {{ item.name }}
           </ATitle>
-        </ALink>
+        </NuxtLink>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Navigation } from "@t/navigation";
-
+import { navigateTo, onUnmounted, watch } from "#imports";
 import useScrollLock from "@/composables/use-scroll-lock";
 import nav from "@/data/navigation";
-import { navigateTo,onUnmounted, watch } from "#imports";
+import type { Navigation } from "@t/navigation";
+
 
 interface HeaderMenuProperties {
   navigation: Navigation;
