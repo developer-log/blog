@@ -82,8 +82,8 @@ const footerSocial = computed(() => {
   padding: 12px 0;
   gap: 12px;
   background: rgba(255, 255, 255, 0.87);
-  backdrop-filter: blur(10px);
   border-top: 1px solid var(--color-neutral-4);
+  backdrop-filter: blur(10px);
 }
 
 .social {
@@ -108,6 +108,13 @@ const footerSocial = computed(() => {
     right: 32px;
     top: 50%;
     transform: translateY(-50%);
+  }
+}
+
+@include theme-dark {
+  .footer {
+    background: rgba(51, 51, 51, 0.87);
+    border-top: 1px solid var(--color-neutral-9);
   }
 }
 </style>

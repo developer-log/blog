@@ -19,4 +19,11 @@
     padding: 4px 12px;
   }
 }
+
+@include theme-dark {
+  .tag {
+    background: var(--color-green-dark);
+    border: 1px solid var(--color-green-darker);
+  }
+}
 </style>

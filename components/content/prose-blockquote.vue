@@ -32,4 +32,10 @@
     padding: 12px;
   }
 }
+
+@include theme-dark {
+  .post-content-blockquote__text {
+    color: var(--color-green-normal);
+  }
+}
 </style>

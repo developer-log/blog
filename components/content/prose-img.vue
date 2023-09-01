@@ -23,4 +23,10 @@ defineProps<ProseImgProperties>();
   border: 1px solid var(--color-neutral-4);
   border-radius: 6px;
 }
+
+@include theme-dark {
+  .post-content-image {
+    border-color: var(--color-neutral-9);
+  }
+}
 </style>

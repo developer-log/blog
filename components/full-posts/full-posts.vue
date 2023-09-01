@@ -46,4 +46,10 @@ defineProps<{groups: PostDateGroups}>();
     }
   }
 }
+
+@include theme-dark {
+  .posts-list::before {
+    background: var(--color-neutral-9);
+  }
+}
 </style>

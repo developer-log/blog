@@ -24,13 +24,14 @@
 
 <script lang="ts" setup>
 import { defineModel } from "#imports";
-import useLS from "@/composables/use-ls";
+import { useLocalStorageState } from "#imports";
+import localStorageKey from "@/data/local-storage-key";
 
 const model = defineModel<boolean>();
-const ls = useLS();
+const cookie = useLocalStorageState<boolean>(localStorageKey.cookie);
 
 const handleAccept = () => {
-  ls.cookie.agreement.set(true);
+  cookie.value = true;
   model.value = false;
 };
 </script>
@@ -88,6 +89,20 @@ const handleAccept = () => {
     &__button {
       width: fit-content;
     }
+  }
+}
+
+//@at-root body[data-theme=dark] {
+//  .banner__wrapper {
+//    background: var(--color-neutral-10);
+//    border-color: var(--color-green-normal-active);
+//  }
+//}
+
+@include theme-dark {
+  .banner__wrapper {
+    background: var(--color-neutral-10);
+    border-color: var(--color-green-normal-active);
   }
 }
 </style>

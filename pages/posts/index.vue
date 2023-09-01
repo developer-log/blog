@@ -25,13 +25,27 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, queryContent, ref, useAsyncData, useI18n, useRoute, watch } from "#imports";
+import { computed, queryContent, ref, useAsyncData, useI18n, useOg, useRequestURL, useRoute, useSeoMeta, watch } from "#imports";
 import type { PostItemContent } from "@t/content";
 import type { PostDateGroups, PostDateKey } from "@t/posts";
 
+const { t, getLocaleCookie } = useI18n();
+const url = useRequestURL();
+
+useSeoMeta({
+  ...useOg({
+    title: `${t("title")}: ${t("page.posts.tabTitle")}`,
+    image: {
+      title: `${t("title")}: ${t("page.posts.tabTitle")}`,
+      description: t("page.home.hero").split(".").slice(0, 2).join(".") + ".",
+    },
+    url,
+    author: "Daniil Shilo (tokiory) <tokiory.personal@gmail.com>",
+  }),
+});
+
 const route = useRoute();
 const search = ref(route.query?.search ?? "");
-const { t, getLocaleCookie } = useI18n();
 
 const locale = getLocaleCookie() ?? "ru";
 

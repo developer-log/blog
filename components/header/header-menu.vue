@@ -18,7 +18,7 @@
             class="item__title"
             level="3"
           >
-            {{ item.name }}
+            {{ $t(item.name) }}
           </ATitle>
         </NuxtLink>
       </li>

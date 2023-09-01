@@ -44,4 +44,10 @@ const { t } = useI18n();
     color: var(--color-neutral-8);
   }
 }
+
+@include theme-dark {
+  .technology__value {
+    color: var(--color-neutral-6);
+  }
+}
 </style>

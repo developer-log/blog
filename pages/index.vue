@@ -57,9 +57,24 @@
 </template>
 
 <script setup lang="ts">
-import { queryContent, useAsyncData } from "#imports";
+import { queryContent, useAsyncData, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import { social } from "@/data/content";
 import type { PostItemContent } from "@t/content";
+
+const { t } = useI18n();
+const url = useRequestURL();
+
+useSeoMeta({
+  ...useOg({
+    title: t("title"),
+    image: {
+      title: `${t("title")}: ${t("page.home.tabTitle")}`,
+      description: t("page.home.hero").split(".").slice(0, 2).join(".") + ".",
+    },
+    url,
+    author: "Daniil Shilo (tokiory) <tokiory.personal@gmail.com>",
+  }),
+});
 
 const { data: posts } = useAsyncData(async () => {
   const fields: Array<keyof PostItemContent> = [
@@ -138,7 +153,7 @@ const { data: posts } = useAsyncData(async () => {
 
 @include from-md {
   .content__title {
-      font-size: 48px;
+      font-size: 48px !important;
   }
 }
 
@@ -150,7 +165,7 @@ const { data: posts } = useAsyncData(async () => {
 
 @include from-xxl {
   .content__title {
-    font-size: 72px;
+    font-size: 72px !important;
   }
 
   .waterfall__item {

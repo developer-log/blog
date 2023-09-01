@@ -70,8 +70,12 @@
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.0.9",
     "@fontsource/iosevka": "^5.0.7",
+    "@resvg/resvg-js": "^2.4.1",
     "csstype": "^3.1.2",
     "normalize.css": "^8.0.1",
+    "satori": "^0.10.3",
+    "satori-html": "^0.3.2",
+    "sharp": "^0.32.5",
     "zod": "^3.22.2"
   }
 }

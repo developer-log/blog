@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import "shiki-es";
+
 import type { NuxtConfig } from "nuxt/config";
 
 const locales = [ "en", "ru", "ko", "be", "kk" ];
@@ -112,7 +114,7 @@ const content: NuxtConfig["content"] = {
   locales,
   defaultLocale: "ru",
   highlight: {
-    theme: "github-light",
+    theme: "css-variables",
   },
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore

@@ -118,8 +118,23 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "#imports";
+import { computed, ref, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import { projects } from "@/data/content";
+
+const { t } = useI18n();
+const url = useRequestURL();
+
+useSeoMeta({
+  ...useOg({
+    title: `${t("title")}: ${t("page.projects.tabTitle")}`,
+    image: {
+      title: `${t("title")}: ${t("page.projects.tabTitle")}`,
+      description: t("page.home.hero").split(".").slice(0, 2).join(".") + ".",
+    },
+    url,
+    author: "Daniil Shilo (tokiory) <tokiory.personal@gmail.com>",
+  }),
+});
 
 const activeProjectIndex = ref<number>();
 
@@ -169,9 +184,10 @@ const isLinksVisible = computed(() => {
   &::-webkit-scrollbar-track {
     background: var(--color-neutral-3);
   }
+
   &::-webkit-scrollbar-thumb {
-    background-color: var(--color-red-normal);    /* цвет плашки */
-    border-radius: 2px;       /* закругления плашки */
+    background-color: var(--color-red-normal);
+    border-radius: 2px;
   }
 
   &__item {
@@ -314,6 +330,44 @@ const isLinksVisible = computed(() => {
     width: 415px;
     flex-direction: column;
     overflow: auto;
+  }
+}
+
+@include theme-dark {
+  .menu {
+    &::-webkit-scrollbar-track {
+      background: var(--color-neutral-9);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-green-normal);
+      border-radius: 2px;
+    }
+
+    &__description {
+      color: var(--color-neutral-6);
+    }
+
+    &__card {
+      &:hover {
+        border-color: var(--color-green-dark);
+      }
+
+      &.active {
+        border-color: var(--color-green-normal);
+      }
+    }
+  }
+
+  .links__item::before {
+    background: var(--color-green-dark);
+  }
+
+  .stack__image {
+    border-color: var(--color-neutral-9);
+  }
+
+  .view__title {
+    color: var(--color-green-normal);
   }
 }
 </style>

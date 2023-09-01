@@ -86,4 +86,13 @@ defineProps<PostItemContent>();
     display: flex;
   }
 }
+
+@include theme-dark {
+  .post__card:hover {
+    border-color: var(--color-green-dark);
+  }
+  .post:hover .tags__tag {
+    color: var(--color-neutral-2);
+  }
+}
 </style>

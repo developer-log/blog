@@ -21,4 +21,9 @@
 //  padding: 10px;
 //}
 
+@include theme-dark {
+  .post-content-table {
+    background: var(--color-neutral-10);
+  }
+}
 </style>

@@ -11,6 +11,12 @@
   border: 1px solid var(--color-neutral-6);
   border-radius: 4px;
   font-weight: 600;
+}
 
+@include theme-dark {
+  .post-content-th {
+    background: var(--color-neutral-11);
+    border-color: var(--color-neutral-9);
+  }
 }
 </style>

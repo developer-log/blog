@@ -1,4 +1,5 @@
 :root {
+  // Accents
   --color-red-light: #FDEEF5;
   --color-red-light-hover: #FCE6F0;
   --color-red-light-active: #FACBDF;
@@ -9,6 +10,18 @@
   --color-red-dark-hover: #8F355C;
   --color-red-dark-active: #6B2845;
   --color-red-darker: #531F36;
+
+  --color-green-light-hover: #DBF6F2;
+  --color-green-light-active: #B4EBE3;
+  --color-green-normal: #0CC0A5;
+  --color-green-normal-hover: #0BAD95;
+  --color-green-normal-active: #0A9A84;
+  --color-green-dark: #09907C;
+  --color-green-dark-hover: #077363;
+  --color-green-dark-active: #05564A;
+  --color-green-darker: #04433A;
+  --color-green-light: #E7F9F6;
+
   --color-neutral-1: #FFFFFF;
   --color-neutral-2: #FDFDFD;
   --color-neutral-3: #F5F5F5;
@@ -23,3 +36,182 @@
   --color-neutral-12: #222222;
   --color-neutral-13: #0F0F0F;
 }
+
+// Code
+:root {
+  --shiki-color-text: #212121;
+  --shiki-token-constant: #1976D2;
+  --shiki-token-string: #22863a;
+  --shiki-token-comment: #c2c3c5;
+  --shiki-token-keyword: #D32F2F;
+  --shiki-token-parameter: #FF9800;
+  --shiki-token-function: #6f42c1;
+  --shiki-token-string-expression: #22863a;
+  --shiki-token-punctuation: #212121;
+  --shiki-token-link: #d32f2f;
+
+  @include theme-dark {
+    --shiki-color-text: #c9d1d9;
+    --shiki-color-background: #0d1117;
+    --shiki-token-constant: #79c0ff;
+    --shiki-token-string: #a5d6ff;
+    --shiki-token-comment: #8b949e;
+    --shiki-token-keyword: #ff7b72;
+    --shiki-token-parameter: #c9d1d9;
+    --shiki-token-function: #d2a8ff;
+    --shiki-token-string-expression: #a5d6ff;
+    --shiki-token-punctuation: #c9d1d9;
+    --shiki-token-link: #000012;
+  }
+}
+
+/*
+"scope": [
+"constant.numeric",
+"constant.language",
+"constant.other.placeholder",
+"constant.character.format.placeholder",
+"variable.language.this",
+"variable.other.object",
+"variable.other.class",
+"variable.other.constant",
+"meta.property-name",
+"meta.property-value",
+"support"
+],
+"settings": {
+"foreground": ""
+}
+},
+{
+"scope": [
+"keyword",
+"storage.modifier",
+"storage.type",
+"storage.control.clojure",
+"entity.name.function.clojure",
+"entity.name.tag.yaml",
+"support.function.node",
+"support.type.property-name.json",
+"punctuation.separator.key-value",
+"punctuation.definition.template-expression"
+],
+"settings": {
+"foreground": ""
+}
+},
+{
+"scope": "variable.parameter.function",
+"settings": {
+"foreground": ""
+}
+},
+{
+"scope": [
+"support.function",
+"entity.name.type",
+"entity.other.inherited-class",
+"meta.function-call",
+"meta.instance.constructor",
+"entity.other.attribute-name",
+"entity.name.function",
+"constant.keyword.clojure"
+],
+"settings": {
+"foreground": ""
+}
+},
+{
+"scope": [
+"entity.name.tag",
+"string.quoted",
+"string.regexp",
+"string.interpolated",
+"string.template",
+"string.unquoted.plain.out.yaml",
+"keyword.other.template"
+],
+"settings": {
+"foreground": ""
+}
+},
+{
+"scope": "token.info-token",
+"settings": {
+"foreground": "#316bcd"
+}
+},
+{
+"scope": "token.warn-token",
+"settings": {
+"foreground": "#cd9731"
+}
+},
+{
+"scope": "token.error-token",
+"settings": {
+"foreground": "#cd3131"
+}
+},
+{
+"scope": "token.debug-token",
+"settings": {
+"foreground": "#800080"
+}
+},
+{
+"scope": [
+"strong",
+"markup.heading.markdown",
+"markup.bold.markdown"
+],
+"settings": {
+"foreground": "#6f42c1"
+}
+},
+{
+"scope": [
+"punctuation.definition.arguments",
+"punctuation.definition.dict",
+"punctuation.separator",
+"meta.function-call.arguments"
+],
+"settings": {
+"foreground": ""
+}
+},
+{
+"name": "[Custom] Markdown links",
+"scope": [
+"markup.underline.link",
+"punctuation.definition.metadata.markdown"
+],
+"settings": {
+"foreground": "#22863a"
+}
+},
+{
+"name": "[Custom] Markdown list",
+"scope": [
+"beginning.punctuation.definition.list.markdown"
+],
+"settings": {
+"foreground": "#6f42c1"
+}
+},
+{
+"name": "[Custom] Markdown punctuation definition brackets",
+"scope": [
+"punctuation.definition.string.begin.markdown",
+"punctuation.definition.string.end.markdown",
+"string.other.link.title.markdown",
+"string.other.link.description.markdown"
+],
+"settings": {
+"foreground": ""
+}
+}
+]
+}
+
+ */

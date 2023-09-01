@@ -39,10 +39,26 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import {
   professionalStack as professionalStackContent,
   technologiesStack as technologiesStackContent
 } from "@/data/content";
+
+const { t } = useI18n();
+const url = useRequestURL();
+
+useSeoMeta({
+  ...useOg({
+    title: `${t("title")}: ${t("page.author.tabTitle")}`,
+    image: {
+      title: `${t("title")}: ${t("page.author.tabTitle")}`,
+      description: t("page.home.hero").split(".").slice(0, 2).join(".") + ".",
+    },
+    url,
+    author: "Daniil Shilo (tokiory) <tokiory.personal@gmail.com>",
+  }),
+});
 </script>
 
 <style lang="scss" scoped>
@@ -103,6 +119,12 @@ import {
 @include from-xxl {
   .waterfall__item {
     width: 480px;
+  }
+}
+
+@include theme-dark {
+  .title {
+    color: var(--color-green-dark);
   }
 }
 </style>

@@ -36,15 +36,28 @@
 </template>
 
 <script setup lang="ts">
-import { queryContent, useAsyncData, useRoute  } from "#imports";
+import { queryContent, useAsyncData, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import { getTagSearchURL } from "@/utils/search";
 import type { PostItemContent } from "@t/content";
 
 import type { MarkdownParsedContent } from "@nuxt/content/dist/runtime/types";
 
-const route = useRoute();
-console.log(route.path);
-const { data } = await useAsyncData(() => queryContent<PostItemContent & MarkdownParsedContent>(route.path).findOne());
+const url = useRequestURL();
+const { t } = useI18n();
+
+const { data } = await useAsyncData(() => queryContent<PostItemContent & MarkdownParsedContent>(url.pathname).findOne());
+
+useSeoMeta({
+  ...useOg({
+    title: `${t("title").split(" ").map(word => word[0].toUpperCase()).join("")}${data.value?.title ? `: ${data.value?.title}` : ""}`,
+    image: {
+      title: data.value?.title ?? "",
+      description: data.value?.description ?? "",
+    },
+    url,
+    author: "Daniil Shilo (tokiory) <tokiory.personal@gmail.com>",
+  }),
+});
 
 // Navigation
 // const navigation = computed<PostNavigationItem[]>(() => {

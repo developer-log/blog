@@ -13,3 +13,12 @@ a {
     color: var(--color-red-dark-hover);
   }
 }
+
+@include theme-dark {
+  a {
+    color: var(--color-green-normal);
+    &:hover {
+      color: var(--color-green-normal-hover);
+    }
+  }
+}

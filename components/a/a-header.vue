@@ -46,6 +46,7 @@
           </NuxtLink>
         </li>
       </ul>
+      <ThemeSwitcher class="header__theme" />
       <HeaderBurger
         v-model="isHeaderMenuActive"
         class="header__burger"
@@ -72,14 +73,13 @@ const localePath = useLocalePath();
 <style lang="scss" scoped>
 .header {
   background: rgba(255, 255, 255, 0.87);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-neutral-4);
+  backdrop-filter: blur(10px);
   position: sticky;
   overflow: hidden;
   top: 0;
   @include zi(header);
   @include spacing-layout;
-
 
   &.active {
     border: none;
@@ -111,14 +111,15 @@ const localePath = useLocalePath();
     margin: 0 auto;
     width: 55px;
     height: 55px;
-
-    @include from-md {
-      margin: initial;
-    }
   }
 
   &__social {
     margin-left: auto;
+  }
+
+  &__theme {
+    margin-left: 32px;
+    color: inherit;
   }
 
   &__burger {
@@ -130,26 +131,12 @@ const localePath = useLocalePath();
     padding: 8px;
     color: inherit;
     @include zi(header-burger);
-
-
-    @include from-md {
-      display: none;
-    }
   }
 }
 
 .nav {
   display: none;
   align-items: center;
-
-  @include from-md {
-    display: flex;
-    padding-left: 64px;
-  }
-
-  @include from-xl {
-    padding-left: 128px;
-  }
 
   &__list {
     display: flex;
@@ -169,16 +156,55 @@ const localePath = useLocalePath();
   display: none;
   gap: 24px;
 
-  @include from-md {
-    display: flex;
-  }
-
   &__link {
     color: inherit;
 
     &:hover {
       color: var(--color-red-dark-hover);
     }
+  }
+}
+
+@include from-md {
+  .social {
+    display: flex;
+  }
+
+  .nav {
+    display: flex;
+    padding-left: 64px;
+  }
+
+  .header {
+    &__logo {
+      margin: initial;
+    }
+
+    &__burger {
+      display: none;
+    }
+  }
+}
+
+@include from-xl {
+  .nav {
+    padding-left: 128px;
+  }
+}
+
+@include theme-dark {
+  .header {
+    background: rgba(51, 51, 51, 0.87);
+    border-bottom: 1px solid var(--color-neutral-9);
+
+    &.active::after {
+      background-color: var(--color-green-normal);
+    }
+  }
+
+  .nav__link:hover,
+  .social__link:hover {
+    color: var(--color-green-normal-hover);
   }
 }
 </style>

@@ -28,4 +28,10 @@
     }
   }
 }
+
+@include theme-dark {
+  .post-content-ul > li::before {
+    background: var(--color-neutral-2);
+  }
+}
 </style>

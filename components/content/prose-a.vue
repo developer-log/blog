@@ -24,4 +24,14 @@ defineProps<ProseAProperties>();
     color: var(--color-red-normal-hover);
   }
 }
+
+@include theme-dark {
+  .post-content-link {
+    color: var(--color-green-normal);
+
+    &:hover {
+      color: var(--color-green-normal-hover);
+    }
+  }
+}
 </style>

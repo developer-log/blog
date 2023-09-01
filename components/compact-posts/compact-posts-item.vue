@@ -103,4 +103,10 @@ defineProps<PostItemContent>();
     }
   }
 }
+
+@include theme-dark {
+  .post {
+    color: var(--color-neutral-2);
+  }
+}
 </style>

@@ -48,4 +48,14 @@ defineProps<CompactPostsProperties>();
     }
   }
 }
+
+
+@include theme-dark {
+  .posts__item {
+    border-color: var(--color-neutral-9);
+    &:hover {
+      background: var(--color-neutral-11);
+    }
+  }
+}
 </style>

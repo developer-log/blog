@@ -21,6 +21,7 @@
 
 <script setup lang="ts">
 import { ref } from "#imports";
+
 interface ProseCodeProperties {
   code: string;
   language: string;
@@ -41,7 +42,6 @@ const copy = async () => {
       }, 3000);
     })
     .catch(console.error);
-
 };
 </script>
 
@@ -49,9 +49,9 @@ const copy = async () => {
 .post-content-code {
   position: relative;
   padding: 8px 12px;
-  border: 1px solid var(--color-neutral-4);
   border-radius: 4px;
   background: var(--color-neutral-2);
+  border: 1px solid var(--color-neutral-4);
   margin: 24px 0;
 
   &__nav {
@@ -109,6 +109,29 @@ const copy = async () => {
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+@include theme-dark {
+  .post-content-code {
+    background: var(--color-neutral-10);
+    border: 1px solid var(--color-neutral-9);
+
+    &__nav {
+      border-bottom-color: var(--color-neutral-9);
+    }
+
+    &__copy {
+      color: var(--color-neutral-9);
+
+      &:hover {
+        color: var(--color-neutral-8);
+      }
+
+      &.active {
+        color: var(--color-green-dark);
+      }
+    }
   }
 }
 </style>

@@ -16,5 +16,14 @@ const model = defineModel<string>();
   padding: 12px;
   border: 1px solid var(--color-neutral-5);
   border-radius: 6px;
+  outline: none;
+}
+
+@include theme-dark {
+  .input {
+    background: var(--color-neutral-10);
+    border-color: var(--color-neutral-9);
+    color: var(--color-neutral-2);
+  }
 }
 </style>

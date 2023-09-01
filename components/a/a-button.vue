@@ -30,7 +30,7 @@ withDefaults(defineProps<ButtonProperties>(), {
   &.primary {
     background: var(--color-red-normal);
     border-color: var(--color-red-dark);
-    color: var(--color-neutral-1);
+    color: var(--color-neutral-2);
 
     &:hover {
       background: var(--color-red-normal-hover);
@@ -51,6 +51,24 @@ withDefaults(defineProps<ButtonProperties>(), {
     &:active {
       background: var(--color-neutral-5);
       border-color: var(--color-neutral-5);
+    }
+  }
+}
+
+@include theme-dark {
+  .button {
+    &.primary {
+      background: var(--color-green-normal);
+      border-color: var(--color-green-dark);
+      color: var(--color-neutral-2);
+
+      &:hover {
+        background: var(--color-green-normal-hover);
+      }
+
+      &:active {
+        background: var(--color-green-normal-active);
+      }
     }
   }
 }
