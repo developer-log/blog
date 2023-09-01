@@ -26,6 +26,25 @@
             </NuxtLink>
           </li>
         </ul>
+        <NuxtLink
+          v-if="data?.origin"
+          class="origin"
+          external
+          target="_blank"
+          :href="data.origin.url"
+        >
+          <Icon
+            class="origin__icon"
+            size="16"
+            name="uil:link-h"
+          />
+          <AText
+            secondary
+            class="origin__text"
+          >
+            {{ data?.origin.type }}
+          </AText>
+        </NuxtLink>
       </div>
       <ContentRendererMarkdown
         class="post__render"
@@ -99,8 +118,26 @@ useSeoMeta({
   &__render {
     margin-top: 48px;
   }
+
 }
 
+.origin {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--color-neutral-4);
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+
+  &:hover {
+    border-color: var(--color-neutral-5);
+  }
+
+  &__icon {
+    margin-top: 1px;
+  }
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -120,6 +157,16 @@ useSeoMeta({
 @include from-sm {
   .post {
     padding: 32px;
+  }
+}
+
+@include theme-dark {
+
+  .origin {
+    border-color: var(--color-neutral-9);
+    &:hover {
+      border-color: var(--color-neutral-8);
+    }
   }
 }
 </style>
