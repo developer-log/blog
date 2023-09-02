@@ -7,6 +7,9 @@
       <div
         class="language-select__current"
         :class="{active}"
+        role="menu"
+        tabindex="0"
+        @keydown.enter="active = !active"
         @click="active = !active"
       >
         <Icon
@@ -22,7 +25,10 @@
         <div
           v-for="item in otherLanguages"
           :key="item"
+          role="menuitem"
+          tabindex="0"
           class="language-select__option"
+          @keydown.enter="selectLanguage(item)"
           @click="selectLanguage(item)"
         >
           <Icon

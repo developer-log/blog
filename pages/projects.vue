@@ -1,11 +1,17 @@
 <template>
   <main class="projects">
-    <ul class="projects__menu menu">
+    <ul
+      role="menu"
+      class="projects__menu menu"
+    >
       <li
         v-for="(item, idx) in projects.list"
         :key="idx"
+        role="menuitem"
+        tabindex="0"
         class="menu__item"
         @click="activeProjectIndex = idx"
+        @keydown.enter="activeProjectIndex = idx"
       >
         <ACard
           :class="{active: activeProjectIndex === idx}"

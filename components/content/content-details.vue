@@ -4,7 +4,11 @@
   >
     <summary
       class="details__summary"
+      role="button"
+      :aria-expanded="active"
+      tabindex="0"
       @click="active = !active"
+      @keydown.enter="active = !active"
     >
       {{ title }}
       <Icon

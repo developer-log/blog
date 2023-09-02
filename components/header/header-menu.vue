@@ -8,11 +8,11 @@
         v-for="item in nav"
         :key="item"
         class="menu__item item"
-        @click="() => navigate(item.url)"
       >
         <NuxtLink
           :to="item.url"
           class="item__link"
+          @click="$emit('update:modelValue', false)"
         >
           <ATitle
             class="item__title"
@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { navigateTo, onUnmounted, watch } from "#imports";
+import { onUnmounted, watch } from "#imports";
 import useScrollLock from "@/composables/use-scroll-lock";
 import nav from "@/data/navigation";
 import type { Navigation } from "@t/navigation";
@@ -39,7 +39,7 @@ interface HeaderMenuProperties {
 }
 
 const properties = defineProps<HeaderMenuProperties>();
-const emit = defineEmits<{"update:modelValue": [value: boolean]}>();
+defineEmits<{"update:modelValue": [value: boolean]}>();
 const scrollLock = useScrollLock();
 
 watch(() => properties.modelValue, () => {
@@ -49,11 +49,6 @@ watch(() => properties.modelValue, () => {
     scrollLock.unlock();
   }
 });
-
-const navigate = (url: string) => {
-  emit("update:modelValue", false);
-  navigateTo(url);
-};
 
 onUnmounted(scrollLock.unlock);
 </script>

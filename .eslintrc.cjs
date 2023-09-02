@@ -14,6 +14,7 @@ module.exports = {
     "plugin:yml/standard",
     "plugin:ava/recommended",
     "plugin:editorconfig/all",
+    "plugin:vuejs-accessibility/recommended"
   ],
 
   ignorePatterns: [ "pnpm-lock.yaml" ],
@@ -52,6 +53,7 @@ module.exports = {
     "ava",
     "editorconfig",
     "simple-import-sort",
+    "vuejs-accessibility"
   ],
 
   "rules": {
@@ -100,5 +102,17 @@ module.exports = {
       "ignores": []
     }],
     "comma-spacing": [ "error", { "before": false, "after": true }],
+    "vuejs-accessibility/aria-role": ["error", { "ignoreNonDOM": false }],
+    "vuejs-accessibility/alt-text": [
+      "error",
+      {
+        "elements": ["img", "object", "area", "input[type=\"image\"]"],
+        "components": ["Image", "NuxtImage", "NuxtImg", "Img"],
+        "img": ["Image"],
+        "object": ["Object"],
+        "area": ["Area"],
+        "input[type=\"image\"]": ["ImageInput"]
+      }
+    ],
   }
 };
