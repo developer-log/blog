@@ -26,6 +26,7 @@
           v-for="item in otherLanguages"
           :key="item"
           role="menuitem"
+          :lang="item"
           tabindex="0"
           class="language-select__option"
           @keydown.enter="selectLanguage(item)"
