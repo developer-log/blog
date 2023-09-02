@@ -139,8 +139,7 @@ const filteredPosts = computed(() => {
 
   &__loading {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    place-items: center;
     flex-grow: 1;
   }
 

@@ -41,8 +41,7 @@ const handleAccept = () => {
   position: fixed;
   bottom: 48px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
   left: 16px;
   right: 16px;
 

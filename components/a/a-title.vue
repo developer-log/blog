@@ -52,5 +52,6 @@ const styles = computed(() => {
 <style lang="scss" scoped>
 .title {
   line-height: 130%;
+  scroll-margin: 96px;
 }
 </style>

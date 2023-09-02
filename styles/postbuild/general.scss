@@ -12,6 +12,7 @@ body {
   font-weight: 400;
   background: var(--color-neutral-1);
   color: var(--color-neutral-13);
+  scroll-margin-top: 96px;
   @include base-transition(background-color, color);
 
   @include theme-dark {

@@ -14,14 +14,12 @@
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
   gap: 24px;
 
   &__avatars {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    place-items: center;
   }
 
   &__description {

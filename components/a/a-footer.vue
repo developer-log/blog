@@ -77,8 +77,7 @@ const footerSocial = computed(() => {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  place-items: center;
   padding: 12px 0;
   gap: 12px;
   background: rgba(255, 255, 255, 0.87);

@@ -175,20 +175,7 @@ const isLinksVisible = computed(() => {
   padding: 12px 0;
   max-height: calc(100vh - var(--size-header) - 64px);
 
-  // Scrollbar
-  &::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: var(--color-neutral-3);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-red-normal);
-    border-radius: 2px;
-  }
+  @include base-scroll;
 
   &__item {
     width: 100%;
@@ -278,8 +265,7 @@ const isLinksVisible = computed(() => {
 .empty {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
   height: 100%;
   width: calc(100% - 16px);
 
@@ -335,14 +321,7 @@ const isLinksVisible = computed(() => {
 
 @include theme-dark {
   .menu {
-    &::-webkit-scrollbar-track {
-      background: var(--color-neutral-9);
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--color-green-normal);
-      border-radius: 2px;
-    }
-
+    @include base-scroll(var(--color-neutral-9), var(--color-green-normal));
     &__description {
       color: var(--color-neutral-6);
     }

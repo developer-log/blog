@@ -1,11 +1,16 @@
 <template>
   <div class="post">
-    <!--      <PostNavigation-->
-    <!--        class="post__navigation"-->
-    <!--        :navigation="navigation"-->
-    <!--        :active-id="activeScrollingTitleId"-->
-    <!--      />-->
-    <div class="post__content">
+    <ClientOnly>
+      <PostNavigation
+        v-model="activeAnchor"
+        class="post__navigation"
+        :navigation="navigation"
+      />
+    </ClientOnly>
+    <div
+      ref="contentReference"
+      class="post__content"
+    >
       <div class="post__header header">
         <ATitle class="header__title">
           {{ data?.title }}
@@ -55,9 +60,10 @@
 </template>
 
 <script setup lang="ts">
-import { queryContent, useAsyncData, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
+import { computed, onMounted, onUnmounted, queryContent, ref, useAsyncData, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import { getTagSearchURL } from "@/utils/search";
 import type { PostItemContent } from "@t/content";
+import type { PostNavigationItem } from "@t/posts";
 
 import type { MarkdownParsedContent } from "@nuxt/content/dist/runtime/types";
 
@@ -79,27 +85,58 @@ useSeoMeta({
 });
 
 // Navigation
-// const navigation = computed<PostNavigationItem[]>(() => {
-//   if (!data.value) {
-//     return [];
-//   }
-//
-//   return data.value.body.children
-//     .filter(node => {
-//       const headerRegex = /^h\d$/g;
-//       const text = node.children?.at(0)?.type === "text" ? node.children?.at(0)?.value : "";
-//       return node.tag && headerRegex.test(node.tag) && text;
-//     })
-//     .map((node, id) => {
-//       const title = node.children?.at(0)?.value ?? "";
-//       return {
-//         title,
-//         anchor: node.props?.id,
-//         id
-//       };
-//     });
-// });
-// const activeScrollingTitleId = ref(0);
+const navigation = computed<PostNavigationItem[]>(() => {
+  if (!data.value) {
+    return [];
+  }
+
+  return data.value.body.children
+    .filter(node => {
+      const headerRegex = /^h\d$/g;
+      const text = node.children?.at(0)?.type === "text" ? node.children?.at(0)?.value : "";
+      return node.tag && headerRegex.test(node.tag) && text;
+    })
+    .map((node, id) => {
+      const title = node.children?.at(0)?.value ?? "";
+      const level = Number.parseInt(node.tag?.replaceAll(/\D/g, "") ?? "");
+      return {
+        title,
+        level: Number.isNaN(level) ? 0 : level - 1,
+        anchor: node.props?.id,
+        id
+      };
+    });
+});
+
+const activeAnchor = ref(decodeURI(url.hash).replace("#", ""));
+let observer: IntersectionObserver;
+let onScroll = (entries: IntersectionObserverEntry[]) => {
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      activeAnchor.value = entry.target.id;
+    }
+  }
+};
+
+onMounted(() => {
+  const titles = document.querySelectorAll(".title");
+  if (titles.length <= 0) {
+    return;
+  }
+
+  // eslint-disable-next-line compat/compat
+  observer = new IntersectionObserver(onScroll, { rootMargin: "-5% 0% -95% 0%" });
+  for (const item of titles) {
+    if (!item.id) {
+      continue;
+    }
+    observer.observe(item);
+  }
+});
+
+onUnmounted(() => {
+  observer.disconnect();
+});
 </script>
 
 <style lang="scss" scoped>
@@ -107,12 +144,23 @@ useSeoMeta({
   position: relative;
   display: flex;
   justify-content: center;
+  gap: 48px;
   padding: 16px;
   min-height: calc(100vh - var(--size-header));
+  scroll-behavior: smooth;
 
   &__content {
     width: 100%;
     max-width: 1024px;
+    flex-shrink: 2;
+  }
+
+  &__navigation {
+    position: sticky;
+    top: calc(var(--size-header) + 32px);
+    height: fit-content;
+    display: none;
+    flex-shrink: 1;
   }
 
   &__render {
@@ -138,6 +186,7 @@ useSeoMeta({
     margin-top: 1px;
   }
 }
+
 .header {
   display: flex;
   flex-direction: column;
@@ -160,8 +209,13 @@ useSeoMeta({
   }
 }
 
-@include theme-dark {
+@include from-xl {
+  .post__navigation {
+    display: block;
+  }
+}
 
+@include theme-dark {
   .origin {
     border-color: var(--color-neutral-9);
     &:hover {
