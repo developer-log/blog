@@ -1,12 +1,10 @@
 <template>
   <div class="post">
-    <ClientOnly>
-      <PostNavigation
-        v-model="activeAnchor"
-        class="post__navigation"
-        :navigation="navigation"
-      />
-    </ClientOnly>
+    <PostNavigation
+      v-model="activeAnchor"
+      class="post__navigation post__navigation_desktop"
+      :navigation="navigation"
+    />
     <div
       ref="contentReference"
       class="post__content"
@@ -51,6 +49,10 @@
           </AText>
         </NuxtLink>
       </div>
+      <PostNavigationMobile
+        class="post__navigation post__navigation_mobile"
+        :navigation="navigation"
+      />
       <ContentRendererMarkdown
         class="post__render"
         :value="data"
@@ -84,7 +86,7 @@ useSeoMeta({
   }),
 });
 
-// Navigation
+// Navigation section
 const navigation = computed<PostNavigationItem[]>(() => {
   if (!data.value) {
     return [];
@@ -156,11 +158,17 @@ onUnmounted(() => {
   }
 
   &__navigation {
-    position: sticky;
-    top: calc(var(--size-header) + 32px);
-    height: fit-content;
-    display: none;
-    flex-shrink: 1;
+    &_mobile {
+      margin-top: 32px;
+    }
+
+    &_desktop {
+      position: initial;
+      top: calc(var(--size-header) + 32px);
+      height: fit-content;
+      display: none;
+      flex-shrink: 1;
+    }
   }
 
   &__render {
@@ -210,8 +218,16 @@ onUnmounted(() => {
 }
 
 @include from-xl {
-  .post__navigation {
-    display: block;
+  .post {
+    &__navigation {
+      &_mobile {
+        display: none;
+      }
+      &_desktop {
+        display: block;
+        position: sticky;
+      }
+    }
   }
 }
 

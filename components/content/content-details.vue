@@ -47,6 +47,7 @@ const active = ref(false);
   }
 
   &__summary {
+    font-weight: 500;
     padding: 12px 0;
     position: relative;
     &::marker {
