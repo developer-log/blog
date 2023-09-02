@@ -3,6 +3,7 @@ export default {
     tokiory: "https://t.me/tokiory",
     awamishi: "https://t.me/awamishi",
   },
+  boosty: "https://boosty.to/tokiory/donate",
   telegram: "https://t.me/developer_log",
   github: "https://github.com/tokiory",
   codepen: "https://codepen.io/tokiory",

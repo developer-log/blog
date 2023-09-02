@@ -1,40 +1,52 @@
 <template>
   <footer class="footer">
-    <AText>
-      Collab by
-      <NuxtLink :href="social.collab.tokiory">
-        tokiory
-      </NuxtLink>
-      x
-      <NuxtLink :href="social.collab.awamishi">
-        awamishi
-      </NuxtLink>
-    </AText>
-    <nav class="footer__social social">
-      <ul class="social__list">
-        <li
-          v-for="item in footerSocial"
-          :key="item"
-          class="social__item"
-        >
-          <NuxtLink
-            :href="item.url"
-            external
-            class="social__link"
+    <NuxtLink
+      :href="social.boosty"
+      target="_blank"
+      class="footer__donate donate"
+    >
+      <Icon
+        size="32"
+        name="fluent-emoji:money-with-wings"
+      />
+    </NuxtLink>
+    <div class="footer__description">
+      <AText>
+        Collab by
+        <NuxtLink :href="social.collab.tokiory">
+          tokiory
+        </NuxtLink>
+        x
+        <NuxtLink :href="social.collab.awamishi">
+          awamishi
+        </NuxtLink>
+      </AText>
+      <nav class="footer__social social">
+        <ul class="social__list">
+          <li
+            v-for="item in footerSocial"
+            :key="item"
+            class="social__item"
           >
-            {{ item.name }}
-          </NuxtLink>
-        </li>
-        <li class="social__item">
-          <NuxtLink
-            :to="{path: '/license'}"
-            class="social__link"
-          >
-            License
-          </NuxtLink>
-        </li>
-      </ul>
-    </nav>
+            <NuxtLink
+              :href="item.url"
+              external
+              class="social__link"
+            >
+              {{ item.name }}
+            </NuxtLink>
+          </li>
+          <li class="social__item">
+            <NuxtLink
+              :to="{path: '/license'}"
+              class="social__link"
+            >
+              License
+            </NuxtLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <LanguageSelect
       v-model="currentLocale"
       :languages="availableLocales as Array<keyof typeof languageFlag>"
@@ -76,13 +88,25 @@ const footerSocial = computed(() => {
 .footer {
   position: relative;
   display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
-  place-items: center;
-  padding: 12px 0;
-  gap: 12px;
   background: rgba(255, 255, 255, 0.87);
   border-top: 1px solid var(--color-neutral-4);
   backdrop-filter: blur(10px);
+  @include spacing-layout;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 12px;
+  }
+}
+
+.donate {
+  cursor: pointer;
 }
 
 .social {
@@ -102,11 +126,8 @@ const footerSocial = computed(() => {
 }
 
 @include from-md {
-  .footer__language {
-    position: absolute;
-    right: 32px;
-    top: 50%;
-    transform: translateY(-50%);
+  .footer {
+    flex-direction: row;
   }
 }
 

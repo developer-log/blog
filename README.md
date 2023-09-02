@@ -20,7 +20,8 @@
 - [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) - Plugin for compatibility with old browsers;
 - [eslint-plugin-editorconfig](https://www.npmjs.com/package/eslint-plugin-editorconfig) - Plugin for linting files with EditorConfig;
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) - Plugin for Playwright framework;
-- [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Plugin for sorting imports
+- [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Plugin for sorting imports;
+- [eslint-plugin-vuejs-accessibility](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/) - Plugin for a11y support;
 
 ### Stylelint modules ☄️
 ### Nuxt modules 💫
@@ -45,6 +46,7 @@ You also can use next terminal commands:
 - `lint`: Commands for linters
   - `lint:eslint`: Run ESLint;
   - `lint:stylelint`: Run Stylelint;
+  - `lint:all`: Run ESLint for all project files;
 - `test`: Commands for testing
   - `test:unit`: Commands for unit tests;
     - `test:unit:run`: Run unit tests in CLI;
@@ -55,6 +57,7 @@ You also can use next terminal commands:
 - `deploy`: Commands for deploying
   - `deploy:dev`: Deploy to the development server;
   - `deploy:prod`: Deploy to the production server;
+- `translate`: Automatic translate;
 
 ## Additional 🤓
 ### Languages 👅
@@ -65,13 +68,16 @@ Languages dictionaries are located in `@l`. Following languages are supported no
 - Belarusian;
 - Korean;
 
+### Supabase & OAuth 💖
+We use Supabase OAuth. Post comments are also stored in this database.
+
 ### Adaptive 🤳
 - **Minimal Value**: 400px;
 - **Maximum value**: 2048px;
 
 #### Conventions
 1. We're building mobile-first layout
-2. We're using `adaptive-from` mixin, it's located in [`styles/prebuild/breakpoint.scss`](styles/prebuild/breakpoint.scss)
+2. We're using `from-{breakpoint}` mixin, it's located in [`styles/prebuild/breakpoint.scss`](styles/prebuild/breakpoint.scss)
 
 ### Git hooks 🤞
 This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a68523065d86a218797d349fbbbd).
