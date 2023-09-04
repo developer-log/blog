@@ -117,20 +117,23 @@ const localePath = useLocalePath();
     margin-left: auto;
   }
 
-  &__theme {
-    margin-left: 32px;
-    color: inherit;
-  }
-
+  &__theme,
   &__burger {
     cursor: pointer;
     position: absolute;
-    right: 16px;
     background: none;
     border: none;
     padding: 8px;
     color: inherit;
-    @include zi(header-burger);
+    @include zi(header-control);
+  }
+
+  &__burger {
+    right: 16px;
+  }
+
+  &__theme {
+    left: 16px;
   }
 }
 
@@ -182,6 +185,11 @@ const localePath = useLocalePath();
 
     &__burger {
       display: none;
+    }
+
+    &__theme {
+      position: initial;
+      margin-left: 32px;
     }
   }
 }

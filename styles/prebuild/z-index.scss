@@ -4,7 +4,7 @@
 $z-index:
   header-menu,
   header,
-  header-burger;
+  header-control;
 
 @mixin zi($name) {
   $idx: list.index($z-index, $name);
