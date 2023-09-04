@@ -101,17 +101,18 @@ module.exports = {
       "registeredComponentsOnly": false,
       "ignores": []
     }],
+    "unicorn/no-null": "off",
     "comma-spacing": [ "error", { "before": false, "after": true }],
-    "vuejs-accessibility/aria-role": ["error", { "ignoreNonDOM": false }],
+    "vuejs-accessibility/aria-role": [ "error", { "ignoreNonDOM": false }],
     "vuejs-accessibility/alt-text": [
       "error",
       {
-        "elements": ["img", "object", "area", "input[type=\"image\"]"],
-        "components": ["Image", "NuxtImage", "NuxtImg", "Img"],
-        "img": ["Image"],
-        "object": ["Object"],
-        "area": ["Area"],
-        "input[type=\"image\"]": ["ImageInput"]
+        "elements": [ "img", "object", "area", "input[type=\"image\"]" ],
+        "components": [ "Image", "NuxtImage", "NuxtImg", "Img" ],
+        "img": [ "Image" ],
+        "object": [ "Object" ],
+        "area": [ "Area" ],
+        "input[type=\"image\"]": [ "ImageInput" ]
       }
     ],
   }
