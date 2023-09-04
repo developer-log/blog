@@ -50,6 +50,7 @@
         </NuxtLink>
       </div>
       <PostNavigationMobile
+        v-if="navigation.length > 1"
         class="post__navigation post__navigation_mobile"
         :navigation="navigation"
       />
