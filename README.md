@@ -5,7 +5,7 @@
 - Nuxt
 - Typescript
 - Sass (SCSS)
-- Ava
+- Vitest
 - Linters
   - ESLint
   - Commitlint
@@ -15,7 +15,7 @@
 - [@typescript-eslint/eslint-plugin](https://typescript-eslint.io) - ESLint plugin for typescript;
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) - Powerful rules for strict code;
 - [eslint-plugin-vue](https://eslint.vuejs.org) - Eslint plugin for Vue.js;
-- [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - Plugin for ava.js testing framework;
+- [eslint-plugin-vitest](https://github.com/veritem/eslint-plugin-vitest) - Plugin for vitest testing framework;
 - [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml) - Plugin for YAML files;
 - [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) - Plugin for compatibility with old browsers;
 - [eslint-plugin-editorconfig](https://www.npmjs.com/package/eslint-plugin-editorconfig) - Plugin for linting files with EditorConfig;
@@ -30,6 +30,7 @@
 - [@nuxt/image](https://nuxt.com/modules/image) - Adds a11y image component;
 - [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
 - [@nuxt/content](https://content.nuxtjs.org) - Adds content to the nuxt;
+- [@nuxt/vitest](https://nuxt.com/modules/vitest) - Adds support for vitest;
 
 ## Commands 🙌
 If you can, you can use Webstorm commands via `Ctrl + Ctrl` keybinding
@@ -60,6 +61,12 @@ You also can use next terminal commands:
 - `translate`: Automatic translate;
 
 ## Additional 🤓
+
+### Testing 🥰
+Testing is done thanks to three frameworks:
+  - vitest
+  - playwright
+
 ### Languages 👅
 Languages dictionaries are located in `@l`. Following languages are supported now:
 
@@ -67,9 +74,6 @@ Languages dictionaries are located in `@l`. Following languages are supported no
 - English;
 - Belarusian;
 - Korean;
-
-### Supabase & OAuth 💖
-We use Supabase OAuth. Post comments are also stored in this database.
 
 ### Adaptive 🤳
 - **Minimal Value**: 400px;
