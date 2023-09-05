@@ -35,7 +35,7 @@ const active = ref(false);
 
 <style lang="scss" scoped>
 .details {
-  padding: 0 18px;
+  margin: 24px 0;
   border: 1px solid var(--color-neutral-4);
   border-radius: 6px;
 
@@ -45,14 +45,20 @@ const active = ref(false);
 
   &__icon {
     position: absolute;
-    right: 0;
+    right: 18px;
     top: 50%;
     transform: translateY(-50%);
   }
 
+  &__content {
+    padding: 12px 18px;
+  }
+
   &__summary {
+    cursor: pointer;
+    background: var(--color-neutral-3);
+    padding: 12px 18px;
     font-weight: 500;
-    padding: 12px 0;
     position: relative;
 
     &::marker {
@@ -64,7 +70,7 @@ const active = ref(false);
 
 @include theme-dark {
   .details {
-    border-color: var(--color-neutral-9);
+    border-color: var(--color-neutral-8);
   }
 }
 </style>

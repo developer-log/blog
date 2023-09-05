@@ -59,6 +59,7 @@
             <NuxtImg
               class="stack__image"
               :src="`/stack/${item}.svg`"
+              preload
               :alt="item"
               width="55"
             />

@@ -51,6 +51,9 @@ EOF
 pnpm husky add .husky/commit-msg 'npx --no-install commitlint --edit'
 ```
 
+::ContentBookmark{:url="https://gist.github.com/tokiory/5b99a68523065d86a218797d349fbbbd"}
+::
+
 ::ContentDetails
 ---
 title: Все в одной команде для терминала

@@ -16,8 +16,17 @@ Rust является достаточно сложным для изучени�
 
 Оставлю тут несколько ссылок:
 
-- https://ziglang.org/
-- https://github.com/ratfactor/ziglings
-- https://github.com/C-BJ/awesome-zig
-- https://habr.com/ru/articles/435574/
-- https://about.sourcegraph.com/blog/zig-programming-language-revisiting-design-approach
+::ContentBookmark{:url="https://ziglang.org/"}
+::
+
+::ContentBookmark{:url="https://github.com/ratfactor/ziglings"}
+::
+
+::ContentBookmark{:url="https://github.com/C-BJ/awesome-zig"}
+::
+
+::ContentBookmark{:url="https://habr.com/ru/articles/435574/"}
+::
+
+::ContentBookmark{:url="https://about.sourcegraph.com/blog/zig-programming-language-revisiting-design-approach"}
+::

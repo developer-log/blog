@@ -67,7 +67,10 @@ API.
 градиента, основной цвет которого мы будем передавать внутри параметра `gradient`.
 
 Также нам нужна схема для того чтобы проверять пришли ли нам все параметры в GET-запросе. Мы будем делать это с помощью
-[Zod](https://github.com/colinhacks/zod).
+Zod.
+
+::ContentBookmark{url="https://github.com/colinhacks/zod"}
+::
 
 ```typescript[preview.types.ts]
 import { z } from "zod";
@@ -473,7 +476,10 @@ return send(event, pngBuffer, "image/png");
 
 # Composable
 Теперь нужно сделать так, чтобы страницы в Nuxt динамически встраивали в себя Open Graph мета-теги, которые мы укажем.
-Мы будем делать это с помощью [composable](https://nuxt.com/docs/guide/directory-structure/composables).
+Мы будем делать это с помощью composable.
+
+::ContentBookmark{url="https://nuxt.com/docs/guide/directory-structure/composables"}
+::
 
 Внизу предоставлен полный листинг нашего composable:
 

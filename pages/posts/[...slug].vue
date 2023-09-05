@@ -58,6 +58,20 @@
         class="post__render"
         :value="data"
       />
+      <div
+        v-if="data?.references"
+        class="post__references references"
+      >
+        <ATitle class="references__title">
+          Референсы
+        </ATitle>
+        <ContentBookmark
+          v-for="reference in data.references"
+          :key="reference"
+          class="references__list"
+          :url="reference?.url ?? ''"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -128,7 +142,7 @@ onMounted(() => {
   }
 
   // eslint-disable-next-line compat/compat
-  observer = new IntersectionObserver(onScroll, { rootMargin: "-5% 0% -95% 0%" });
+  observer = new IntersectionObserver(onScroll, { rootMargin: "-5% 0% -85% 0%" });
   for (const item of titles) {
     if (!item.id) {
       continue;
@@ -210,6 +224,10 @@ onUnmounted(() => {
   &__tag-link {
     color: inherit;
   }
+}
+
+.references {
+  margin-top: 12px;
 }
 
 @include from-sm {
