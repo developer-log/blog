@@ -87,6 +87,9 @@ const { data: posts } = useAsyncData(async () => {
   ];
 
   const posts = await queryContent<PostItemContent>()
+    .where({
+      _draft: { $ne: true },
+    })
     .only(fields)
     .limit(5)
     .find();
