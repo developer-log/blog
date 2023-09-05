@@ -6,6 +6,16 @@
     target="_blank"
   >
     <ACard
+      v-if="pending"
+      class="bookmark__card bookmark__card_pending"
+    >
+      <Icon
+        size="32"
+        name="svg-spinners:90-ring-with-bg"
+      />
+    </ACard>
+    <ACard
+      v-else
       hover
       class="bookmark__card"
     >
@@ -13,7 +23,10 @@
         <AText class="bookmark__title">
           {{ data?.title }}
         </AText>
-        <AText class="bookmark__description">
+        <AText
+          v-if="data?.description"
+          class="bookmark__description"
+        >
           {{ data?.description }}
         </AText>
         <div class="bookmark__link">
@@ -48,8 +61,9 @@ interface BookmarkProperties {
 
 const properties = defineProps<BookmarkProperties>();
 
-const { data, error } = await useFetch<SiteMetaResponse>("/api/meta",
+const { data, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
   {
+    lazy: true,
     method: "POST",
     body: {
       url: properties.url
@@ -63,28 +77,45 @@ const { data, error } = await useFetch<SiteMetaResponse>("/api/meta",
   display: block;
   color: inherit;
   margin: 24px 0;
+  overflow: hidden;
 
   &__card {
     padding: 12px;
-    display: flex;
-    gap: 32px;
-    justify-content: space-between;
-  }
+    display: block;
+    height: 100%;
 
-  &__meta {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    &:hover {
+      background: var(--color-neutral-2);
+      border-color: var(--color-neutral-5);
+    }
+
+    &_pending {
+      height: 120px;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100%;
+    }
   }
 
   &__title {
-    font-size: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  &__description {
+    font-size: 14px;
+    margin-top: 8px;
   }
 
   &__link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: none;
+    margin-top: 8px;
+  }
+
+  &__url {
+    font-size: 14px;
   }
 
   &__favicon {
@@ -95,6 +126,30 @@ const { data, error } = await useFetch<SiteMetaResponse>("/api/meta",
   &__preview {
     max-width: 120px;
     height: 100%;
+    max-height: 110px;
+    display: none;
+  }
+}
+
+@include from-sm {
+  .bookmark__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@include from-md {
+  .bookmark {
+    &__card {
+      display: flex;
+      gap: 32px;
+      justify-content: space-between;
+    }
+
+    &__preview {
+      display: block;
+    }
   }
 }
 </style>

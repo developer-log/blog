@@ -21,7 +21,8 @@ const ruleset = {
   icon: [
     { selector: "link[rel=\"apple-touch-icon\"]", callback: (link: Element) => link.getAttribute("href") },
     { selector: "link[rel=\"apple-touch-icon-precomposed\"]", callback: (link: Element) => link.getAttribute("href") },
-    { selector: "link[rel=\"icon\" i]", callback: (link: Element) => link.getAttribute("href") }
+    { selector: "link[rel=\"icon\"]", callback: (link: Element) => link.getAttribute("href") },
+    { selector: "link[rel=\"shortcut icon\"]", callback: (link: Element) => link.getAttribute("href") }
   ],
 
   image: [
@@ -92,8 +93,19 @@ export default defineEventHandler(async (event) => {
         result[key] = absoluteUrl.origin + result[key];
       }
     }
+
+    // Check favicon
+    if (!result.icon) {
+      result.icon = absoluteUrl.origin + "/favicon.ico";
+    }
+
+    // Check description
+    if (!result.description) {
+      const firstParagraph = documentNode.querySelector("p");
+      result.description = firstParagraph?.textContent ?? null;
+    }
   } catch(error) {
-    console.erroe(error);
+    console.error(error);
   }
 
   return send(event, JSON.stringify(result), "application/json");
