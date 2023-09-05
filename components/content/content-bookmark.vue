@@ -87,6 +87,10 @@ const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/me
   margin: 24px 0;
   overflow: hidden;
 
+  &:hover {
+    color: inherit;
+  }
+
   &__card {
     padding: 12px;
     display: block;
@@ -169,6 +173,18 @@ const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/me
 
     &__preview {
       display: block;
+    }
+  }
+}
+
+@include theme-dark {
+  .bookmark {
+    &__card {
+      &:hover {
+        color: inherit;
+        background: var(--color-neutral-10);
+        border-color: var(--color-neutral-8);
+      }
     }
   }
 }

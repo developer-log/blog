@@ -182,4 +182,34 @@ withDefaults(defineProps<WaterfallProperties>(), {
     right: 0;
   }
 }
+
+@include theme-dark {
+  .waterfall {
+    &.circle {
+      background: linear-gradient(180deg, #0EAA9F 0%, #52A4BE 100%, #1397A2 100%);
+      &::after {
+        background: linear-gradient(180deg, #09BB9B 32.73%, #1783A5 79.84%);
+      }
+    }
+    &.lava {
+      background: linear-gradient(180deg, #b18ed5, #be99e5, #b18ed5);
+      &::after {
+        background: linear-gradient(180deg, rgba(255, 101, 101, 0.00) 0%, #414188 100%);
+      }
+    }
+    .line {
+      background: #62AE79;
+      &::after {
+        background: linear-gradient(180deg, #62AE79, #D9D21F, #79BC66);
+      }
+    }
+    .heartbeat {
+      background: linear-gradient(180deg, #4C8993 0%, rgba(77, 169, 139, 0.94) 68.63%);
+      &::after {
+        background: linear-gradient(180deg, #82C152, #76BB69, #4DA58C);
+        //background: linear-gradient(180deg, #FFB6CD 0%, #f87ea1 37.36%);
+      }
+    }
+  }
+}
 </style>

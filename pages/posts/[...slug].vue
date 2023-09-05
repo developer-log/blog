@@ -257,5 +257,10 @@ onUnmounted(() => {
       border-color: var(--color-neutral-8);
     }
   }
+  .header {
+    &__tag-link {
+      color: inherit;
+    }
+  }
 }
 </style>

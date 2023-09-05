@@ -88,11 +88,16 @@ defineProps<PostItemContent>();
 }
 
 @include theme-dark {
-  .post__card:hover {
-    border-color: var(--color-green-dark);
-  }
-  .post:hover .tags__tag {
-    color: var(--color-neutral-2);
+  .post {
+    color: inherit;
+
+    &:hover .tags__tag {
+      color: var(--color-neutral-2);
+    }
+
+    &__card:hover {
+      border-color: var(--color-green-dark);
+    }
   }
 }
 </style>

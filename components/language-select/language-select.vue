@@ -103,6 +103,7 @@ onUnmounted(() => {
   &__option {
     cursor: pointer;
     border-radius: 50%;
+    overflow: hidden;
   }
 
   &__current {
@@ -130,6 +131,13 @@ onUnmounted(() => {
     &.active {
       display: flex;
     }
+  }
+}
+
+@include theme-dark {
+  .language-select__options {
+    background: var(--color-neutral-9);
+    border: 1px solid var(--color-neutral-8);
   }
 }
 </style>

@@ -71,6 +71,9 @@ const active = ref(false);
 
 @include theme-dark {
   .details {
+    &__summary {
+      background: var(--color-neutral-9);
+    }
     border-color: var(--color-neutral-8);
   }
 }
