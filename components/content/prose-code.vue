@@ -88,6 +88,7 @@ const copy = async () => {
 
   pre {
     margin: 0;
+    overflow: auto;
   }
 
   code {
