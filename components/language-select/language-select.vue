@@ -102,6 +102,7 @@ onUnmounted(() => {
   &__current,
   &__option {
     cursor: pointer;
+    border-radius: 50%;
   }
 
   &__current {
