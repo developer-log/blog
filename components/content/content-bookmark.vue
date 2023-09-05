@@ -20,21 +20,29 @@
       class="bookmark__card"
     >
       <div class="bookmark__meta">
-        <AText class="bookmark__title">
-          {{ data?.title }}
-        </AText>
+        <div class="bookmark__header">
+          <img
+            v-if="meta?.icon"
+            class="bookmark__favicon bookmark__favicon_header"
+            alt="favicon"
+            :src="meta?.icon"
+          >
+          <AText class="bookmark__title">
+            {{ meta?.title }}
+          </AText>
+        </div>
         <AText
-          v-if="data?.description"
+          v-if="meta?.description"
           class="bookmark__description"
         >
-          {{ data?.description }}
+          {{ meta?.description }}
         </AText>
         <div class="bookmark__link">
           <img
-            v-if="data?.icon"
+            v-if="meta?.icon"
             class="bookmark__favicon"
             alt="favicon"
-            :src="data?.icon"
+            :src="meta?.icon"
           >
           <AText class="bookmark__url">
             {{ url }}
@@ -42,9 +50,9 @@
         </div>
       </div>
       <img
-        v-if="data?.image"
+        v-if="meta?.image"
         class="bookmark__preview"
-        :src="data?.image"
+        :src="meta?.image"
         alt="preview"
       >
     </ACard>
@@ -61,7 +69,7 @@ interface BookmarkProperties {
 
 const properties = defineProps<BookmarkProperties>();
 
-const { data, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
+const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
   {
     lazy: true,
     method: "POST",
@@ -69,7 +77,7 @@ const { data, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
       url: properties.url
     },
     key: properties.url
-  },);
+  });
 </script>
 
 <style lang="scss" scoped>
@@ -121,6 +129,11 @@ const { data, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
   &__favicon {
     width: 16px;
     height: 16px;
+
+    &_header {
+      float: left;
+      margin-right: 8px;
+    }
   }
 
   &__preview {
@@ -132,10 +145,16 @@ const { data, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
 }
 
 @include from-sm {
-  .bookmark__link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  .bookmark {
+    &__favicon_header {
+      display: none;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
   }
 }
 
@@ -146,6 +165,7 @@ const { data, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
       gap: 32px;
       justify-content: space-between;
     }
+
 
     &__preview {
       display: block;
