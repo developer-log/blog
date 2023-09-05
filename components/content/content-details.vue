@@ -54,8 +54,10 @@ const active = ref(false);
     font-weight: 500;
     padding: 12px 0;
     position: relative;
+
     &::marker {
       content: '';
+      display: none;
     }
   }
 }
