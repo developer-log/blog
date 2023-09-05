@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .post-content-th {
-  padding: 0 16px;
+  padding: 16px 16px;
   background: var(--color-neutral-3);
   border: 1px solid var(--color-neutral-6);
   border-radius: 4px;
