@@ -61,6 +61,7 @@ const active = ref(false);
     font-weight: 500;
     position: relative;
 
+    &::-webkit-details-marker,
     &::marker {
       content: '';
       display: none;
