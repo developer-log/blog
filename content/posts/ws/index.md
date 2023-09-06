@@ -8,6 +8,9 @@ description: >
   Сегодня поговорим о том как работает WS, напишем простенький клиент на JS, обсудим как дебажить данный протокол
   ну и просто обсудим несколько интересных фактов.
 date: 14 May 2023
+origin:
+  type: vc
+  url: https://vc.ru/dev/417980-websocket-smotrim-kak-rabotaet-za-kulisami
 ---
 
 # Первая ступень развития: HTTP
