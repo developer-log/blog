@@ -51,7 +51,6 @@ const onRightClick = (event: Event) => {
 .theme-switcher {
   cursor: pointer;
   padding: 8px;
-  outline: none;
   border: none;
   background: inherit;
 }

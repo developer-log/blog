@@ -73,7 +73,6 @@ const copy = async () => {
     color: var(--color-neutral-6);
     cursor: pointer;
     background: transparent;
-    outline: none;
     border: none;
     padding: 8px;
 

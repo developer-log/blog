@@ -227,7 +227,7 @@ onUnmounted(() => {
 }
 
 .references {
-  margin-top: 12px;
+  margin-top: 64px;
 }
 
 @include from-sm {

@@ -17,8 +17,7 @@
 
     &::before {
       background: var(--color-neutral-13);
-      top: 50%;
-      translate: 0% -50%;
+      top: 10px;
       position: absolute;
       content: '';
       left: -14px;

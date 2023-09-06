@@ -23,7 +23,7 @@
 @include theme-dark {
   .tag {
     background: var(--color-green-dark);
-    border: 1px solid var(--color-green-darker);
+    border: 1px solid var(--color-green-normal-hover);
   }
 }
 </style>

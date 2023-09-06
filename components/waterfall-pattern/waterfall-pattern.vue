@@ -192,15 +192,19 @@ withDefaults(defineProps<WaterfallProperties>(), {
       }
     }
     &.lava {
-      background: linear-gradient(180deg, #b18ed5, #be99e5, #b18ed5);
+      background: linear-gradient(180deg, #F29730, #F29D2D, #F29730);
       &::after {
-        background: linear-gradient(180deg, rgba(255, 101, 101, 0.00) 0%, #414188 100%);
+        background: linear-gradient(180deg, rgba(255, 101, 101, 0.00) 0%, #F8C816 100%);
       }
     }
     .line {
-      background: #62AE79;
+      //background: #F38888;
+      //&::after {
+      //  background: linear-gradient(180deg, rgba(255, 203, 101, 0.00) 0%, #fd5353 100%);
+      //}
+      background: rgb(40, 201, 97);
       &::after {
-        background: linear-gradient(180deg, #62AE79, #D9D21F, #79BC66);
+        background: linear-gradient(180deg, rgba(0,0,0,0), #32e87c);
       }
     }
     .heartbeat {
