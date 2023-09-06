@@ -57,19 +57,14 @@ const onRightClick = (event: Event) => {
 .v-enter-active,
 .v-leave-active {
   transition: transform 400ms ease-in-out,
-  scale 400ms ease-in-out,
+  rotate 500ms linear,
   opacity 400ms ease-in-out
-}
-
-.v-leave-active {
-  display: none;
 }
 
 .v-enter-from,
 .v-leave-to {
   position: absolute;
   opacity: 0;
-  transform: translate(10px);
-  scale: 1.5;
+  transform: rotate(180deg);
 }
 </style>
