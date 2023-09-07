@@ -1,7 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-import "shiki-es";
-
 import type { NuxtConfig } from "nuxt/config";
+import { defineNuxtConfig } from "nuxt/config";
 
 const locales = [ "en", "ru", "ko", "be", "kk" ];
 

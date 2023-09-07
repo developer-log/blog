@@ -1,11 +1,17 @@
-import { TEST_PORT } from "@test/unit/global-setup.mjs";
-import axios from "axios";
-import { describe, expect, test } from "vitest";
+import waitEndpoint from "../../utils/wait-endpoint";
+
+import type { AxiosInstance } from "axios";
+import { beforeAll, describe, expect, test } from "vitest";
+
+let request: AxiosInstance;
+beforeAll(async () => {
+  const endpoint = await waitEndpoint();
+  request = endpoint.request;
+});
 
 describe("/api/og", () => {
-  const request = axios.create({
-    baseURL: `http://127.0.0.1:${TEST_PORT}`
-  });
+
+
   test("Success request", async () => {
     const response = await request.get("/api/og", {
       params: {
