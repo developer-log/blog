@@ -1,4 +1,6 @@
 name: End to end Tests
+env:
+  PORT: 8100
 on:
   push:
     branches: [ main, master ]
