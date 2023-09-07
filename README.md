@@ -1,5 +1,10 @@
 # Blog ✨
 
+<p align="left">
+  <a href="https://github.com/tokiory-blog/blog/actions/workflows/build.yml" target="_blank"><img src="https://github.com/tokiory-blog/blog/actions/workflows/build.yml/badge.svg" alt="Unit Test" /></a>
+  <a href="https://github.com/tokiory-blog/blog/actions/workflows/unit.yml" target="_blank"><img src="https://github.com/tokiory-blog/blog/actions/workflows/unit.yml/badge.svg" alt="Unit Test" /></a>
+</p>
+
 ## Stack 🥸
 - Vue
 - Nuxt
