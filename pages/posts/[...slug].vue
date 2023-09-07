@@ -54,10 +54,11 @@
         class="post__navigation post__navigation_mobile"
         :navigation="navigation"
       />
-      <ContentRendererMarkdown
-        class="post__render"
-        :value="data"
-      />
+      <article class="post__render">
+        <ContentRendererMarkdown
+          :value="data"
+        />
+      </article>
       <div
         v-if="data?.references"
         class="post__references references"

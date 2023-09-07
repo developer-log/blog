@@ -25,9 +25,9 @@ import { ref } from "#imports";
 interface ProseCodeProperties {
   code: string;
   language: string;
-  filename: string;
-  highlights: number[];
-  meta: string;
+  filename?: string;
+  highlights?: number[];
+  meta?: string;
 }
 
 const properties = defineProps<ProseCodeProperties>();

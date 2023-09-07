@@ -8,7 +8,7 @@
       :placeholder="t('page.posts.searchPlaceholder')"
     />
     <div
-      v-if="pending && !filteredPosts"
+      v-if="pending"
       class="posts__loading"
     >
       <Icon
@@ -139,7 +139,8 @@ const filteredPosts = computed(() => {
 
   &__loading {
     display: flex;
-    place-items: center;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
   }
 

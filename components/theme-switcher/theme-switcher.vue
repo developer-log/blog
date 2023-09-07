@@ -1,6 +1,7 @@
 <template>
   <button
     class="theme-switcher"
+    :data-test="dtes.themeSwitcher"
     @click="onClick"
     @click.right="onRightClick"
   >
@@ -26,6 +27,7 @@
 <script setup lang="ts">
 import useLocalStorageState from "@/composables/use-local-storage-state";
 import localStorageKey from "@/data/local-storage-key";
+import dtes from "@/tests/selectors";
 import type { Theme } from "@t/theme";
 
 const localStorageTheme = useLocalStorageState<Theme>(localStorageKey.theme);

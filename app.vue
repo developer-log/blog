@@ -35,5 +35,5 @@ onMounted(() => {
 watch(theme, () => {
   console.log(theme.value);
   document.body.dataset.theme = theme.value ?? "initial";
-});
+}, {});
 </script>

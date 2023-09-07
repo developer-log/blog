@@ -7,10 +7,8 @@ const locales = [ "en", "ru", "ko", "be", "kk" ];
 
 const alias: NuxtConfig["alias"] = {
   "@t": "./types",
-  "@s": "./server",
   "@style": "./styles",
   "@l": "./localization",
-  "@test": "./tests",
 };
 
 
