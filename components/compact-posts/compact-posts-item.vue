@@ -2,6 +2,7 @@
   <NuxtLink
     :href="_path"
     class="post"
+    :data-test="dataSelectors.compactPost.item"
   >
     <div class="post__info info">
       <Icon
@@ -36,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import dataSelectors from "@/tests/data-selectors";
 import type { PostItemContent } from "@t/content/post";
 defineProps<PostItemContent>();
 </script>

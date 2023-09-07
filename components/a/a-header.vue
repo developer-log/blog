@@ -21,6 +21,7 @@
             <NuxtLink
               :to="{path: localePath(item.url), external: true}"
               class="nav__link"
+              :data-test="dataSelectors.header.navigationItem"
             >
               {{ capitalize($t(item.name)) }}
             </NuxtLink>
@@ -64,6 +65,7 @@ import { ref, useLocalePath } from "#imports";
 import { social } from "@/data/content";
 import navigation from "@/data/navigation";
 
+import dataSelectors from "~/tests/data-selectors";
 import { capitalize } from "vue";
 
 const isHeaderMenuActive = ref(false);

@@ -56,10 +56,13 @@ You also can use next terminal commands:
 - `test`: Commands for testing
   - `test:unit`: Commands for unit tests;
     - `test:unit:run`: Run unit tests in CLI;
+    - `test:unit:gui`: Run unit tests in GUI;
+    - `test:unit:watch`: Watch for unit tests;
   - `test:end`: Commands for end to end tests;
     - `test:end:run`: Run end to end tests in CLI;
     - `test:end:ui`: Run end to end tests in GUI;
     - `test:end:setup`: Setup browsers for testing;
+    - `test:end:record`: Record End to end test;
 - `deploy`: Commands for deploying
   - `deploy:dev`: Deploy to the development server;
   - `deploy:prod`: Deploy to the production server;

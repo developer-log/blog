@@ -2,6 +2,7 @@
   <NuxtLink
     :to="{path: _path}"
     class="post"
+    :data-test="selectors.fullPost.item"
   >
     <ACard class="post__card">
       <AText class="post__title">
@@ -29,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import selectors from "@/tests/data-selectors";
 import type { PostItemContent } from "@t/content";
 
 defineProps<PostItemContent>();

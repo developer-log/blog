@@ -1,17 +1,21 @@
 import { defineConfig, devices } from "@playwright/test";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
   testDir: "./tests/e2e",
+  outputDir: "./.artifacts/playwright",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  retries: process.env.CI ? 5 : 3,
+  workers: process.env.CI ? 1 : 3,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:8100",
+    baseURL: `http://localhost:${process.env.PORT}`,
     trace: "on-first-retry",
   },
 
