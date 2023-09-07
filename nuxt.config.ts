@@ -80,6 +80,7 @@ const modules: NuxtConfig["modules"] = [
   "@nuxt/image",
   "@nuxtjs/i18n",
   "nuxt-icon",
+  "nuxt-vitest"
 ];
 
 const i18n: NuxtConfig["i18n"] = {
@@ -127,7 +128,7 @@ export default defineNuxtConfig({
     "normalize.css/normalize.css"
   ],
   devServer: {
-    port: 8100,
+    port: Number.parseInt(process.env.PORT ?? "8100"),
   },
   app,
   modules,

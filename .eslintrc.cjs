@@ -12,17 +12,37 @@ module.exports = {
     "plugin:unicorn/recommended",
     "plugin:compat/recommended",
     "plugin:yml/standard",
-    "plugin:ava/recommended",
     "plugin:editorconfig/all",
     "plugin:vuejs-accessibility/recommended"
   ],
 
   ignorePatterns: [ "pnpm-lock.yaml" ],
   "overrides": [
+    // Test files
+    {
+      env: {
+        node: true,
+        browser: false,
+      },
+      plugins: [
+        "vitest"
+      ],
+      extends: [
+        "plugin:vitest/recommended"
+      ],
+      files: [ "*.test.ts", "*.e2e.ts", "*.unit.ts" ],
+      rules: {
+        "compat/compat": "off",
+      }
+    },
+
+    // YAML/JSON files
     {
       files: [ "*.yaml", "*.yml" ],
       parser: "yaml-eslint-parser",
     },
+
+    // ESLint config
     {
       "env": {
         "node": true
@@ -50,7 +70,6 @@ module.exports = {
     "vue",
     "unicorn",
     "compat",
-    "ava",
     "editorconfig",
     "simple-import-sort",
     "vuejs-accessibility"
