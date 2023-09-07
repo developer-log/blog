@@ -1,0 +1,40 @@
+name: Unit Test
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: "8.x"
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: JarvusInnovations/background-action@v1
+        with:
+          name: Bootstrap server
+          run: |
+            pnpm app:dev
+          wait-on: |
+            http://localhost:8100
+            http-get://localhost:8100
+          tail: true # true = stderr,stdout
+          log-output-resume: stderr
+          wait-for: 5m
+          log-output: stderr,stdout # same as true
+          log-output-if: failure
+
+      - name: Run tests
+        run: "pnpm test:unit:run"
+
