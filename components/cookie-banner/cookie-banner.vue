@@ -6,17 +6,17 @@
     <ACard class="banner__wrapper">
       <div class="banner__description description">
         <AText class="description__text">
-          Мы используем cookie. Это позволяет нам анализировать взаимодействие посетителей с сайтом и делать его лучше.
+          {{ $t('cookie.title').concat(' ') }}
         </AText>
         <AText class="description__text">
-          Продолжая пользоваться сайтом, вы соглашаетесь с использованием файлов cookie.
+          {{ $t('cookie.description') }}
         </AText>
       </div>
       <AButton
         class="banner__button"
         @click="handleAccept"
       >
-        Принять
+        {{ $t('dialog.accept') }}
       </AButton>
     </ACard>
   </div>
@@ -41,7 +41,8 @@ const handleAccept = () => {
   position: fixed;
   bottom: 48px;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   left: 16px;
   right: 16px;
 
