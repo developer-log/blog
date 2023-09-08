@@ -1,8 +1,8 @@
-![Github Banner](https://github.com/tokiory-blog/blog/assets/101672047/c83ecdde-15ac-456d-b868-3011811de9c4)
+![Github Banner](https://github.com/developer-log/blog/assets/101672047/3e31b542-9423-4374-b2ab-e3a8c1d86171)
 
 <p align="left">
-  <a href="https://github.com/tokiory-blog/blog/actions/workflows/build.yml" target="_blank"><img src="https://github.com/tokiory-blog/blog/actions/workflows/build.yml/badge.svg" alt="Unit Test" /></a>
-  <a href="https://github.com/tokiory-blog/blog/actions/workflows/unit.yml" target="_blank"><img src="https://github.com/tokiory-blog/blog/actions/workflows/unit.yml/badge.svg" alt="Unit Test" /></a>
+  <a href="https://github.com/developer-log/blog/actions/workflows/build.yml" target="_blank"><img src="https://github.com/developer-log/blog/actions/workflows/build.yml/badge.svg" alt="Unit Test" /></a>
+  <a href="https://github.com/developer-log/blog/actions/workflows/unit.yml" target="_blank"><img src="https://github.com/developer-log/blog/actions/workflows/unit.yml/badge.svg" alt="Unit Test" /></a>
 </p>
 
 ## Stack 🥸
