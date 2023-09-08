@@ -11,7 +11,7 @@ on:
           - prod
         required: true
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,6 +29,8 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+      - name: env
+        run: echo ${{inputs.env}}
 
       - uses: amondnet/vercel-action@v20
         if: contains(inputs.env, 'prod')
