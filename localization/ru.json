@@ -63,8 +63,17 @@
   "page": {
     "license": {
       "tabTitle": "Лицензия",
-      "collaboration": "Коллаборация tokiory x awamishi",
-      "title": "Лицензии"
+      "title": "Лицензии",
+      "source": "Источник",
+      "license": "Лицензия",
+      "phrase": {
+        "test": "Тесты на",
+        "host": "Хостится на",
+        "store": "Хранится на",
+        "made": "Сделано с помощью",
+        "work": "Работает благодаря",
+        "thanks": "Отдельное спасибо"
+      }
     },
     "projects": {
       "tabTitle": "Проекты",

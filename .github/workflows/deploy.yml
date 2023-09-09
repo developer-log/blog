@@ -29,8 +29,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-      - name: env
-        run: echo ${{inputs.env}}
+
+      - name: Translate all localizations
+        run: pnpm translate
 
       - uses: amondnet/vercel-action@v20
         with:
