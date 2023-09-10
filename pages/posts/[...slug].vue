@@ -29,25 +29,10 @@
             </NuxtLink>
           </li>
         </ul>
-        <NuxtLink
+        <PostSource
           v-if="data?.origin"
-          class="origin"
-          external
-          target="_blank"
-          :href="data.origin.url"
-        >
-          <Icon
-            class="origin__icon"
-            size="16"
-            name="uil:link-h"
-          />
-          <AText
-            secondary
-            class="origin__text"
-          >
-            {{ data?.origin.type }}
-          </AText>
-        </NuxtLink>
+          :url="data.origin.url"
+        />
       </div>
       <PostNavigationMobile
         v-if="navigation.length > 1"
