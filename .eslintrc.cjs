@@ -16,7 +16,7 @@ module.exports = {
     "plugin:vuejs-accessibility/recommended"
   ],
 
-  ignorePatterns: [ "pnpm-lock.yaml" ],
+  ignorePatterns: [ "pnpm-lock.yaml", ".artifacts/*" ],
   "overrides": [
     // Test files
     {

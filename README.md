@@ -39,7 +39,10 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
 - [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
 - [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
 - [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;
+- [nuxt-simple-sitemap](https://nuxt.com/modules/simple-sitemap) - Adds sitemap;
 - [nuxt/vitest](https://nuxt.com/modules/vitest) - Adds support for vitest;
+- [@nuxtjs/stylelint](https://nuxt.com/modules/stylelint) - Stylelint errors will displayed in the browser;
+- [@nuxtjs/eslint](https://nuxt.com/modules/stylelint) - ESLint errors will displayed in the browser;
 
 ## Commands 🙌
 If you can, you can use Webstorm commands via `Ctrl + Ctrl` keybinding

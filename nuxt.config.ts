@@ -73,6 +73,9 @@ const app: NuxtConfig["app"] = {
 };
 
 const modules: NuxtConfig["modules"] = [
+  "nuxt-simple-sitemap",
+  "@nuxtjs/stylelint-module",
+  "@nuxtjs/eslint-module",
   "nuxt-content-assets",
   "@nuxt/content",
   "@nuxt/image",
@@ -127,6 +130,9 @@ export default defineNuxtConfig({
   ],
   devServer: {
     port: Number.parseInt(process.env.PORT ?? "8100"),
+  },
+  eslint: {
+    lintOnStart: false,
   },
   app,
   modules,
