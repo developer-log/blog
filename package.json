@@ -8,7 +8,6 @@
     "app:run": "node ./.output/server/index.mjs",
     "docker:app:build": "docker build -t developer-log .",
     "docker:app:run": "docker run -p 3000:3000 developer-log",
-    "docker:test:build": "docker build -t developer-log .",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",

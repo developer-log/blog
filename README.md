@@ -6,6 +6,8 @@
   <a href="https://github.com/developer-log/blog/actions/workflows/lint.yml" target="_blank"><img src="https://github.com/developer-log/blog/actions/workflows/lint.yml/badge.svg" alt="Unit Test" /></a>
 </p>
 
+In the bustling realm of technology, where innovation is the heartbeat, "Developer Log" emerges as a guiding light for both seasoned developers and aspiring enthusiasts alike. This unique blog serves as a sanctuary for code aficionados, offering a rich tapestry of insights, experiences, and solutions in the ever-evolving world of software development.
+
 ## Stack 🥸
 - Vue
 - Nuxt
@@ -18,25 +20,26 @@
   - Stylelint
 
 ### ESLint modules 🔥
-- [@typescript-eslint/eslint-plugin](https://typescript-eslint.io) - ESLint plugin for typescript;
-- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) - Powerful rules for strict code;
-- [eslint-plugin-vue](https://eslint.vuejs.org) - Eslint plugin for Vue.js;
-- [eslint-plugin-vitest](https://github.com/veritem/eslint-plugin-vitest) - Plugin for vitest testing framework;
-- [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml) - Plugin for YAML files;
 - [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) - Plugin for compatibility with old browsers;
 - [eslint-plugin-editorconfig](https://www.npmjs.com/package/eslint-plugin-editorconfig) - Plugin for linting files with EditorConfig;
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) - Plugin for Playwright framework;
 - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort) - Plugin for sorting imports;
+- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) - Powerful rules for strict code;
+- [eslint-plugin-vitest](https://github.com/veritem/eslint-plugin-vitest) - Plugin for vitest testing framework;
+- [eslint-plugin-vue](https://eslint.vuejs.org) - Eslint plugin for Vue.js;
 - [eslint-plugin-vuejs-accessibility](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/) - Plugin for a11y support;
+- [eslint-plugin-yml](https://www.npmjs.com/package/eslint-plugin-yml) - Plugin for YAML files;
+- [@typescript-eslint/eslint-plugin](https://typescript-eslint.io) - ESLint plugin for typescript;
 
 ### Stylelint modules ☄️
 ### Nuxt modules 💫
-- [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;
-- [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
-- [@nuxt/image](https://nuxt.com/modules/image) - Adds a11y image component;
-- [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
 - [@nuxt/content](https://content.nuxtjs.org) - Adds content to the nuxt;
-- [@nuxt/vitest](https://nuxt.com/modules/vitest) - Adds support for vitest;
+- [@nuxt/devtools](https://nuxt.com/modules/devtools) - Devtools for Nuxt 3;
+- [@nuxt/image](https://nuxt.com/modules/image) - Adds a11y image component;
+- [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
+- [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
+- [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;
+- [nuxt/vitest](https://nuxt.com/modules/vitest) - Adds support for vitest;
 
 ## Commands 🙌
 If you can, you can use Webstorm commands via `Ctrl + Ctrl` keybinding
@@ -53,7 +56,10 @@ You also can use next terminal commands:
 - `lint`: Commands for linters
   - `lint:eslint`: Run ESLint;
   - `lint:stylelint`: Run Stylelint;
+  - `lint:staged`: Lint all staged files;
   - `lint:all`: Run ESLint for all project files;
+    - `lint:all:stylelint`: Lint all files with Stylelint;
+    - `lint:all:eslint`: Lint all files with ESLint;
 - `test`: Commands for testing
   - `test:unit`: Commands for unit tests;
     - `test:unit:run`: Run unit tests in CLI;
@@ -72,9 +78,15 @@ You also can use next terminal commands:
 ## Additional 🤓
 
 ### Testing 🥰
-Testing is done thanks to three frameworks:
+Testing is done thanks to two frameworks:
   - vitest
   - playwright
+
+Vitest is used for unit tests. It use happy dom to simulate browser DOM and
+`@nuxt/test-utils`.
+
+Playwright is used for end to end tests. It uses special selectors,
+those defined in `tests/data-selectors.ts`.
 
 ### Languages 👅
 Languages dictionaries are located in `@l`. Following languages are supported now:
@@ -83,11 +95,15 @@ Languages dictionaries are located in `@l`. Following languages are supported no
 - English;
 - Belarusian;
 - Korean;
+- Kazakhstan;
 
 ### Adaptive 🤳
 - **Minimal Value**: 400px;
 - **Maximum value**: 2048px;
 
+For adaptive layout we use sass mixins, they are defined in `styles/prebuild/breakpoint.scss`.
+
+Blog also have a dark theme. Mixin for dark theme is defined in `styles/prebuild/theme.scss`.
 #### Conventions
 1. We're building mobile-first layout
 2. We're using `from-{breakpoint}` mixin, it's located in [`styles/prebuild/breakpoint.scss`](styles/prebuild/breakpoint.scss)
