@@ -17,7 +17,7 @@ logs
 # Misc
 .DS_Store
 .fleet
-.idea
+.gitignore
 
 # Local env files
 .env
