@@ -72,8 +72,18 @@ const app: NuxtConfig["app"] = {
   }
 };
 
+const fontLoader: NuxtConfig["fontLoader"] = {
+  local: [
+    {
+      src: "/fonts/virgil/Virgil.woff2",
+      family: "Virgil",
+    },
+  ]
+};
+
 const modules: NuxtConfig["modules"] = [
   "nuxt-simple-sitemap",
+  "nuxt-font-loader",
   "@nuxtjs/stylelint-module",
   "@nuxtjs/eslint-module",
   "nuxt-content-assets",
@@ -124,7 +134,10 @@ const content: NuxtConfig["content"] = {
 };
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
+  telemetry: {
+    enabled: false,
+  },
   css: [
     "normalize.css/normalize.css"
   ],
@@ -136,6 +149,7 @@ export default defineNuxtConfig({
   },
   app,
   modules,
+  fontLoader,
   vite,
   alias,
   i18n,

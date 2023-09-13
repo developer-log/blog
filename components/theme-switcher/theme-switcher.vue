@@ -2,6 +2,7 @@
   <button
     class="theme-switcher"
     :data-test="dtes.themeSwitcher"
+    title="Кликните правой кнопкой мыши, чтобы сбросить настройки"
     @click="onClick"
     @click.right="onRightClick"
   >

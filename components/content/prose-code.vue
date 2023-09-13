@@ -5,7 +5,7 @@
         secondary
         class="post-content-code__filename"
       >
-        {{ filename }}
+        {{ path }}
       </AText>
       <button
         class="post-content-code__copy"
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "#imports";
+import { computed, ref } from "#imports";
 
 interface ProseCodeProperties {
   code: string;
@@ -32,6 +32,13 @@ interface ProseCodeProperties {
 
 const properties = defineProps<ProseCodeProperties>();
 const copied = ref(false);
+const path = computed(() => {
+  if (properties.language === "output") {
+    return "Output";
+  }
+
+  return properties.filename;
+});
 
 const copy = async () => {
   navigator.clipboard.writeText(properties.code.trim())
@@ -54,6 +61,19 @@ const copy = async () => {
   border: 1px solid var(--color-neutral-4);
   margin: 24px 0;
 
+  // Result styling
+  &:has(+ &.language-output) {
+    border-bottom: none;
+    margin-bottom: 0;
+    border-radius: 4px 4px 0 0;
+  }
+
+  & + &.language-output {
+    margin-top: 0;
+    border-radius: 0 0 4px 4px;
+  }
+
+  // Inner styling
   &__nav {
     border-bottom: 1px solid var(--color-neutral-4);
     margin-left: auto;
@@ -96,6 +116,19 @@ const copy = async () => {
     letter-spacing: 0.7px;
   }
 }
+
+//& + &.language-result {
+//  margin-top: -24px;
+//  border-top: none;
+//  position: relative;
+//  &::after {
+//    position: absolute;
+//    content: 'Output';
+//    top: 10px;
+//    right: 48px;
+//    font-size: 14px;
+//  }
+//}
 
 @include from-sm {
   .post-content-code__copy {

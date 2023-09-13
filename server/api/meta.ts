@@ -50,12 +50,20 @@ export default defineEventHandler(async (event) => {
     return;
   }
 
-  const { data: rawHtml, status } = await axios.get<string>(body.url);
+  let rawHtml = "";
+  try {
+    const { data, status } = await axios.get<string>(body.url);
 
-  if (status !== 200) {
+    if (status !== 200) {
+      setResponseStatus(event, status);
+      await send(event);
+      return;
+    }
+
+    rawHtml = data;
+  } catch {
     setResponseStatus(event, 500);
     await send(event);
-    return;
   }
 
   const documentNode = new JSDOM(rawHtml)

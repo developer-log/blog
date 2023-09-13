@@ -145,6 +145,7 @@ const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/me
     height: 100%;
     max-height: 110px;
     display: none;
+    border-radius: 4px;
   }
 }
 

@@ -36,6 +36,7 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
 ### Nuxt modules 💫
 - [@nuxt/content](https://content.nuxtjs.org) - Adds content to the nuxt;
 - [@nuxt/devtools](https://nuxt.com/modules/devtools) - Devtools for Nuxt 3;
+- [nuxt-font-loader](https://www.npmjs.com/package/nuxt-font-loader) - Optimized font loading for Nuxt 3+;
 - [@nuxt/image](https://nuxt.com/modules/image) - Adds a11y image component;
 - [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
 - [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
@@ -123,3 +124,42 @@ This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a6852
   On pre-commit hook husky runs eslint and stylelint on every committed file;
 - **push** \
   We have hook on push. It runs unit and end to end tests;
+
+### Excalidraw
+Sometimes I use Excalidraw to illustrate a concept. The problem with Excalidraw is that it loads fonts from its resource.
+In order to reduce the delay before the fonts appear correctly in the diagrams,
+I downloaded the font that Excalidraw uses ([Virgil](https://virgil.excalidraw.com/)).
+
+The problem is that Excalidraw sets its own font in each of the svg we use.
+That is why when using the new svg file from Excalidraw we need to replace this code:
+
+```svg
+<defs>
+  <style class="style-fonts">
+    @font-face {
+    font-family: "Virgil";
+    src: url("https://excalidraw.com/Virgil.woff2");
+    }
+    @font-face {
+    font-family: "Cascadia";
+    src: url("https://excalidraw.com/Cascadia.woff2");
+    }
+  </style>
+</defs>
+```
+
+To this code:
+
+```svg
+<defs>
+  <style class="style-fonts">
+    @font-face {
+    font-family: "Virgil";
+    src: url("/fonts/virgil/Virgil.woff2"); // Use downloaded font
+    }
+  </style>
+</defs>
+```
+
+> **Note**
+> Later I plan to write a plugin for Vite to automatically link such font imports from third-party resources
