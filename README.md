@@ -18,6 +18,7 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
   - ESLint
   - Commitlint
   - Stylelint
+  - SVGLint
 
 ### ESLint modules 🔥
 - [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) - Plugin for compatibility with old browsers;
@@ -59,10 +60,12 @@ You also can use next terminal commands:
 - `lint`: Commands for linters
   - `lint:eslint`: Run ESLint;
   - `lint:stylelint`: Run Stylelint;
+  - `lint:svglint`: Lint svg files with svglint;
   - `lint:staged`: Lint all staged files;
   - `lint:all`: Run ESLint for all project files;
     - `lint:all:stylelint`: Lint all files with Stylelint;
     - `lint:all:eslint`: Lint all files with ESLint;
+    - `lint:all:svglint`: Lint all svg files with svglint;
 - `test`: Commands for testing
   - `test:unit`: Commands for unit tests;
     - `test:unit:run`: Run unit tests in CLI;
