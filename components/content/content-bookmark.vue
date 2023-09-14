@@ -23,6 +23,7 @@
         <div class="bookmark__header">
           <img
             v-if="meta?.icon"
+            loading="lazy"
             class="bookmark__favicon bookmark__favicon_header"
             alt="favicon"
             :src="meta?.icon"
@@ -40,6 +41,7 @@
         <div class="bookmark__link">
           <img
             v-if="meta?.icon"
+            loading="lazy"
             class="bookmark__favicon"
             alt="favicon"
             :src="meta?.icon"
@@ -51,6 +53,7 @@
       </div>
       <img
         v-if="meta?.image"
+        loading="lazy"
         class="bookmark__preview"
         :src="meta?.image"
         alt="preview"
