@@ -21,13 +21,14 @@
     >
       <div class="bookmark__meta">
         <div class="bookmark__header">
-          <img
+          <NuxtImg
             v-if="meta?.icon"
             loading="lazy"
+            :preload="false"
             class="bookmark__favicon bookmark__favicon_header"
+            :src="meta.icon"
             alt="favicon"
-            :src="meta?.icon"
-          >
+          />
           <AText class="bookmark__title">
             {{ meta?.title }}
           </AText>
@@ -36,35 +37,36 @@
           v-if="meta?.description"
           class="bookmark__description"
         >
-          {{ meta?.description }}
+          {{ meta.description }}
         </AText>
         <div class="bookmark__link">
-          <img
+          <NuxtImg
             v-if="meta?.icon"
             loading="lazy"
+            :preload="false"
             class="bookmark__favicon"
+            :src="meta.icon"
             alt="favicon"
-            :src="meta?.icon"
-          >
+          />
           <AText class="bookmark__url">
             {{ url }}
           </AText>
         </div>
       </div>
-      <img
+      <NuxtImg
         v-if="meta?.image"
         loading="lazy"
         class="bookmark__preview"
-        :src="meta?.image"
+        :preload="false"
+        :src="meta.image"
         alt="preview"
-      >
+      />
     </ACard>
   </NuxtLink>
 </template>
 
 <script setup lang="ts">
 import { useFetch } from "#imports";
-import type { SiteMetaResponse } from "@t/api/meta";
 
 interface BookmarkProperties {
   url: string;
@@ -72,7 +74,7 @@ interface BookmarkProperties {
 
 const properties = defineProps<BookmarkProperties>();
 
-const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
+const { data: meta, pending, error } = await useFetch("/api/meta",
   {
     lazy: true,
     method: "POST",

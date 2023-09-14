@@ -84,14 +84,13 @@ const fontLoader: NuxtConfig["fontLoader"] = {
 const modules: NuxtConfig["modules"] = [
   "nuxt-simple-sitemap",
   "nuxt-font-loader",
-  "@nuxtjs/stylelint-module",
-  "@nuxtjs/eslint-module",
   "nuxt-content-assets",
   "@nuxt/content",
   "@nuxt/image",
   "@nuxtjs/i18n",
   "nuxt-icon",
-  "nuxt-vitest"
+  "nuxt-vitest",
+  "nuxt-purgecss",
 ];
 
 const i18n: NuxtConfig["i18n"] = {
@@ -141,11 +140,11 @@ export default defineNuxtConfig({
   css: [
     "normalize.css/normalize.css"
   ],
+  purgecss: {
+    enabled: true,
+  },
   devServer: {
     port: Number.parseInt(process.env.PORT ?? "8100"),
-  },
-  eslint: {
-    lintOnStart: false,
   },
   app,
   modules,

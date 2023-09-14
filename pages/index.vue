@@ -91,12 +91,16 @@ const { data: posts } = useAsyncData(async () => {
       _draft: { $ne: true },
     })
     .only(fields)
-    .limit(5)
     .find();
   posts.sort((a, b) => {
     return Date.parse(b.date) - Date.parse(a.date);
   });
-  return posts;
+  return posts.slice(0, 5).map(item => {
+    return {
+      ...item,
+      tags: item.tags.slice(0, 2)
+    };
+  });
 });
 </script>
 

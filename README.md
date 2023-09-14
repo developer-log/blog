@@ -43,8 +43,7 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
 - [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;
 - [nuxt-simple-sitemap](https://nuxt.com/modules/simple-sitemap) - Adds sitemap;
 - [nuxt/vitest](https://nuxt.com/modules/vitest) - Adds support for vitest;
-- [@nuxtjs/stylelint](https://nuxt.com/modules/stylelint) - Stylelint errors will displayed in the browser;
-- [@nuxtjs/eslint](https://nuxt.com/modules/stylelint) - ESLint errors will displayed in the browser;
+- [nuxt-purgecss](https://nuxt.com/modules/purgecss) - Remove unused css;
 
 ## Commands 🙌
 If you can, you can use Webstorm commands via `Ctrl + Ctrl` keybinding
