@@ -90,7 +90,6 @@ const modules: NuxtConfig["modules"] = [
   "@nuxtjs/i18n",
   "nuxt-icon",
   "nuxt-vitest",
-  "nuxt-purgecss",
 ];
 
 const image: NuxtConfig["image"] = {
