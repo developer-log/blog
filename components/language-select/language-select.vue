@@ -43,7 +43,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from "#imports";
 import languageFlag from "@/data/language-flag";
 
 type Language = keyof typeof languageFlag;

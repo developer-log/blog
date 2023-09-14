@@ -20,8 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "#imports";
-
 interface ProseCodeProperties {
   code: string;
   language: string;

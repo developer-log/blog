@@ -18,6 +18,12 @@ module.exports = {
 
   ignorePatterns: [ "pnpm-lock.yaml", ".artifacts/*" ],
   "overrides": [
+    {
+      files: [ "*.ts", "*.vue" ],
+      rules: {
+        "no-undef": "off",
+      },
+    },
     // Test files
     {
       env: {

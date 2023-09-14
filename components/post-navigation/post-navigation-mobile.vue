@@ -21,7 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "#imports";
 import type { PostNavigationItem } from "@t/posts";
 
 interface PostNavigationMobileProperties {

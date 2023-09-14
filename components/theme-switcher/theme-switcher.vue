@@ -26,8 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, watch } from "#imports";
-import useLocalStorageState from "@/composables/use-local-storage-state";
 import localStorageKey from "@/data/local-storage-key";
 import dtes from "@/tests/data-selectors";
 import type { Theme } from "@t/theme";

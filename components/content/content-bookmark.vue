@@ -66,8 +66,6 @@
 </template>
 
 <script setup lang="ts">
-import { useFetch } from "#imports";
-
 interface BookmarkProperties {
   url: string;
 }

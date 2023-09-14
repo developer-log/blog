@@ -23,8 +23,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineModel } from "#imports";
-import { useLocalStorageState } from "#imports";
 import localStorageKey from "@/data/local-storage-key";
 
 const model = defineModel<boolean>();

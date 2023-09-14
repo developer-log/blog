@@ -26,7 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import { useFetch } from "#imports";
 import type { SiteMetaResponse } from "@t/api/meta";
 
 interface PostSourceProperties {

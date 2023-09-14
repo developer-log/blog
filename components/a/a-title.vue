@@ -8,8 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "#imports";
-
 import type { Properties as CSS } from "csstype";
 
 interface TitleProperties {

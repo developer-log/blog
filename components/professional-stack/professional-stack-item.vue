@@ -19,7 +19,6 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "#imports";
 import type { ProfessionalStackItemContent } from "@t/content";
 
 defineProps<ProfessionalStackItemContent>();

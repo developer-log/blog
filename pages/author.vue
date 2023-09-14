@@ -39,7 +39,6 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import {
   professionalStack as professionalStackContent,
   technologiesStack as technologiesStackContent

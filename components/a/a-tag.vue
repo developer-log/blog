@@ -10,8 +10,14 @@
   display: flex;
   padding: 4px 8px;
   background: var(--color-red-light);
-  border: 1px solid var(--color-red-normal-hover);
+  border: 1px solid var(--color-red-normal);
   border-radius: 4px;
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--color-red-light-hover);
+    border-color: var(--color-red-normal-hover);
+  }
 }
 
 @include from-sm {
@@ -23,7 +29,12 @@
 @include theme-dark {
   .tag {
     background: var(--color-green-dark);
-    border: 1px solid var(--color-green-normal-hover);
+    border: 1px solid var(--color-green-normal);
+
+    &:hover {
+      background: var(--color-green-dark-hover);
+      border-color: var(--color-green-normal-hover);
+    }
   }
 }
 </style>

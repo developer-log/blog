@@ -14,8 +14,6 @@
 
 <script setup lang="ts">
 import "@fontsource-variable/montserrat";
-import { onMounted, ref } from "#imports";
-import useLocalStorageState from "@/composables/use-local-storage-state";
 import localStorageKey from "@/data/local-storage-key";
 import "@fontsource/iosevka/400.css";
 import "@fontsource/iosevka/400-italic.css";

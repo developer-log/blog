@@ -4,8 +4,8 @@
     class="technologies-list"
   >
     <li
-      v-for="technology in list"
-      :key="technology"
+      v-for="(technology, idx) in list"
+      :key="idx"
       class="technologies-list__item"
     >
       <TechnologiesStackItem

@@ -63,8 +63,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, queryContent, ref, useAsyncData, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
-import { getTagSearchURL } from "@/utils/search";
 import type { PostItemContent } from "@t/content";
 import type { PostNavigationItem } from "@t/posts";
 

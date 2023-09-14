@@ -128,7 +128,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import { projects } from "@/data/content";
 
 const { t } = useI18n();

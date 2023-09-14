@@ -25,7 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, queryContent, ref, useAsyncData, useI18n, useOg, useRequestURL, useRoute, useSeoMeta, watch } from "#imports";
 import type { PostItemContent } from "@t/content";
 import type { PostDateGroups, PostDateKey } from "@t/posts";
 

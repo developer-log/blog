@@ -98,6 +98,7 @@ const image: NuxtConfig["image"] = {
       modifiers: {
         format: "webp",
         width: 44,
+        fit: "outside",
       }
     }
   }
@@ -146,6 +147,11 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   telemetry: {
     enabled: false,
+  },
+  imports: {
+    dirs: [
+      "types/**",
+    ]
   },
   css: [
     "normalize.css/normalize.css"

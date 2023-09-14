@@ -1,4 +1,3 @@
-import { readBody } from "#imports";
 import { SiteMetaBodySchema, SiteMetaRequestBody, SiteMetaResponse } from "@/types/api/meta";
 
 import axios from "axios";
