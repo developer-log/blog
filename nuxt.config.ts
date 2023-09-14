@@ -93,6 +93,17 @@ const modules: NuxtConfig["modules"] = [
   "nuxt-purgecss",
 ];
 
+const image: NuxtConfig["image"] = {
+  presets: {
+    stack: {
+      modifiers: {
+        format: "webp",
+        width: 44,
+      }
+    }
+  }
+};
+
 const i18n: NuxtConfig["i18n"] = {
   locales,
   defaultLocale: "ru",
@@ -140,9 +151,6 @@ export default defineNuxtConfig({
   css: [
     "normalize.css/normalize.css"
   ],
-  purgecss: {
-    enabled: true,
-  },
   devServer: {
     port: Number.parseInt(process.env.PORT ?? "8100"),
   },
@@ -153,5 +161,6 @@ export default defineNuxtConfig({
   alias,
   i18n,
   content,
+  image,
   typescript,
 });

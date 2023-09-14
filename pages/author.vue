@@ -19,12 +19,12 @@
           {{ $t('page.author.pursuit') }}
         </AText>
       </div>
-      <ProfessionalStack
+      <LazyProfessionalStack
         v-bind="professionalStackContent"
         layout="row"
         class="content__professional"
       />
-      <TechnologiesStack
+      <LazyTechnologiesStack
         class="content__tech"
         v-bind="technologiesStackContent"
       />

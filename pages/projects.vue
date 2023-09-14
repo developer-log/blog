@@ -60,8 +60,8 @@
               class="stack__image"
               :src="`/stack/${item}.svg`"
               preload
+              preset="stack"
               :alt="item"
-              width="55"
             />
           </li>
         </ul>
@@ -73,7 +73,8 @@
           >
             <NuxtImg
               class="stack__image"
-              width="55"
+              preset="stack"
+              preload
               :alt="item"
               :src="`/stack/${item}.svg`"
             />
@@ -113,6 +114,8 @@
       <NuxtImg
         class="empty__cat"
         src="/tokiory/question.svg"
+        preload
+        format="webp"
       />
       <ATitle class="empty__title">
         {{ $t("page.projects.chooseTitle") }}
@@ -234,11 +237,14 @@ const isLinksVisible = computed(() => {
     flex-wrap: wrap;
   }
 
-  &__image {
-    display: block;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 55px;
     border: 1px solid var(--color-neutral-4);
     border-radius: 4px;
-    height: 100%;
     padding: 8px;
   }
 }
