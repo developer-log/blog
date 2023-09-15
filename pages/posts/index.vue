@@ -31,6 +31,13 @@ import type { PostDateGroups, PostDateKey } from "@t/posts";
 const { t, getLocaleCookie } = useI18n();
 const url = useRequestURL();
 
+
+definePageMeta({
+  name: "Posts Page",
+  path: "/posts/",
+
+});
+
 useSeoMeta({
   ...useOg({
     title: `${t("title")}: ${t("page.posts.tabTitle")}`,

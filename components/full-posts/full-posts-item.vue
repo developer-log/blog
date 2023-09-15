@@ -15,15 +15,17 @@
             :key="idx"
             class="tags__item"
           >
-            <NuxtLink
-              :to="{path: getTagSearchURL(tag)}"
-              class="tags__link"
-              @click.stop
-            >
-              <ATag class="tags__tag">
-                {{ tag }}
-              </ATag>
-            </NuxtLink>
+            <ClientOnly>
+              <NuxtLink
+                :to="getTagSearchURL(tag)"
+                class="tags__link"
+                @click.stop
+              >
+                <ATag class="tags__tag">
+                  {{ tag }}
+                </ATag>
+              </NuxtLink>
+            </ClientOnly>
           </li>
         </ul>
         <Icon

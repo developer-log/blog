@@ -85,6 +85,9 @@ defineProps<PostItemContent>();
   &__link {
     display: block;
     color: inherit;
+    &:hover {
+      color: inherit;
+    }
   }
 
   &__angle {

@@ -148,6 +148,11 @@ export default defineNuxtConfig({
   telemetry: {
     enabled: false,
   },
+  router: {
+    options: {
+      sensitive: false,
+    }
+  },
   imports: {
     dirs: [
       "types/**",
