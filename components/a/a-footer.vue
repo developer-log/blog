@@ -38,7 +38,7 @@
           </li>
           <li class="social__item">
             <NuxtLink
-              :to="{path: '/license'}"
+              :to="localePath({path: '/license'})"
               class="social__link"
             >
               License
@@ -55,6 +55,7 @@
 
 <script setup lang="ts">
 import social from "@/data/content/social";
+const localePath = useLocalePath();
 const footerSocial = computed(() => {
   return [
     {
