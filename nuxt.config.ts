@@ -72,17 +72,37 @@ const app: NuxtConfig["app"] = {
   }
 };
 
+const fontLoader: NuxtConfig["fontLoader"] = {
+  local: [
+    {
+      src: "/fonts/virgil/Virgil.woff2",
+      family: "Virgil",
+    },
+  ]
+};
+
 const modules: NuxtConfig["modules"] = [
   "nuxt-simple-sitemap",
-  "@nuxtjs/stylelint-module",
-  "@nuxtjs/eslint-module",
+  "nuxt-font-loader",
   "nuxt-content-assets",
   "@nuxt/content",
   "@nuxt/image",
   "@nuxtjs/i18n",
   "nuxt-icon",
-  "nuxt-vitest"
+  "nuxt-vitest",
 ];
+
+const image: NuxtConfig["image"] = {
+  presets: {
+    stack: {
+      modifiers: {
+        format: "webp",
+        width: 44,
+        fit: "outside",
+      }
+    }
+  }
+};
 
 const i18n: NuxtConfig["i18n"] = {
   locales,
@@ -124,21 +144,33 @@ const content: NuxtConfig["content"] = {
 };
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
+  telemetry: {
+    enabled: false,
+  },
+  router: {
+    options: {
+      sensitive: false,
+    }
+  },
+  imports: {
+    dirs: [
+      "types/**",
+    ]
+  },
   css: [
     "normalize.css/normalize.css"
   ],
   devServer: {
     port: Number.parseInt(process.env.PORT ?? "8100"),
   },
-  eslint: {
-    lintOnStart: false,
-  },
   app,
   modules,
+  fontLoader,
   vite,
   alias,
   i18n,
   content,
+  image,
   typescript,
 });

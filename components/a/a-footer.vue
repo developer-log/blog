@@ -56,7 +56,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, useI18n } from "#imports";
 import social from "@/data/content/social";
 import languageFlag from "@/data/language-flag";
 

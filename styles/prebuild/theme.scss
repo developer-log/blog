@@ -1,8 +1,4 @@
 @mixin theme-dark {
-  @media screen and (prefers-color-scheme: dark) {
-    @content;
-  }
-
   @at-root body[data-theme="dark"] {
     @content;
   }

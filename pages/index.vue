@@ -36,6 +36,7 @@
         <CompactPosts
           class="posts__list"
           :posts="posts!"
+          :pending="pending"
         />
       </div>
     </section>
@@ -57,9 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import { queryContent, useAsyncData, useI18n, useOg, useRequestURL, useSeoMeta } from "#imports";
 import { social } from "@/data/content";
-import type { PostItemContent } from "@t/content";
 
 const { t } = useI18n();
 const url = useRequestURL();
@@ -76,7 +75,7 @@ useSeoMeta({
   }),
 });
 
-const { data: posts } = useAsyncData(async () => {
+const { data: posts, pending } = useAsyncData(async () => {
   const fields: Array<keyof PostItemContent> = [
     "_id",
     "_path",
@@ -91,12 +90,16 @@ const { data: posts } = useAsyncData(async () => {
       _draft: { $ne: true },
     })
     .only(fields)
-    .limit(5)
     .find();
   posts.sort((a, b) => {
     return Date.parse(b.date) - Date.parse(a.date);
   });
-  return posts;
+  return posts.slice(0, 5).map(item => {
+    return {
+      ...item,
+      tags: item.tags.slice(0, 2)
+    };
+  });
 });
 </script>
 

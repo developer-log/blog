@@ -5,6 +5,7 @@ export const SiteMetaBodySchema = z.object({
 });
 
 export type SiteMetaRequestBody = z.infer<typeof SiteMetaBodySchema>;
+
 export interface SiteMetaResponse {
   title: string | null;
   description: string | null;

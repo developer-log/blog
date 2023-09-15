@@ -15,9 +15,17 @@
             :key="idx"
             class="tags__item"
           >
-            <ATag class="tags__tag">
-              {{ tag }}
-            </ATag>
+            <ClientOnly>
+              <NuxtLink
+                :to="getTagSearchURL(tag)"
+                class="tags__link"
+                @click.stop
+              >
+                <ATag class="tags__tag">
+                  {{ tag }}
+                </ATag>
+              </NuxtLink>
+            </ClientOnly>
           </li>
         </ul>
         <Icon
@@ -73,9 +81,13 @@ defineProps<PostItemContent>();
   display: flex;
   gap: 8px;
   align-items: center;
+
+  &__link {
+    color: inherit;
+  }
 }
 
-@include from-sm {
+@include from-md {
   .post__card {
     gap: 24px;
     padding: 12px 36px;

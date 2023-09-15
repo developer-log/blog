@@ -23,9 +23,17 @@
           :key="tag"
           class="nav__item"
         >
-          <ATag class="nav__tag">
-            {{ tag }}
-          </ATag>
+          <ClientOnly>
+            <NuxtLink
+              class="nav__link"
+              :to="getTagSearchURL(tag)"
+              @click.stop
+            >
+              <ATag class="nav__tag">
+                {{ tag }}
+              </ATag>
+            </NuxtLink>
+          </ClientOnly>
         </li>
       </ul>
       <Icon
@@ -74,8 +82,12 @@ defineProps<PostItemContent>();
   align-items: center;
   gap: 8px;
 
-  &__tag-link {
+  &__link {
+    display: block;
     color: inherit;
+    &:hover {
+      color: inherit;
+    }
   }
 
   &__angle {

@@ -7,7 +7,6 @@
 </template>
 
 <script lang="ts" setup>
-import { defineModel } from "#imports";
 const model = defineModel<string>();
 </script>
 

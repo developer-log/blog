@@ -1,5 +1,15 @@
 <template>
-  <ul class="posts">
+  <ul
+    :class="{pending}"
+    class="posts"
+  >
+    <!--    <Icon-->
+    <!--      v-if="pending"-->
+    <!--      size="32"-->
+    <!--      class="source__spinner"-->
+    <!--      name="svg-spinners:90-ring-with-bg"-->
+    <!--    />-->
+    <!--    <template v-else>-->
     <li
       v-for="post in posts"
       :key="post"
@@ -10,6 +20,7 @@
         v-bind="post"
       />
     </li>
+    <!--    </template>-->
   </ul>
 </template>
 
@@ -18,6 +29,7 @@ import type { PostContent } from "@t/content";
 
 interface CompactPostsProperties {
   posts: PostContent,
+  pending: boolean;
 }
 
 defineProps<CompactPostsProperties>();
@@ -46,6 +58,16 @@ defineProps<CompactPostsProperties>();
     &:last-child {
       border-radius: 0 0 4px 4px;
     }
+  }
+
+  &.pending {
+    border: 1px solid var(--color-neutral-5);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
   }
 }
 

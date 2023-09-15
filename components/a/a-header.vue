@@ -61,7 +61,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, useLocalePath } from "#imports";
 import { social } from "@/data/content";
 import navigation from "@/data/navigation";
 

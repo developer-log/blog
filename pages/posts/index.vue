@@ -25,12 +25,18 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, queryContent, ref, useAsyncData, useI18n, useOg, useRequestURL, useRoute, useSeoMeta, watch } from "#imports";
 import type { PostItemContent } from "@t/content";
 import type { PostDateGroups, PostDateKey } from "@t/posts";
 
 const { t, getLocaleCookie } = useI18n();
 const url = useRequestURL();
+
+
+definePageMeta({
+  name: "Posts Page",
+  path: "/posts/",
+
+});
 
 useSeoMeta({
   ...useOg({
@@ -87,6 +93,7 @@ const { data: posts, pending } = useAsyncData(async () => {
     "date",
     "tags",
     "description",
+    "keywords"
   ];
 
   const posts = await queryContent<PostItemContent>("posts").where({
@@ -117,7 +124,8 @@ const filteredPosts = computed(() => {
       .filter(post => {
         return post.title.toLowerCase().includes(loweredQuery)
           || post.description.toLowerCase().includes(loweredQuery)
-          || post.tags.some(tag => tag.includes(loweredQuery.replace("#", "")));
+          || post.tags.some(tag => tag.includes(loweredQuery.replace("#", "")))
+          || post.keywords?.some(word => word.toLowerCase().includes(loweredQuery));
       });
 
     if (filteredPosts?.length) {

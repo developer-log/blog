@@ -4,8 +4,8 @@
     :class="{grid: layout === 'row'}"
   >
     <li
-      v-for="item in list"
-      :key="item"
+      v-for="(item, idx) in list"
+      :key="idx"
       class="stack-list__item"
     >
       <ProfessionalStackItem

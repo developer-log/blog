@@ -27,8 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import { onUnmounted, watch } from "#imports";
-import useScrollLock from "@/composables/use-scroll-lock";
 import nav from "@/data/navigation";
 import type { Navigation } from "@t/navigation";
 

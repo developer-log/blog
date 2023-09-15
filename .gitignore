@@ -6,6 +6,7 @@
 .cache
 dist
 .artifacts
+.stylelintcache
 
 # Node dependencies
 node_modules
@@ -17,7 +18,7 @@ logs
 # Misc
 .DS_Store
 .fleet
-.idea
+.gitignore
 
 # Local env files
 .env

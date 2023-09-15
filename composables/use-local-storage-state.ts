@@ -1,5 +1,3 @@
-import { onMounted } from "#imports";
-
 const EVENT = "local-storage-reactive";
 
 type LocalStorageValue<T> = T | null;

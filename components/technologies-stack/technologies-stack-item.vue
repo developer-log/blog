@@ -17,7 +17,6 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "#imports";
 import type { TechnologiesStackItemContent } from "@t/content";
 defineProps<TechnologiesStackItemContent>();
 

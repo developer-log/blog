@@ -10,7 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n, useSeoMeta, watch } from "#imports";
 const { t, locale } = useI18n();
 
 const setMeta = () => useSeoMeta({

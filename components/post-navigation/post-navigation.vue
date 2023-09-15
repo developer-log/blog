@@ -38,7 +38,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, useRoute, watch } from "#imports";
 import type { PostNavigationItem } from "@t/posts";
 
 interface PostNavigationProperties {

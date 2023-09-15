@@ -23,7 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "#imports";
 interface ContentDetailsProperties {
   title: string;
 }

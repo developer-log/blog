@@ -29,6 +29,7 @@ export interface PostItemContent extends NuxtContentMeta {
   date: string;
   origin?: Origin;
   references?: Reference[];
+  keywords?: string[];
 }
 
 export type PostContent = PostItemContent[];
