@@ -353,7 +353,7 @@ const isLinksVisible = computed(() => {
     background: var(--color-green-dark);
   }
 
-  .stack__image {
+  .stack__item {
     border-color: var(--color-neutral-9);
   }
 
