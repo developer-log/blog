@@ -86,6 +86,7 @@ const { data: posts, pending } = useAsyncData(async () => {
     "date",
     "tags",
     "description",
+    "keywords"
   ];
 
   const posts = await queryContent<PostItemContent>("posts").where({
@@ -116,7 +117,8 @@ const filteredPosts = computed(() => {
       .filter(post => {
         return post.title.toLowerCase().includes(loweredQuery)
           || post.description.toLowerCase().includes(loweredQuery)
-          || post.tags.some(tag => tag.includes(loweredQuery.replace("#", "")));
+          || post.tags.some(tag => tag.includes(loweredQuery.replace("#", "")))
+          || post.keywords?.some(word => word.toLowerCase().includes(loweredQuery));
       });
 
     if (filteredPosts?.length) {

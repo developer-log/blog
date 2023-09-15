@@ -6,6 +6,14 @@ tags:
   - under-the-hood
 date: 6 Sep 2023
 exclusive: true
+keywords:
+  - commonjs
+  - esm
+  - module
+  - requirejs
+  - amd
+  - umd
+  - systemjs
 references:
   - name: "Dev.to: An Overview of Javascript Module Types"
     url: https://dev.to/ndesmic/an-overview-of-javascript-modules-dfg

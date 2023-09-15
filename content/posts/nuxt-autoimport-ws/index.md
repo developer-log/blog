@@ -1,5 +1,5 @@
 ---
-title: Ошибки при использовании глобальных импортов в Webstorm
+title: Чиним глобальные импорты в Webstorm
 tags:
   - webstorm
   - nuxt
