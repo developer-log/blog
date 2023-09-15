@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PostDateGroups } from "@t/posts";
+import type { PostDateGroups } from "@/types/posts";
 
 defineProps<{groups: PostDateGroups}>();
 </script>

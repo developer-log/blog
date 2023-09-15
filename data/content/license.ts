@@ -1,4 +1,4 @@
-import type { LicenseContent } from "@t/content";
+import type { LicenseContent } from "@/types/content";
 
 const packages: LicenseContent = [
   {

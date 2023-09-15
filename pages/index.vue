@@ -35,8 +35,7 @@
         </ATitle>
         <CompactPosts
           class="posts__list"
-          :posts="posts!"
-          :pending="pending"
+          :posts="posts ?? []"
         />
       </div>
     </section>
@@ -60,7 +59,10 @@
 <script setup lang="ts">
 import { social } from "@/data/content";
 
+import type { PostItemContent } from "~/types/content";
+
 const { t } = useI18n();
+
 const url = useRequestURL();
 
 useSeoMeta({
@@ -75,7 +77,7 @@ useSeoMeta({
   }),
 });
 
-const { data: posts, pending } = useAsyncData(async () => {
+const { data: posts } = useAsyncData<PostItemContent[]>(async () => {
   const fields: Array<keyof PostItemContent> = [
     "_id",
     "_path",

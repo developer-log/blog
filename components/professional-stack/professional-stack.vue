@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProfessionalStackContent } from "@t/content";
+import type { ProfessionalStackContent } from "@/types/content";
 
 interface ProfessionalStackProperties extends ProfessionalStackContent {
   layout?: "row" | "column";

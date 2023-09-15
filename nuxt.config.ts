@@ -82,12 +82,12 @@ const fontLoader: NuxtConfig["fontLoader"] = {
 };
 
 const modules: NuxtConfig["modules"] = [
+  "@nuxtjs/i18n",
   "nuxt-simple-sitemap",
   "nuxt-font-loader",
   "nuxt-content-assets",
   "@nuxt/content",
   "@nuxt/image",
-  "@nuxtjs/i18n",
   "nuxt-icon",
   "nuxt-vitest",
 ];
@@ -105,9 +105,9 @@ const image: NuxtConfig["image"] = {
 };
 
 const i18n: NuxtConfig["i18n"] = {
-  locales,
+  locales: locales.map(item => ({ code: item, iso: item })),
   defaultLocale: "ru",
-  strategy: "no_prefix",
+  strategy: "prefix_except_default",
   detectBrowserLanguage: {
     useCookie: true,
   },
@@ -152,11 +152,6 @@ export default defineNuxtConfig({
     options: {
       sensitive: false,
     }
-  },
-  imports: {
-    dirs: [
-      "types/**",
-    ]
   },
   css: [
     "normalize.css/normalize.css"

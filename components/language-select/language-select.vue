@@ -14,7 +14,7 @@
       >
         <Icon
           size="24"
-          :name="`circle-flags:${languageFlag[modelValue]}`"
+          :name="`circle-flags:${languageFlag[locale]}`"
         />
       </div>
 
@@ -23,7 +23,7 @@
         :class="{active}"
       >
         <div
-          v-for="item in otherLanguages"
+          v-for="item in otherLanguages as Language[]"
           :key="item"
           role="menuitem"
           :lang="item"
@@ -47,26 +47,23 @@ import languageFlag from "@/data/language-flag";
 
 type Language = keyof typeof languageFlag;
 
-interface LanguageSelectProperties {
-  languages: Array<Language>;
-  modelValue: Language;
-}
+const { availableLocales, locale, setLocale } = useI18n();
 
-const properties = defineProps<LanguageSelectProperties>();
-const emit = defineEmits<{"update:modelValue": [value: Language]}>();
-
-const languageSelectReference = ref<HTMLDivElement>();
-const active = ref(false);
-
+/**
+ * Select current language
+ * @param language
+ */
 const selectLanguage = (language: Language) => {
+  setLocale(language);
   active.value = false;
-  emit("update:modelValue", language);
 };
 
 const otherLanguages = computed(() => {
-  return properties.languages.filter(item => item !== properties.modelValue);
+  return availableLocales.filter(item => item !== locale.value);
 });
 
+const languageSelectReference = ref<HTMLDivElement>();
+const active = ref(false);
 
 
 const handleOutsideClick = (event: MouseEvent) => {

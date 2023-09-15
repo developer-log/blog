@@ -25,18 +25,11 @@
 </template>
 
 <script lang="ts" setup>
-import type { PostItemContent } from "@t/content";
-import type { PostDateGroups, PostDateKey } from "@t/posts";
+import type { PostItemContent } from "@/types/content";
+import type { PostDateGroups, PostDateKey } from "@/types/posts";
 
 const { t, getLocaleCookie } = useI18n();
 const url = useRequestURL();
-
-
-definePageMeta({
-  name: "Posts Page",
-  path: "/posts/",
-
-});
 
 useSeoMeta({
   ...useOg({
@@ -53,7 +46,7 @@ useSeoMeta({
 const route = useRoute();
 const search = ref(route.query?.search ?? "");
 
-const locale = getLocaleCookie() ?? "ru";
+const locale =  getLocaleCookie() ?? "ru";
 
 // Watch
 watch(() => route.query?.search, (v) => {

@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="{path: _path}"
+    :to="localePath(_path)"
     class="post"
     :data-test="selectors.fullPost.item"
   >
@@ -17,7 +17,7 @@
           >
             <ClientOnly>
               <NuxtLink
-                :to="getTagSearchURL(tag)"
+                :to="localePath({path: '/posts', query: {search: tag}})"
                 class="tags__link"
                 @click.stop
               >
@@ -39,8 +39,9 @@
 
 <script setup lang="ts">
 import selectors from "@/tests/data-selectors";
-import type { PostItemContent } from "@t/content";
+import type { PostItemContent } from "@/types/content";
 
+const localePath = useLocalePath();
 defineProps<PostItemContent>();
 </script>
 

@@ -6,8 +6,7 @@
     <div class="header__wrapper">
       <NuxtLink
         class="header__logo"
-        :to="{path: localePath('/')}"
-        @click="isHeaderMenuActive = false"
+        :to="localePath('/')"
       >
         <ALogo />
       </NuxtLink>
@@ -19,7 +18,7 @@
             class="nav__item"
           >
             <NuxtLink
-              :to="{path: localePath(item.url), external: true}"
+              :to="localePath(item.url)"
               class="nav__link"
               :data-test="dataSelectors.header.navigationItem"
             >
@@ -35,7 +34,6 @@
           class="social__item"
         >
           <NuxtLink
-            external
             :to="item.url"
             target="_blank"
             class="social__link"
@@ -66,7 +64,6 @@ import navigation from "@/data/navigation";
 
 import dataSelectors from "~/tests/data-selectors";
 import { capitalize } from "vue";
-
 const isHeaderMenuActive = ref(false);
 const localePath = useLocalePath();
 </script>

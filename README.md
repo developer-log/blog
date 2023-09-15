@@ -109,10 +109,14 @@ Languages dictionaries are located in `@l`. Following languages are supported no
 For adaptive layout we use sass mixins, they are defined in `styles/prebuild/breakpoint.scss`.
 
 Blog also have a dark theme. Mixin for dark theme is defined in `styles/prebuild/theme.scss`.
+
 #### Conventions
 1. We're building mobile-first layout
 2. We're using `from-{breakpoint}` mixin, it's located in [`styles/prebuild/breakpoint.scss`](styles/prebuild/breakpoint.scss)
+3. We use routes that are registered in data/routes.ts in order to use them in `NuxtLink` or `navigateTo`.
 
+> **Note**
+> In order to successfully use routes, each page must be given a name from the route, for this we use `definePageMeta`
 ### Git hooks 🤞
 This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a68523065d86a218797d349fbbbd).
 

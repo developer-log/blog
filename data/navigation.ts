@@ -1,4 +1,4 @@
-import type { Navigation } from "@t/navigation";
+import type { Navigation } from "@/types/navigation";
 
 export default [
   {

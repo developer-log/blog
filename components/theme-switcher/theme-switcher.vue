@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import localStorageKey from "@/data/local-storage-key";
 import dtes from "@/tests/data-selectors";
-import type { Theme } from "@t/theme";
+import type { Theme } from "@/types/theme";
 
 const localStorageTheme = useLocalStorageState<Theme>(localStorageKey.theme);
 

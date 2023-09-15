@@ -20,7 +20,7 @@
             class="header__item"
           >
             <NuxtLink
-              :href="getTagSearchURL(tag)"
+              :href="localePath({path: '/posts', query: {search: tag}})"
               class="header__tag-link"
             >
               <ATag class="header__tag">
@@ -63,15 +63,17 @@
 </template>
 
 <script setup lang="ts">
-import type { PostItemContent } from "@t/content";
-import type { PostNavigationItem } from "@t/posts";
+import type { PostItemContent } from "@/types/content";
+import type { PostNavigationItem } from "@/types/posts";
+import { getPostSlug } from "@/utils/post";
 
 import type { MarkdownParsedContent } from "@nuxt/content/dist/runtime/types";
 
 const url = useRequestURL();
 const { t } = useI18n();
+const localePath = useLocalePath();
 
-const { data } = await useAsyncData(() => queryContent<PostItemContent & MarkdownParsedContent>(url.pathname).findOne());
+const { data } = await useAsyncData(() => queryContent<PostItemContent & MarkdownParsedContent>(getPostSlug(url)).findOne());
 
 useSeoMeta({
   ...useOg({

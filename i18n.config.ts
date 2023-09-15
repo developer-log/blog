@@ -1,8 +1,8 @@
-import be from "@l/be.json";
-import en from "@l/en.json";
-import kk from "@l/kk.json";
-import ko from "@l/ko.json";
-import ru from "@l/ru.json";
+import be from "@/localization/be.json";
+import en from "@/localization/en.json";
+import kk from "@/localization/kk.json";
+import ko from "@/localization/ko.json";
+import ru from "@/localization/ru.json";
 
 export default defineI18nConfig(() => ({
   legacy: false,
