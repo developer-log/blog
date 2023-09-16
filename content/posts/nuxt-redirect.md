@@ -2,7 +2,7 @@
 title: Редирект на Nuxt 3
 tags:
   - nuxt
-  - devnote
+  - note
 date: 04 Jun 2023
 ---
 

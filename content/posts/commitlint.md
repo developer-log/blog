@@ -2,7 +2,7 @@
 title: Установка и настройка husky + commitlint
 tags:
   - nuxt
-  - devnote
+  - note
 date: 05 Jun 2023
 ---
 
