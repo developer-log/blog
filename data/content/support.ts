@@ -1,4 +1,4 @@
-import type { SupportItemContent } from "@t/content";
+import type { SupportItemContent } from "@/types/content";
 
 const support = {
   jetbrains: {

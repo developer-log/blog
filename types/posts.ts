@@ -1,4 +1,4 @@
-import type { PostContent } from "@t/content";
+import type { PostContent } from "@/types/content";
 
 export type PostDateKey = `${string} ${string}`;
 export type PostDateGroups = Map<PostDateKey, PostContent>;

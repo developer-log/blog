@@ -3,7 +3,7 @@ title: Замена для Rust - Zig
 tags:
 - zig
 - rust
-- devnote
+- note
 date: 01 Jun 2023
 ---
 

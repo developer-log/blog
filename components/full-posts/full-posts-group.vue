@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PostItemContent } from "@t/content";
+import type { PostItemContent } from "@/types/content";
 
 interface FullPostsGroupProperties {
   group: PostItemContent[];

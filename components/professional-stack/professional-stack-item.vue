@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProfessionalStackItemContent } from "@t/content";
+import type { ProfessionalStackItemContent } from "@/types/content";
 
 defineProps<ProfessionalStackItemContent>();
 const { t } = useI18n();

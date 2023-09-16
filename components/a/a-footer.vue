@@ -38,7 +38,7 @@
           </li>
           <li class="social__item">
             <NuxtLink
-              :to="{path: '/license'}"
+              :to="localePath({path: '/license'})"
               class="social__link"
             >
               License
@@ -48,8 +48,6 @@
       </nav>
     </div>
     <LanguageSelect
-      v-model="currentLocale"
-      :languages="availableLocales as Array<keyof typeof languageFlag>"
       class="footer__language"
     />
   </footer>
@@ -57,14 +55,7 @@
 
 <script setup lang="ts">
 import social from "@/data/content/social";
-import languageFlag from "@/data/language-flag";
-
-const { availableLocales, locale: defaultLocale, setLocale } = useI18n();
-const currentLocale = computed({
-  set: v => setLocale(v),
-  get: () => defaultLocale.value,
-});
-
+const localePath = useLocalePath();
 const footerSocial = computed(() => {
   return [
     {

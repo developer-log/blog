@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import nav from "@/data/navigation";
-import type { Navigation } from "@t/navigation";
+import type { Navigation } from "@/types/navigation";
 
 
 interface HeaderMenuProperties {

@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TechnologiesStackContent } from "@t/content";
+import type { TechnologiesStackContent } from "@/types/content";
 
 interface TechnologiesStackProperties extends TechnologiesStackContent {
   layout?: "row" | "column";

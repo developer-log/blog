@@ -1,4 +1,4 @@
-import type { ProjectContent } from "@t/content";
+import type { ProjectContent } from "@/types/content";
 
 const projects: ProjectContent = {
   list: [

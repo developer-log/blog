@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :href="_path"
+    :to="localePath(_path)"
     class="post"
     :data-test="dataSelectors.compactPost.item"
   >
@@ -26,7 +26,7 @@
           <ClientOnly>
             <NuxtLink
               class="nav__link"
-              :to="getTagSearchURL(tag)"
+              :to="localePath({path: '/posts', query: {search: tag}})"
               @click.stop
             >
               <ATag class="nav__tag">
@@ -46,7 +46,9 @@
 
 <script setup lang="ts">
 import dataSelectors from "@/tests/data-selectors";
-import type { PostItemContent } from "@t/content/post";
+import type { PostItemContent } from "@/types/content/post";
+
+const localePath = useLocalePath();
 defineProps<PostItemContent>();
 </script>
 

@@ -1,37 +1,37 @@
 <template>
   <main class="license">
     <section class="license__support support">
-      <LicenseSupport
+      <LazyLicenseSupport
         class="support__card support__card_ts"
         :phrase="$t('page.license.phrase.work')"
         icon="/stack/typescript.svg"
       />
-      <LicenseSupport
+      <LazyLicenseSupport
         class="support__card support__card_playwright"
         :phrase="$t('page.license.phrase.test')"
         icon="/stack/playwright.svg"
       />
-      <LicenseSupport
+      <LazyLicenseSupport
         class="support__card support__card_vitest"
         :phrase="$t('page.license.phrase.test')"
         icon="/stack/vitest.svg"
       />
-      <LicenseSupport
+      <LazyLicenseSupport
         class="support__card support__card_github"
         :phrase="$t('page.license.phrase.store')"
         icon="/stack/github.svg"
       />
-      <LicenseSupport
+      <LazyLicenseSupport
         class="support__card support__card_vercel"
         :phrase="$t('page.license.phrase.host')"
         icon="/stack/vercel.svg"
       />
-      <LicenseSupport
+      <LazyLicenseSupport
         class="support__card support__card_nuxt"
         :phrase="$t('page.license.phrase.made')"
         icon="/stack/nuxt.svg"
       />
-      <LicenseSupport
+      <LazyLicenseSupport
         class="support__card support__card_jetbrains"
         :phrase="$t('page.license.phrase.thanks')"
         icon="/stack/jetbrains.svg"

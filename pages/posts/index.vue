@@ -2,11 +2,19 @@
   <main
     class="posts"
   >
-    <AInput
-      v-model.trim="search"
-      class="posts__input"
-      :placeholder="t('page.posts.searchPlaceholder')"
-    />
+    <div class="posts__search">
+      <AInput
+        v-model.trim="search"
+        class="posts__input"
+        :placeholder="t('page.posts.searchPlaceholder')"
+      />
+      <ACheckbox
+        id="notes-visible"
+        v-model="isNotesVisible"
+        class="posts__checkbox"
+        :label="$t('page.posts.showNotes')"
+      />
+    </div>
     <div
       v-if="pending"
       class="posts__loading"
@@ -17,26 +25,36 @@
       />
     </div>
     <FullPosts
-      v-else-if="filteredPosts"
+      v-else-if="filteredPosts?.size"
       :groups="filteredPosts"
       class="posts__list"
     />
+    <div
+      v-else
+      class="posts__stub stub"
+    >
+      <NuxtImg
+        class="stub__image"
+        preload
+        quality="100"
+        width="280"
+        height="220"
+        src="/tokiory/cry.svg"
+        format="webp"
+      />
+      <ATitle>{{ $t('page.posts.stubTitle') }}</ATitle>
+      <AText>{{ $t('page.posts.stubInfo') }}</AText>
+      <AText>{{ $t('page.posts.stubTryAgain') }}</AText>
+    </div>
   </main>
 </template>
 
 <script lang="ts" setup>
-import type { PostItemContent } from "@t/content";
-import type { PostDateGroups, PostDateKey } from "@t/posts";
+import type { PostItemContent } from "@/types/content";
+import type { PostDateGroups, PostDateKey } from "@/types/posts";
 
 const { t, getLocaleCookie } = useI18n();
 const url = useRequestURL();
-
-
-definePageMeta({
-  name: "Posts Page",
-  path: "/posts/",
-
-});
 
 useSeoMeta({
   ...useOg({
@@ -52,8 +70,9 @@ useSeoMeta({
 
 const route = useRoute();
 const search = ref(route.query?.search ?? "");
+const isNotesVisible = ref(true);
 
-const locale = getLocaleCookie() ?? "ru";
+const locale =  getLocaleCookie() ?? "ru";
 
 // Watch
 watch(() => route.query?.search, (v) => {
@@ -115,12 +134,15 @@ const filteredPosts = computed(() => {
     return filteredPostsGroups;
   }
 
-  if (search.value === "") {
+  if (search.value === "" && isNotesVisible.value) {
     return posts.value;
   }
 
   for (const date of posts.value.keys()) {
     const filteredPosts = (posts.value.get(date) ?? [])
+      .filter(post => {
+        return isNotesVisible.value ? post : !post.tags.includes("note");
+      })
       .filter(post => {
         return post.title.toLowerCase().includes(loweredQuery)
           || post.description.toLowerCase().includes(loweredQuery)
@@ -145,6 +167,17 @@ const filteredPosts = computed(() => {
   gap: 24px;
   min-height: calc(100vh - var(--size-header));
 
+  &__search {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
   &__loading {
     display: flex;
     justify-content: center;
@@ -157,8 +190,18 @@ const filteredPosts = computed(() => {
   }
 }
 
+.stub {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+}
+
 @include from-xl {
-  .posts__input {
+  .posts__search {
     margin-left: 180px;
   }
 }

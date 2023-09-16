@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import type { SiteMetaResponse } from "@t/api/meta";
+import type { SiteMetaResponse } from "@/types/api/meta";
 
 interface PostSourceProperties {
   url: string;
