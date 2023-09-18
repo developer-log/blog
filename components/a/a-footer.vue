@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <NuxtLink
+    <ALink
       :href="social.boosty"
       target="_blank"
       class="footer__donate donate"
@@ -9,17 +9,23 @@
         size="32"
         name="fluent-emoji:money-with-wings"
       />
-    </NuxtLink>
+    </ALink>
     <div class="footer__description">
       <AText>
         Collab by
-        <NuxtLink :href="social.collab.tokiory">
+        <ALink
+          color
+          :href="social.collab.tokiory"
+        >
           tokiory
-        </NuxtLink>
+        </ALink>
         x
-        <NuxtLink :href="social.collab.awamishi">
+        <ALink
+          color
+          :href="social.collab.awamishi"
+        >
           awamishi
-        </NuxtLink>
+        </ALink>
       </AText>
       <nav class="footer__social social">
         <ul class="social__list">
@@ -28,21 +34,23 @@
             :key="item"
             class="social__item"
           >
-            <NuxtLink
+            <ALink
               :href="item.url"
+              color
               external
               class="social__link"
             >
               {{ item.name }}
-            </NuxtLink>
+            </ALink>
           </li>
           <li class="social__item">
-            <NuxtLink
+            <ALink
               :to="localePath({path: '/license'})"
+              color
               class="social__link"
             >
               License
-            </NuxtLink>
+            </ALink>
           </li>
         </ul>
       </nav>

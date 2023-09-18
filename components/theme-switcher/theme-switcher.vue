@@ -1,7 +1,7 @@
 <template>
   <button
     class="theme-switcher"
-    :data-test="dtes.themeSwitcher"
+    :data-test="dataSelectors.themeSwitcher"
     title="Кликните правой кнопкой мыши, чтобы сбросить настройки"
     @click="onClick"
     @click.right="onRightClick"
@@ -26,63 +26,35 @@
 </template>
 
 <script setup lang="ts">
+import { useTheme } from "#imports";
 import localStorageKey from "@/data/local-storage-key";
-import dtes from "@/tests/data-selectors";
-import type { Theme } from "@/types/theme";
+import dataSelectors from "@/tests/data-selectors";
 
-const localStorageTheme = useLocalStorageState<Theme>(localStorageKey.theme);
-
-const theme = computed({
-  set: (v: Theme | undefined) => localStorageTheme.value = v,
-  get() {
-    let fallback: Theme = "light";
-
-    if (process.client) {
-      fallback = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    }
-
-    return localStorageTheme.value ?? fallback;
-  }
-});
+const { theme } = useTheme();
 
 const onClick = () => {
   const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
-  switch (localStorageTheme.value) {
+  switch (theme.value) {
   case "dark": {
-    localStorageTheme.value = "light";
+    theme.value = "light";
     break;
   }
   case "light": {
-    localStorageTheme.value = "dark";
+    theme.value = "dark";
     break;
   }
   default: {
-    localStorageTheme.value = preferredTheme === "dark" ? "light" : "dark";
+    theme.value = preferredTheme === "dark" ? "light" : "dark";
   }
   }
 };
-
-watch(localStorageTheme, () => {
-  if (localStorageTheme.value) {
-    document.body.dataset.theme = localStorageTheme.value;
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    document.body.dataset.theme = "dark";
-  } else {
-    document.body.dataset.theme = "";
-  }
-});
 
 const onRightClick = (event: Event) => {
   event.preventDefault();
-  localStorageTheme.value = undefined;
+  theme.value = null;
   localStorage.removeItem(localStorageKey.theme);
 };
-
-onMounted(() => {
-  const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  localStorageTheme.value = localStorageTheme.value ?? preferredTheme;
-});
 </script>
 
 <style lang="scss" scoped>

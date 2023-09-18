@@ -17,13 +17,14 @@
             :key="item"
             class="nav__item"
           >
-            <NuxtLink
+            <ALink
               :to="localePath(item.url)"
-              class="nav__link"
               :data-test="dataSelectors.header.navigationItem"
+              hover
+              class="nav__link"
             >
               {{ capitalize($t(item.name)) }}
-            </NuxtLink>
+            </ALink>
           </li>
         </ul>
       </nav>
@@ -33,8 +34,9 @@
           :key="item"
           class="social__item"
         >
-          <NuxtLink
+          <ALink
             :to="item.url"
+            hover
             target="_blank"
             class="social__link"
           >
@@ -42,7 +44,7 @@
               size="24"
               :name="item.icon"
             />
-          </NuxtLink>
+          </ALink>
         </li>
       </ul>
       <ThemeSwitcher class="header__theme" />
@@ -118,11 +120,11 @@ const localePath = useLocalePath();
   &__theme,
   &__burger {
     cursor: pointer;
+    color: inherit;
     position: absolute;
     background: none;
     border: none;
     padding: 8px;
-    color: inherit;
     @include zi(header-control);
   }
 
@@ -143,27 +145,11 @@ const localePath = useLocalePath();
     display: flex;
     gap: 24px;
   }
-
-  &__link {
-    color: inherit;
-
-    &:hover {
-      color: var(--color-red-dark-hover);
-    }
-  }
 }
 
 .social {
   display: none;
   gap: 24px;
-
-  &__link {
-    color: inherit;
-
-    &:hover {
-      color: var(--color-red-dark-hover);
-    }
-  }
 }
 
 @include from-md {
@@ -206,11 +192,6 @@ const localePath = useLocalePath();
     &.active::after {
       background-color: var(--color-green-normal);
     }
-  }
-
-  .nav__link:hover,
-  .social__link:hover {
-    color: var(--color-green-normal-hover);
   }
 }
 </style>
