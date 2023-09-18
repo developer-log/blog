@@ -30,22 +30,6 @@ import "@style/index.scss";
 const isBannerShowed = ref(false);
 const cookie = useLocalStorageState<boolean>(localStorageKey.cookie);
 const { theme, accentColor } = useTheme();
-console.log(theme.value);
-
-// watch(theme, () => {
-//   if (theme.value) {
-//     document.body.dataset.theme = localStorageTheme.value;
-//   } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-//     document.body.dataset.theme = "dark";
-//   } else {
-//     document.body.dataset.theme = "";
-//   }
-// });
-
-// onMounted(() => {
-//   const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-//   localStorageTheme.value = localStorageTheme.value ?? preferredTheme;
-// });
 
 onMounted(() => {
   isBannerShowed.value = !(cookie.value ?? false);
