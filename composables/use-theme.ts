@@ -23,7 +23,12 @@ export default function () {
     }
   });
 
+  const accentColor = computed<`#${string}`>(() => {
+    return theme.value === "dark" ? "#0CC0A5" : "#EE5899";
+  });
+
   return {
+    accentColor,
     theme,
   };
 }

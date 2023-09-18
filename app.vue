@@ -7,7 +7,7 @@
     <NuxtLoadingIndicator
       :throttle="100"
       :duration="2000"
-      color="#EE5899"
+      :color="accentColor"
     />
     <NuxtLayout name="default">
       <NuxtPage />
@@ -29,7 +29,7 @@ import "@style/index.scss";
 
 const isBannerShowed = ref(false);
 const cookie = useLocalStorageState<boolean>(localStorageKey.cookie);
-const { theme } = useTheme();
+const { theme, accentColor } = useTheme();
 console.log(theme.value);
 
 // watch(theme, () => {
