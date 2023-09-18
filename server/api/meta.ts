@@ -41,8 +41,7 @@ export default defineEventHandler(async (event) => {
   try {
     const rawBody = await readBody<SiteMetaRequestBody>(event);
     body = SiteMetaBodySchema.parse(rawBody);
-  } catch (error) {
-    console.error(error);
+  } catch {
     setResponseStatus(event, 400);
     return send(event);
   }
