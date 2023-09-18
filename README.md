@@ -131,6 +131,7 @@ Playwright is used for end to end tests. It uses special selectors, those define
 <p align="left">
   <a href="https://crowdin.com/project/developer-log"><img src="https://badges.crowdin.net/developer-log/localized.svg" alt="Localization" /></a>
 </p>
+
 Languages dictionaries are located in `@/localization`. Following languages are supported now:
 
 - Russian (Main language);
