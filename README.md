@@ -90,6 +90,7 @@ You also can use next terminal commands:
     - `app:dev`: Run development server;
     - `app:build`: Build the project;
     - `app:run`: Run production server;
+    - `app:analyze`: Analyze server and client bundle;
 - `docker`: Commands for docker containerization
   - `docker:build`: Build the project in a docker container;
   - `docker:run`: Run docker container with the app;

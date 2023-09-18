@@ -12,11 +12,16 @@
 <script setup lang="ts">
 const { t, locale } = useI18n();
 
-const setMeta = () => useSeoMeta({
-  title: t("title"),
-});
+watchEffect(() => {
+  useSeoMeta({
+    title: t("title"),
+    ogLocale: locale.value,
+  });
 
-setMeta();
-
-watch(locale, setMeta);
+  useHead({
+    htmlAttrs: {
+      lang: locale.value,
+    }
+  });
+}, { flush: "post" });
 </script>

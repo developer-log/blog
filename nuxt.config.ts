@@ -106,11 +106,17 @@ const image: NuxtConfig["image"] = {
 };
 
 const i18n: NuxtConfig["i18n"] = {
-  locales: locales.map(item => ({ code: item, iso: item })),
+  locales: locales.map(item => ({ code: item, iso: item, file: `${item}.ts` })),
+  experimental: {
+    jsTsFormatResource: true,
+  },
   defaultLocale: "ru",
+  langDir: "localization",
+  lazy: true,
   strategy: "prefix_except_default",
   detectBrowserLanguage: {
     useCookie: true,
+
   },
 };
 
@@ -144,6 +150,12 @@ const content: NuxtConfig["content"] = {
   },
 };
 
+const runtimeConfig: NuxtConfig["runtimeConfig"] = {
+  public: {
+    locales,
+  }
+};
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   telemetry: {
@@ -169,4 +181,5 @@ export default defineNuxtConfig({
   content,
   image,
   typescript,
+  runtimeConfig,
 });

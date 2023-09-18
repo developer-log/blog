@@ -113,6 +113,7 @@ const { data: posts } = useAsyncData<PostItemContent[]>(async () => {
 
 .content {
   @include spacing-content;
+  flex-grow: 1;
 
   &__title {
     font-size: 32px;

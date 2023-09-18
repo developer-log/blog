@@ -3,6 +3,7 @@
     <ALink
       :href="social.boosty"
       target="_blank"
+      aria-label="Donate"
       class="footer__donate donate"
     >
       <Icon
@@ -15,6 +16,7 @@
         Collab by
         <ALink
           color
+          aria-label="tokiory"
           :href="social.collab.tokiory"
         >
           tokiory
@@ -22,6 +24,7 @@
         x
         <ALink
           color
+          aria-label="awamishi"
           :href="social.collab.awamishi"
         >
           awamishi
@@ -37,6 +40,7 @@
             <ALink
               :href="item.url"
               color
+              :aria-label="item.name"
               external
               class="social__link"
             >
@@ -46,10 +50,11 @@
           <li class="social__item">
             <ALink
               :to="localePath({path: '/license'})"
+              :aria-label="$t('page.license.title')"
               color
               class="social__link"
             >
-              License
+              {{ $t('page.license.title') }}
             </ALink>
           </li>
         </ul>

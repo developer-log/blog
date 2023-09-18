@@ -4,12 +4,13 @@
     :class="{active: isHeaderMenuActive}"
   >
     <div class="header__wrapper">
-      <NuxtLink
+      <ALink
         class="header__logo"
+        aria-label="Logo"
         :to="localePath('/')"
       >
         <ALogo />
-      </NuxtLink>
+      </ALink>
       <nav class="header__navigation nav">
         <ul class="nav__list">
           <li
@@ -20,6 +21,7 @@
             <ALink
               :to="localePath(item.url)"
               :data-test="dataSelectors.header.navigationItem"
+              :aria-label="$t(item.name)"
               hover
               class="nav__link"
             >
@@ -37,6 +39,7 @@
           <ALink
             :to="item.url"
             hover
+            :aria-label="item.name"
             target="_blank"
             class="social__link"
           >

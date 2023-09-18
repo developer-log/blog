@@ -1,11 +1,11 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
   },
 
-  "extends": [
+  extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
@@ -17,7 +17,7 @@ module.exports = {
   ],
 
   ignorePatterns: [ "pnpm-lock.yaml", ".artifacts/*" ],
-  "overrides": [
+  overrides: [
     {
       files: [ "*.ts", "*.vue" ],
       rules: {
@@ -50,14 +50,14 @@ module.exports = {
 
     // ESLint config
     {
-      "env": {
-        "node": true
+      env: {
+        node: true
       },
-      "files": [
+      files: [
         ".eslintrc.{js,cjs}"
       ],
-      "parserOptions": {
-        "sourceType": "script"
+      parserOptions: {
+        sourceType: "script"
       },
       rules: {
         "unicorn/prefer-module": "off",
@@ -65,13 +65,13 @@ module.exports = {
     }
   ],
 
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "parser": "@typescript-eslint/parser",
-    "sourceType": "module"
+  parserOptions: {
+    ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser",
+    sourceType: "module"
   },
 
-  "plugins": [
+  plugins: [
     "@typescript-eslint",
     "vue",
     "unicorn",
@@ -81,20 +81,21 @@ module.exports = {
     "vuejs-accessibility"
   ],
 
-  "rules": {
+  rules: {
     "sort-imports": "off",
-    "quotes": [
+    "quote-props": [ "error", "as-needed" ],
+    quotes: [
       "error",
       "double"
     ],
-    "semi": [
+    semi: [
       "error",
       "always"
     ],
     "simple-import-sort/imports": [
       "error",
       {
-        "groups": [
+        groups: [
           [
             // Internal
             "^\\u0000",
@@ -121,22 +122,22 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "vue/multi-word-component-names": "off",
     "object-curly-spacing": [ "error", "always" ],
-    "array-bracket-spacing": [ "error", "always", { "objectsInArrays": false }],
+    "array-bracket-spacing": [ "error", "always", { objectsInArrays: false }],
     "vue/component-name-in-template-casing": [ "error", "PascalCase", {
-      "registeredComponentsOnly": false,
-      "ignores": []
+      registeredComponentsOnly: false,
+      ignores: []
     }],
     "unicorn/no-null": "off",
-    "comma-spacing": [ "error", { "before": false, "after": true }],
-    "vuejs-accessibility/aria-role": [ "error", { "ignoreNonDOM": false }],
+    "comma-spacing": [ "error", { before: false, after: true }],
+    "vuejs-accessibility/aria-role": [ "error", { ignoreNonDOM: false }],
     "vuejs-accessibility/alt-text": [
       "error",
       {
-        "elements": [ "img", "object", "area", "input[type=\"image\"]" ],
-        "components": [ "Image", "NuxtImage", "NuxtImg", "Img" ],
-        "img": [ "Image" ],
-        "object": [ "Object" ],
-        "area": [ "Area" ],
+        elements: [ "img", "object", "area", "input[type=\"image\"]" ],
+        components: [ "Image", "NuxtImage", "NuxtImg", "Img" ],
+        img: [ "Image" ],
+        object: [ "Object" ],
+        area: [ "Area" ],
         "input[type=\"image\"]": [ "ImageInput" ]
       }
     ],

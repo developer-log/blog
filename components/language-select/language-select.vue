@@ -45,9 +45,11 @@
 <script setup lang="ts">
 import languageFlag from "@/data/language-flag";
 
+import type { LocaleObject } from "vue-i18n-routing";
+
 type Language = keyof typeof languageFlag;
 
-const { availableLocales, locale, setLocale } = useI18n();
+const { locale, setLocale, locales } = useI18n();
 
 /**
  * Select current language
@@ -59,7 +61,9 @@ const selectLanguage = (language: Language) => {
 };
 
 const otherLanguages = computed(() => {
-  return availableLocales.filter(item => item !== locale.value);
+  return (locales.value as LocaleObject[])
+    .filter(item => item.code !== locale.value)
+    .map(item => item.code);
 });
 
 const languageSelectReference = ref<HTMLDivElement>();

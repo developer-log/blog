@@ -6,6 +6,7 @@
     "app:build": "nuxt build",
     "app:dev": "nuxt dev",
     "app:run": "node ./.output/server/index.mjs",
+    "app:analyze": "nuxi analyze",
     "docker:app:build": "docker build -t developer-log .",
     "docker:app:run": "docker run -p 3000:3000 developer-log",
     "generate": "nuxt generate",

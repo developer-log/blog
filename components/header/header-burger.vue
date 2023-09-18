@@ -1,6 +1,7 @@
 <template>
   <button
     class="burger"
+    aria-label="Burger button"
     @click="emit('update:modelValue', !modelValue)"
   >
     <Transition mode="out-in">
