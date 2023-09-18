@@ -97,12 +97,13 @@
             :key="item"
             class="links__item"
           >
-            <NuxtLink
+            <ALink
               class="links__link"
+              color
               :href="item.url"
             >
               {{ item.url }}
-            </NuxtLink>
+            </ALink>
           </li>
         </ul>
       </div>

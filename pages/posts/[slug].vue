@@ -206,10 +206,6 @@ onUnmounted(() => {
     align-items: center;
     gap: 8px;
   }
-
-  &__tag-link {
-    color: inherit;
-  }
 }
 
 .references {
@@ -241,11 +237,6 @@ onUnmounted(() => {
     border-color: var(--color-neutral-9);
     &:hover {
       border-color: var(--color-neutral-8);
-    }
-  }
-  .header {
-    &__tag-link {
-      color: inherit;
     }
   }
 }

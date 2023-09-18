@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <ALink
     v-if="!error"
     class="bookmark"
     :href="url"
@@ -62,7 +62,7 @@
         alt="preview"
       />
     </ACard>
-  </NuxtLink>
+  </ALink>
 </template>
 
 <script setup lang="ts">
@@ -86,13 +86,8 @@ const { data: meta, pending, error } = await useFetch("/api/meta",
 <style lang="scss" scoped>
 .bookmark {
   display: block;
-  color: inherit;
   margin: 24px 0;
   overflow: hidden;
-
-  &:hover {
-    color: inherit;
-  }
 
   &__card {
     padding: 12px;
@@ -185,7 +180,6 @@ const { data: meta, pending, error } = await useFetch("/api/meta",
   .bookmark {
     &__card {
       &:hover {
-        color: inherit;
         background: var(--color-neutral-10);
         border-color: var(--color-neutral-8);
       }

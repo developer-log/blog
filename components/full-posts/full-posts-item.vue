@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <ALink
     :to="localePath(_path)"
     class="post"
     :data-test="selectors.fullPost.item"
@@ -34,7 +34,7 @@
         />
       </div>
     </ACard>
-  </NuxtLink>
+  </ALink>
 </template>
 
 <script setup lang="ts">
@@ -47,13 +47,7 @@ defineProps<PostItemContent>();
 
 <style lang="scss" scoped>
 .post {
-  color: inherit;
-
-  &:hover {
-    .tags__tag {
-      color: var(--color-neutral-13);
-    }
-  }
+  display: block;
 
   &__card {
     padding: 12px 16px;
@@ -82,10 +76,6 @@ defineProps<PostItemContent>();
   display: flex;
   gap: 8px;
   align-items: center;
-
-  &__link {
-    color: inherit;
-  }
 }
 
 @include from-md {
@@ -104,12 +94,6 @@ defineProps<PostItemContent>();
 
 @include theme-dark {
   .post {
-    color: inherit;
-
-    &:hover .tags__tag {
-      color: var(--color-neutral-2);
-    }
-
     &__card:hover {
       border-color: var(--color-green-dark);
     }

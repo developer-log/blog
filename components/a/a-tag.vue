@@ -13,12 +13,10 @@
   border: 1px solid var(--color-red-normal);
   border-radius: 4px;
   white-space: nowrap;
-  color: var(--color-neutral-13);
 
   &:hover {
     background: var(--color-red-light-hover);
     border-color: var(--color-red-normal-hover);
-    color: var(--color-neutral-13);
   }
 }
 
@@ -32,12 +30,10 @@
   .tag {
     background: var(--color-green-dark);
     border: 1px solid var(--color-green-normal);
-    color: var(--color-neutral-0);
 
     &:hover {
       background: var(--color-green-dark-hover);
       border-color: var(--color-green-normal-hover);
-      color: var(--color-neutral-0);
     }
   }
 }

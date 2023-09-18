@@ -62,10 +62,4 @@ onUnmounted(scrollLock.unlock);
     gap: 24px;
   }
 }
-
-.item {
-  &__link {
-    color: inherit;
-  }
-}
 </style>
