@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <ALink
     :href="url"
     class="technology"
   >
@@ -13,7 +13,7 @@
         {{ value }}
       </AText>
     </ACard>
-  </NuxtLink>
+  </ALink>
 </template>
 
 <script setup lang="ts">
@@ -26,17 +26,16 @@ const { t } = useI18n();
 <style lang="scss" scoped>
 .technology {
   display: block;
-  color: inherit;
 
   &__card {
     padding: 8px;
     display: flex;
     justify-content: space-between;
     align-content: center;
-  }
 
-  &:hover {
-    color: inherit;
+    &:hover {
+      border-color: var(--color-red-normal-hover);
+    }
   }
 
   &__value {
@@ -45,8 +44,16 @@ const { t } = useI18n();
 }
 
 @include theme-dark {
-  .technology__value {
-    color: var(--color-neutral-6);
+  .technology {
+    &__card {
+      &:hover {
+        border-color: var(--color-green-normal-hover);
+      }
+    }
+
+    &__value {
+      color: var(--color-neutral-6);
+    }
   }
 }
 </style>

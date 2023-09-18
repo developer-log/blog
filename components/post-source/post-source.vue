@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <ALink
     v-if="!error"
     class="source"
   >
@@ -22,7 +22,7 @@
         {{ meta?.title }}
       </AText>
     </div>
-  </NuxtLink>
+  </ALink>
 </template>
 
 <script setup lang="ts">
@@ -51,7 +51,6 @@ const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/me
   border-radius: 4px;
   padding: 8px;
   cursor: pointer;
-  color: inherit;
 
   &__content {
     display: flex;
@@ -60,7 +59,6 @@ const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/me
 
   &:hover {
     border-color: var(--color-neutral-6);
-    color: inherit;
   }
 
   &__icon {

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <ALink
     :to="localePath(_path)"
     class="post"
     :data-test="dataSelectors.compactPost.item"
@@ -41,7 +41,7 @@
         name="uil:angle-right"
       />
     </div>
-  </NuxtLink>
+  </ALink>
 </template>
 
 <script setup lang="ts">
@@ -62,11 +62,6 @@ defineProps<PostItemContent>();
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
-
-  &:hover {
-    color: inherit;
-  }
-
 }
 
 .info {
@@ -86,10 +81,6 @@ defineProps<PostItemContent>();
 
   &__link {
     display: block;
-    color: inherit;
-    &:hover {
-      color: inherit;
-    }
   }
 
   &__angle {

@@ -3,6 +3,7 @@ title: OSI
 tags:
   - network
   - backend
+  - note
 date: 19 Jun 2023
 references:
   - name: Модель OSI | Курс "Компьютерные сети"
