@@ -9,10 +9,9 @@
 In the bustling realm of technology, where innovation is the heartbeat, "Developer Log" emerges as a guiding light for both seasoned developers and aspiring enthusiasts alike. This unique blog serves as a sanctuary for code aficionados, offering a rich tapestry of insights, experiences, and solutions in the ever-evolving world of software development.
 
 ## Stack 🥸
-- Vue
 - Nuxt
 - Typescript
-- Sass (SCSS)
+- Sass
 - Vitest
 - Linters
   - ESLint
@@ -34,14 +33,14 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
 
 ### Stylelint modules ☄️
 ### Nuxt modules 💫
+- [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
+- [nuxt-simple-sitemap](https://nuxt.com/modules/simple-sitemap) - Adds sitemap;
+- [nuxt-font-loader](https://www.npmjs.com/package/nuxt-font-loader) - Optimized font loading for Nuxt 3+;
+- [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
 - [@nuxt/content](https://content.nuxtjs.org) - Adds content to the nuxt;
 - [@nuxt/devtools](https://nuxt.com/modules/devtools) - Devtools for Nuxt 3;
-- [nuxt-font-loader](https://www.npmjs.com/package/nuxt-font-loader) - Optimized font loading for Nuxt 3+;
 - [@nuxt/image](https://nuxt.com/modules/image) - Adds a11y image component;
-- [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
-- [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
 - [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;
-- [nuxt-simple-sitemap](https://nuxt.com/modules/simple-sitemap) - Adds sitemap;
 - [nuxt/vitest](https://nuxt.com/modules/vitest) - Adds support for vitest;
 
 ## Commands 🙌
@@ -80,21 +79,21 @@ You also can use next terminal commands:
   - `deploy:prod`: Deploy to the production server;
 - `translate`: Automatic translate;
 
-## Additional 🤓
-
-### Testing 🥰
+## Testing 🥰
 Testing is done thanks to two frameworks:
-  - vitest
-  - playwright
+- vitest
+- playwright
 
 Vitest is used for unit tests. It use happy dom to simulate browser DOM and
 `@nuxt/test-utils`.
 
-Playwright is used for end to end tests. It uses special selectors,
-those defined in `tests/data-selectors.ts`.
+Playwright is used for end to end tests. It uses special selectors, those defined in `tests/data-selectors.ts`.
 
-### Languages 👅
-Languages dictionaries are located in `@l`. Following languages are supported now:
+## Internationalization 👅
+<p align="left">
+  <a href="https://crowdin.com/project/developer-log"><img src="https://badges.crowdin.net/developer-log/localized.svg" alt="Localization" /></a>
+</p>
+Languages dictionaries are located in `@/localization`. Following languages are supported now:
 
 - Russian (Main language);
 - English;
@@ -102,22 +101,9 @@ Languages dictionaries are located in `@l`. Following languages are supported no
 - Korean;
 - Kazakhstan;
 
-### Adaptive 🤳
-- **Minimal Value**: 400px;
-- **Maximum value**: 2048px;
+> You can also contribute to localization on [Crowdin](https://crowdin.com/project/developer-log)
 
-For adaptive layout we use sass mixins, they are defined in `styles/prebuild/breakpoint.scss`.
-
-Blog also have a dark theme. Mixin for dark theme is defined in `styles/prebuild/theme.scss`.
-
-#### Conventions
-1. We're building mobile-first layout
-2. We're using `from-{breakpoint}` mixin, it's located in [`styles/prebuild/breakpoint.scss`](styles/prebuild/breakpoint.scss)
-3. We use routes that are registered in data/routes.ts in order to use them in `NuxtLink` or `navigateTo`.
-
-> **Note**
-> In order to successfully use routes, each page must be given a name from the route, for this we use `definePageMeta`
-### Git hooks 🤞
+## Hooks 🤞
 This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a68523065d86a218797d349fbbbd).
 
 - **commit** \
@@ -127,7 +113,22 @@ This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a6852
 - **push** \
   We have hook on push. It runs unit and end to end tests;
 
-### Excalidraw
+
+## Conventions 🤝
+
+1. We're building mobile-first layout
+2. We're using `from-{breakpoint}` mixin, it's located in [`styles/prebuild/breakpoint.scss`](styles/prebuild/breakpoint.scss)
+
+### Adaptive 🤳
+- **Minimal Value**: 400px;
+- **Maximum value**: 2048px;
+
+For adaptive layout we use sass mixins, they are defined in `styles/prebuild/breakpoint.scss`.
+
+Blog also have a dark theme. Mixin for dark theme is defined in `styles/prebuild/theme.scss`.
+
+
+### Excalidraw ✍️
 Sometimes I use Excalidraw to illustrate a concept. The problem with Excalidraw is that it loads fonts from its resource.
 In order to reduce the delay before the fonts appear correctly in the diagrams,
 I downloaded the font that Excalidraw uses ([Virgil](https://virgil.excalidraw.com/)).

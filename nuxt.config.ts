@@ -90,6 +90,7 @@ const modules: NuxtConfig["modules"] = [
   "@nuxt/image",
   "nuxt-icon",
   "nuxt-vitest",
+  "@nuxt/devtools",
 ];
 
 const image: NuxtConfig["image"] = {
@@ -144,7 +145,7 @@ const content: NuxtConfig["content"] = {
 };
 
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   telemetry: {
     enabled: false,
   },
