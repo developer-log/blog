@@ -1890,7 +1890,7 @@ packages:
       pkg-types: 1.0.3
       postcss-import-resolver: 2.0.0
       std-env: 3.4.2
-      ufo: 1.2.0
+      ufo: 1.3.0
       unimport: 3.1.3(rollup@3.28.0)
       untyped: 1.4.0
     transitivePeerDependencies:
@@ -1955,7 +1955,7 @@ packages:
       mri: 1.2.0
       nanoid: 4.0.2
       node-fetch: 3.3.2
-      ofetch: 1.1.1
+      ofetch: 1.3.3
       parse-git-config: 3.0.0
       pathe: 1.1.1
       rc9: 2.1.1
@@ -2036,7 +2036,7 @@ packages:
       rollup-plugin-visualizer: 5.9.2(rollup@3.28.0)
       std-env: 3.4.2
       strip-literal: 1.3.0
-      ufo: 1.2.0
+      ufo: 1.3.0
       unplugin: 1.4.0
       vite: 4.3.9(@types/node@18.17.3)(sass@1.66.1)
       vite-node: 0.33.0(@types/node@18.17.3)(sass@1.66.1)
@@ -7444,7 +7444,7 @@ packages:
       mlly: 1.4.0
       node-forge: 1.3.1
       pathe: 1.1.1
-      ufo: 1.2.0
+      ufo: 1.3.0
       untun: 0.1.1
       uqr: 0.1.2
     dev: true
@@ -8359,7 +8359,7 @@ packages:
       acorn: 8.10.0
       pathe: 1.1.1
       pkg-types: 1.0.3
-      ufo: 1.2.0
+      ufo: 1.3.0
     dev: true
 
   /mlly@1.4.1:
@@ -8482,7 +8482,7 @@ packages:
       mlly: 1.4.0
       mri: 1.2.0
       node-fetch-native: 1.2.0
-      ofetch: 1.1.1
+      ofetch: 1.3.3
       ohash: 1.1.3
       openapi-typescript: 6.5.2
       pathe: 1.1.1
@@ -8498,7 +8498,7 @@ packages:
       serve-static: 1.15.0
       source-map-support: 0.5.21
       std-env: 3.4.2
-      ufo: 1.2.0
+      ufo: 1.3.0
       uncrypto: 0.1.3
       unenv: 1.7.4
       unimport: 3.1.3(rollup@3.28.0)
@@ -8961,7 +8961,7 @@ packages:
       nitropack: 2.5.2
       nuxi: 3.6.5
       nypm: 0.2.2
-      ofetch: 1.1.1
+      ofetch: 1.3.3
       ohash: 1.1.3
       pathe: 1.1.1
       perfect-debounce: 1.0.0
@@ -9046,14 +9046,6 @@ packages:
   /object-keys@1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
     engines: {node: '>= 0.4'}
-    dev: true
-
-  /ofetch@1.1.1:
-    resolution: {integrity: sha512-SSMoktrp9SNLi20BWfB/BnnKcL0RDigXThD/mZBeQxkIRv1xrd9183MtLdsqRYLYSqW0eTr5t8w8MqjNhvoOQQ==}
-    dependencies:
-      destr: 2.0.1
-      node-fetch-native: 1.2.0
-      ufo: 1.2.0
     dev: true
 
   /ofetch@1.3.3:
@@ -11819,8 +11811,8 @@ packages:
       lru-cache: 10.0.1
       mri: 1.2.0
       node-fetch-native: 1.2.0
-      ofetch: 1.1.1
-      ufo: 1.2.0
+      ofetch: 1.3.3
+      ufo: 1.3.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -12306,7 +12298,7 @@ packages:
   /vue-bundle-renderer@1.0.3:
     resolution: {integrity: sha512-EfjX+5TTUl70bki9hPuVp+54JiZOvFIfoWBcfXsSwLzKEiDYyHNi5iX8srnqLIv3YRnvxgbntdcG1WPq0MvffQ==}
     dependencies:
-      ufo: 1.2.0
+      ufo: 1.3.0
     dev: true
 
   /vue-component-type-helpers@1.8.4:
@@ -12389,7 +12381,7 @@ packages:
       '@intlify/shared': 9.4.1
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.26)
       '@intlify/vue-router-bridge': 0.8.0(vue-router@4.2.4)(vue@3.3.4)
-      ufo: 1.2.0
+      ufo: 1.3.0
       vue: 3.3.4
       vue-demi: 0.14.5(vue@3.3.4)
       vue-i18n: 9.3.0-beta.26(vue@3.3.4)

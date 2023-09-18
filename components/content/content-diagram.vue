@@ -1,0 +1,100 @@
+<template>
+  <div
+    v-if="error === null"
+    class="diagram"
+    :class="{pending}"
+  >
+    <Transition
+      mode="out-in"
+      name="diagram"
+    >
+      <div
+        v-if="pending"
+        class="diagram__stub"
+      >
+        <Icon
+          size="32"
+          class="diagram__loader"
+          name="svg-spinners:90-ring-with-bg"
+        />
+      </div>
+      <div
+        v-else
+        class="diagram__content"
+        v-html="scheme"
+      />
+    </Transition>
+  </div>
+</template>
+
+<script setup lang="ts">
+interface ContentSchemeProperties {
+  src: string;
+}
+
+const properties = defineProps<ContentSchemeProperties>();
+const requestURL = useRequestURL();
+
+const { pending, data: scheme, error } = await useAsyncData<string>(`${requestURL.pathname}-${properties.src}`, async () => {
+  // eslint-disable-next-line compat/compat
+  const absoluteURL = new URL(properties.src, requestURL);
+  const response = await $fetch<Blob>(absoluteURL.href);
+  return response.text();
+}, { lazy: true });
+</script>
+
+<style scoped lang="scss">
+.diagram {
+  width: 100%;
+  margin: 24px 0;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 500ms ease-in-out;
+
+  &.pending {
+    border-color: var(--color-neutral-5);
+  }
+
+  &__stub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+
+  &__loader {
+    height: fit-content;
+  }
+
+  &__content:deep(svg) {
+    width: 100%;
+    height: fit-content;
+    font-family: "Virgil", 'Montserrat Variable', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+.diagram-enter-active,
+.diagram-leave-active {
+  transition: opacity 0.5s ease-in-out, height 500ms ease-in-out;
+}
+
+.diagram-enter-from,
+.diagram-leave-to {
+  opacity: 0;
+}
+
+@include theme-dark {
+  .diagram {
+
+    &.pending {
+      border-color: var(--color-neutral-8);
+    }
+
+    &__content {
+      filter: invert(1);
+    }
+  }
+}
+</style>
