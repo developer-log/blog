@@ -1,6 +1,6 @@
 import { SiteMetaBodySchema, SiteMetaRequestBody, SiteMetaResponse } from "@/types/api/meta";
 
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { JSDOM } from "jsdom";
 
 
@@ -44,24 +44,26 @@ export default defineEventHandler(async (event) => {
   } catch (error) {
     console.error(error);
     setResponseStatus(event, 400);
-    await send(event);
-    return;
+    return send(event);
   }
 
   let rawHtml = "";
   try {
-    const { data, status } = await axios.get<string>(body.url);
+    const { data, status } = await axios.get<string>(body.url,
+      {
+        timeout: 3000
+      }
+    );
 
     if (status !== 200) {
       setResponseStatus(event, status);
-      await send(event);
-      return;
+      return send(event);
     }
 
     rawHtml = data;
-  } catch {
-    setResponseStatus(event, 500);
-    await send(event);
+  } catch (error) {
+    setResponseStatus(event, (error as AxiosError).response?.status ?? 500);
+    return send(event);
   }
 
   const documentNode = new JSDOM(rawHtml)
