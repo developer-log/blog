@@ -43,6 +43,44 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
 - [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;
 - [nuxt/vitest](https://nuxt.com/modules/vitest) - Adds support for vitest;
 
+## Setup 👌
+If you don't have a `pnpm` - you will need it.
+
+```bash
+# Installing of pnpm
+npm i -g pnpm
+```
+
+After the installation of the pnpm - you can install dependecies of the project:
+
+```bash
+pnpm i
+```
+
+> Warn:
+> You should create an `.env` file
+
+Here is the template file for .env:
+
+```dotenv
+# Sentry
+SENTRY_DSN=<SENTRY_DSN>
+
+# Supabase
+SUPABASE_URL=<SUPABASE_URL>
+SUPABASE_KEY=<SUPABASE_KEY>
+SUPABASE_SERVICE_KEY=<SUPABASE_SERVICE_KEY>
+
+# Nuxt
+PORT=8100
+PUBLIC_URL=https://developer-log.vercel.app
+```
+
+After creation of dotenv file you can run project with the following command:
+
+```bash
+pnpm app:dev
+```
 ## Commands 🙌
 If you can, you can use Webstorm commands via `Ctrl + Ctrl` keybinding
 
