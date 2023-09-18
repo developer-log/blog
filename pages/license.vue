@@ -52,25 +52,27 @@
             <AText class="source__text">
               {{ $t("page.license.source") }}:
             </AText>
-            <NuxtLink
+            <ALink
+              color
               class="source__link"
               :href="item.source"
               target="_blank"
             >
               {{ item.source }}
-            </NuxtLink>
+            </ALink>
           </div>
           <div class="content__ref ref">
             <AText class="ref__text">
               {{ $t("page.license.license") }}:
             </AText>
-            <NuxtLink
+            <ALink
               class="ref__link"
+              color
               :href="item.license"
               target="_blank"
             >
               {{ item.license }}
-            </NuxtLink>
+            </ALink>
           </div>
         </li>
       </ul>
@@ -119,6 +121,15 @@ import license from "@/data/content/license";
   }
 }
 
+.ref,
+.source {
+  &__link {
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
 .support {
   display: none;
 
@@ -151,11 +162,15 @@ import license from "@/data/content/license";
     flex-direction: row;
   }
 
+  .support,
+  .content {
+    max-width: calc(50% - 32px);
+  }
+
   .support {
     position: sticky;
     top: calc(var(--size-header) + 32px);
     height: fit-content;
-    width: 50%;
   }
 }
 </style>
