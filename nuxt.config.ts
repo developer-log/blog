@@ -19,6 +19,7 @@ const typescript: NuxtConfig["typescript"] = {
 };
 
 const app: NuxtConfig["app"] = {
+  pageTransition: { name: "page", mode: "out-in" },
   head: {
     title: "Лог разработчика",
     // eslint-disable-next-line unicorn/text-encoding-identifier-case

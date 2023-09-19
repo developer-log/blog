@@ -10,6 +10,7 @@
       <button
         class="post-content-code__copy"
         :class="{active: copied}"
+        aria-label="Copy"
         @click="copy"
       >
         <Icon name="uil:copy" />

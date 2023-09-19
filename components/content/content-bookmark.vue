@@ -5,62 +5,67 @@
     :href="url"
     target="_blank"
   >
-    <ACard
-      v-if="pending"
-      class="bookmark__card bookmark__card_pending"
+    <Transition
+      mode="out-in"
+      name="bookmark"
     >
-      <ALoader
-        size="32"
-      />
-    </ACard>
-    <ACard
-      v-else
-      hover
-      class="bookmark__card"
-    >
-      <div class="bookmark__meta">
-        <div class="bookmark__header">
-          <NuxtImg
-            v-if="meta?.icon"
-            loading="lazy"
-            :preload="false"
-            class="bookmark__favicon bookmark__favicon_header"
-            :src="meta.icon"
-            alt="favicon"
-          />
-          <AText class="bookmark__title">
-            {{ meta?.title }}
+      <ACard
+        v-if="pending"
+        class="bookmark__card bookmark__card_pending"
+      >
+        <ALoader
+          size="32"
+        />
+      </ACard>
+      <ACard
+        v-else
+        hover
+        class="bookmark__card"
+      >
+        <div class="bookmark__meta">
+          <div class="bookmark__header">
+            <NuxtImg
+              v-if="meta?.icon"
+              loading="lazy"
+              :preload="false"
+              class="bookmark__favicon bookmark__favicon_header"
+              :src="meta.icon"
+              alt="favicon"
+            />
+            <AText class="bookmark__title">
+              {{ meta?.title }}
+            </AText>
+          </div>
+          <AText
+            v-if="meta?.description"
+            class="bookmark__description"
+          >
+            {{ meta.description }}
           </AText>
+          <div class="bookmark__link">
+            <NuxtImg
+              v-if="meta?.icon"
+              loading="lazy"
+              :preload="false"
+              class="bookmark__favicon"
+              :src="meta.icon"
+              alt="favicon"
+            />
+            <AText class="bookmark__url">
+              {{ url }}
+            </AText>
+          </div>
         </div>
-        <AText
-          v-if="meta?.description"
-          class="bookmark__description"
-        >
-          {{ meta.description }}
-        </AText>
-        <div class="bookmark__link">
-          <NuxtImg
-            v-if="meta?.icon"
-            loading="lazy"
-            :preload="false"
-            class="bookmark__favicon"
-            :src="meta.icon"
-            alt="favicon"
-          />
-          <AText class="bookmark__url">
-            {{ url }}
-          </AText>
-        </div>
-      </div>
-      <NuxtImg
-        v-if="meta?.image"
-        loading="lazy"
-        class="bookmark__preview"
-        :preload="false"
-        :src="meta.image"
-        alt="preview"
-      />
-    </ACard>
+        <NuxtImg
+          v-if="meta?.image"
+          loading="lazy"
+          class="bookmark__preview"
+          :preload="false"
+          :src="meta.image"
+          alt="preview"
+        />
+      </ACard>
+    </Transition>
   </ALink>
 </template>
 
@@ -144,6 +149,18 @@ const { data: meta, pending, error } = await useFetch("/api/meta",
     display: none;
     border-radius: 4px;
   }
+}
+
+.bookmark-enter-active,
+.bookmark-leave-active {
+  transition:
+    opacity 500ms ease-in-out,
+    height 500ms ease-in-out;
+}
+
+.bookmark-enter-from,
+.bookmark-leave-to {
+  opacity: 0;
 }
 
 @include from-sm {

@@ -35,3 +35,14 @@ onMounted(() => {
   isBannerShowed.value = !(cookie.value ?? false);
 });
 </script>
+
+<style lang="scss">
+.page-enter-active,
+.page-leave-active {
+  transition: all 100ms;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+</style>

@@ -26,105 +26,111 @@
         </ACard>
       </li>
     </ul>
-    <div
-      v-if="activeProject"
-      class="projects__view view"
+    <Transition
+      mode="out-in"
+      name="projects"
     >
-      <ATitle class="view__title">
-        {{ activeProject.name }}
-      </ATitle>
-      <AText
-        v-for="(item, idx) in activeProject.description.long"
-        :key="idx"
-        class="view__description"
-      >
-        {{ $t(item) }}
-      </AText>
       <div
-        v-if="isStackVisible"
-        class="view__stack stack"
+        v-if="activeProject"
+        :key="activeProjectIndex"
+        class="projects__view view"
       >
-        <ATitle
-          level="2"
-          class="stack__title"
-        >
-          {{ $t("page.projects.stack") }}
+        <ATitle class="view__title">
+          {{ activeProject.name }}
         </ATitle>
-        <ul class="stack__list stack__list_primary">
-          <li
-            v-for="(item, idx) in activeProject.stack.primary"
-            :key="idx"
-            class="stack__item"
-          >
-            <NuxtImg
-              class="stack__image"
-              :src="`/stack/${item}.svg`"
-              preload
-              preset="stack"
-              :alt="item"
-            />
-          </li>
-        </ul>
-        <ul class="stack__list stack__list_additional">
-          <li
-            v-for="(item, idx) in activeProject.stack.additional"
-            :key="idx"
-            class="stack__item"
-          >
-            <NuxtImg
-              class="stack__image"
-              preset="stack"
-              preload
-              :alt="item"
-              :src="`/stack/${item}.svg`"
-            />
-          </li>
-        </ul>
-      </div>
-      <div
-        v-if="isLinksVisible"
-        class="view__links links"
-      >
-        <ATitle
-          level="2"
-          class="links__title"
+        <AText
+          v-for="(item, idx) in activeProject.description.long"
+          :key="idx"
+          class="view__description"
         >
-          {{ $t("page.projects.links") }}
-        </ATitle>
-        <ul class="links__list">
-          <li
-            v-for="item in activeProject.links"
-            :key="item"
-            class="links__item"
+          {{ $t(item) }}
+        </AText>
+        <div
+          v-if="isStackVisible"
+          class="view__stack stack"
+        >
+          <ATitle
+            level="2"
+            class="stack__title"
           >
-            <ALink
-              class="links__link"
-              color
-              :href="item.url"
+            {{ $t("page.projects.stack") }}
+          </ATitle>
+          <ul class="stack__list stack__list_primary">
+            <li
+              v-for="(item, idx) in activeProject.stack.primary"
+              :key="idx"
+              class="stack__item"
             >
-              {{ item.url }}
-            </ALink>
-          </li>
-        </ul>
+              <NuxtImg
+                class="stack__image"
+                :src="`/stack/${item}.svg`"
+                preload
+                preset="stack"
+                :alt="item"
+              />
+            </li>
+          </ul>
+          <ul class="stack__list stack__list_additional">
+            <li
+              v-for="(item, idx) in activeProject.stack.additional"
+              :key="idx"
+              class="stack__item"
+            >
+              <NuxtImg
+                class="stack__image"
+                preset="stack"
+                preload
+                :alt="item"
+                :src="`/stack/${item}.svg`"
+              />
+            </li>
+          </ul>
+        </div>
+        <div
+          v-if="isLinksVisible"
+          class="view__links links"
+        >
+          <ATitle
+            level="2"
+            class="links__title"
+          >
+            {{ $t("page.projects.links") }}
+          </ATitle>
+          <ul class="links__list">
+            <li
+              v-for="item in activeProject.links"
+              :key="item"
+              class="links__item"
+            >
+              <ALink
+                class="links__link"
+                color
+                :href="item.url"
+              >
+                {{ item.url }}
+              </ALink>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div
-      v-else
-      class="projects__empty empty"
-    >
-      <NuxtImg
-        class="empty__cat"
-        src="/tokiory/question.svg"
-        preload
-        format="webp"
-      />
-      <ATitle class="empty__title">
-        {{ $t("page.projects.chooseTitle") }}
-      </ATitle>
-      <AText class="empty__text">
-        {{ $t("page.projects.chooseDescription") }}
-      </AText>
-    </div>
+      <div
+        v-else
+        class="projects__empty empty"
+      >
+        <NuxtImg
+          class="empty__cat"
+          src="/tokiory/question.svg"
+          preload
+          format="webp"
+        />
+        <ATitle class="empty__title">
+          {{ $t("page.projects.chooseTitle") }}
+        </ATitle>
+        <AText class="empty__text">
+          {{ $t("page.projects.chooseDescription") }}
+        </AText>
+      </div>
+    </Transition>
   </main>
 </template>
 
@@ -296,6 +302,22 @@ const isLinksVisible = computed(() => {
     margin-top: 12px;
     text-align: center;
   }
+}
+
+.projects-enter-active,
+.projects-leave-active,
+.view-enter-active,
+.view-leave-active {
+  transition:
+    opacity 200ms ease-in-out,
+    height 200ms ease-in-out;
+}
+
+.projects-enter-from,
+.projects-leave-to,
+.view-enter-from,
+.view-leave-to {
+  opacity: 0;
 }
 
 @include from-sm {
