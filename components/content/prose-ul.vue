@@ -14,6 +14,7 @@
 
   & > li {
     position: relative;
+    margin: 2px 0;
 
     &::before {
       background: var(--color-neutral-13);
