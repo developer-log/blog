@@ -3,11 +3,10 @@
     v-if="!error"
     class="source"
   >
-    <Icon
+    <ALoader
       v-if="pending"
       size="18"
       class="source__spinner"
-      name="svg-spinners:90-ring-with-bg"
     />
     <div
       v-else

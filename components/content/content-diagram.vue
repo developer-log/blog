@@ -12,10 +12,9 @@
         v-if="pending"
         class="diagram__stub"
       >
-        <Icon
+        <ALoader
           size="32"
           class="diagram__loader"
-          name="svg-spinners:90-ring-with-bg"
         />
       </div>
       <div

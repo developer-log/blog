@@ -9,9 +9,8 @@
       v-if="pending"
       class="bookmark__card bookmark__card_pending"
     >
-      <Icon
+      <ALoader
         size="32"
-        name="svg-spinners:90-ring-with-bg"
       />
     </ACard>
     <ACard
