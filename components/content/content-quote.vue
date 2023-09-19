@@ -28,4 +28,10 @@ defineProps<ContentQuoteProperties>();
     margin-top: 12px;
   }
 }
+
+@include theme-dark {
+  .quote {
+    border-left-color: var(--color-green-normal);
+  }
+}
 </style>

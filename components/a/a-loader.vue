@@ -1,5 +1,6 @@
 <template>
   <svg
+    class="loader"
     xmlns="http://www.w3.org/2000/svg"
     :width="size"
     :height="size"
@@ -33,3 +34,10 @@ withDefaults(defineProps<LoaderProperties>(), {
 });
 </script>
 
+<style lang="scss" scoped>
+@include theme-dark {
+  .loader {
+    filter: invert(1);
+  }
+}
+</style>
