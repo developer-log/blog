@@ -9,12 +9,13 @@
         :key="item"
         class="navigation__item"
       >
-        <NuxtLink
+        <ALink
           class="navigation__item"
+          color
           :href="getNavigationUrl(item.anchor)"
         >
           {{ item.title }}
-        </NuxtLink>
+        </ALink>
       </li>
     </ul>
   </ContentDetails>
