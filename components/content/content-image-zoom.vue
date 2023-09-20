@@ -74,7 +74,8 @@ watch(scaleModifier, modifier => {
 
 <style lang="scss" scoped>
 .image-zoom {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,6 +87,7 @@ watch(scaleModifier, modifier => {
 
 
   &__img {
+    transition: all 200ms ease-out;
     width: 100%;
     user-select: none;
     cursor: zoom-in;
@@ -94,6 +96,12 @@ watch(scaleModifier, modifier => {
     &.active {
       cursor: zoom-out;
     }
+  }
+}
+
+@include theme-dark {
+  .image-zoom {
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 </style>
