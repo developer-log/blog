@@ -28,11 +28,18 @@ const getMouseCenterRelativePercentages = (mousePositionPercentages: Coordinates
     y: (mousePositionPercentages.y - 50) * -1,
   };
 
+  const ADDITIONAL_FORCE_MODIFIER: Coordinates = {
+    x: 1.2,
+    y: 1.1,
+  };
+
   let coordinateName: keyof Coordinates;
   for (coordinateName in result) {
     if (Math.abs(result[coordinateName]) > 75) {
       result[coordinateName] += result[coordinateName] >= 0 ? -25 : 25;
     }
+
+    result[coordinateName] *= ADDITIONAL_FORCE_MODIFIER[coordinateName];
   }
 
   return result;

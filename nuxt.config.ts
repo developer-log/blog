@@ -2,11 +2,13 @@ import type { NuxtConfig } from "nuxt/config";
 import { defineNuxtConfig } from "nuxt/config";
 
 const developmentMode = process.env.NODE_ENV === "development";
+
 const locales = [ "en", "ru", "ko", "be", "kk" ];
 
 const features = {
   IMG_ZOOM: true,
-  DIAGRAM_ZOOM: developmentMode,
+  DIAGRAM_ZOOM: true,
+  COMMENTARIES: developmentMode,
 };
 
 const alias: NuxtConfig["alias"] = {

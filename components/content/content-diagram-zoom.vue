@@ -4,7 +4,8 @@
     class="image-zoom"
     role="button"
     tabindex="0"
-    @click="imageZoom.hide"
+    @click="hide"
+    @keydown.esc="hide"
   >
     <div
       ref="objectReference"
@@ -24,10 +25,10 @@
 
 <script lang="ts" setup>
 const objectReference = ref<HTMLObjectElement>();
-const imageZoom = useDiagramZoom();
+const diagramZoom = useDiagramZoom();
 const scrollLock = useScrollLock();
 const mousemoveNavigation = useMousemoveNavigation(objectReference);
-const diagram = imageZoom.zoomDiagram();
+const diagram = diagramZoom.zoomDiagram();
 const scaleModifier = ref(1);
 
 const MAX_ZOOM = 2;
@@ -42,13 +43,19 @@ const zoomIn = () => {
 
 const zoomOut = () => {
   if (scaleModifier.value === 1)
-    imageZoom.hide();
+    diagramZoom.hide();
 
   if (scaleModifier.value > 1)
     scaleModifier.value--;
 
   if (scaleModifier.value === 1)
     mousemoveNavigation.toggle(false);
+};
+
+const hide = () => {
+  diagramZoom.hide();
+  scaleModifier.value = 1;
+  mousemoveNavigation.toggle(false);
 };
 
 watch(diagram, diagram => {
@@ -87,6 +94,7 @@ watch(scaleModifier, modifier => {
 
   &__object {
     transition: all 200ms ease-out;
+    border-radius: 6px;
     width: 100%;
     user-select: none;
     cursor: zoom-in;
@@ -98,7 +106,7 @@ watch(scaleModifier, modifier => {
 
     &:deep(svg) {
       width: 100%;
-      height: fit-content;
+      max-height: calc(100vh - 32px);
       font-family: "Virgil", 'Montserrat Variable', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     }
   }

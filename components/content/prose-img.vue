@@ -5,7 +5,7 @@
     format="webp"
     lazy
     class="post-content-image"
-    @click="isZoomFeatureEnabled && imageZoom.show(fullpath)"
+    @click="showZoomPreview"
   />
 </template>
 
@@ -28,6 +28,10 @@ const fullpath = computed(() => {
   // eslint-disable-next-line compat/compat
   return new URL(properties.src, requestURL).href;
 });
+
+const showZoomPreview = () => {
+  isZoomFeatureEnabled && imageZoom.show(fullpath.value) ;
+};
 </script>
 
 <style lang="scss" scoped>

@@ -4,7 +4,8 @@
     class="image-zoom"
     role="button"
     tabindex="0"
-    @click="imageZoom.hide"
+    @click="hide"
+    @keydown.esc="hide"
   >
     <img
       ref="objectReference"
@@ -52,6 +53,11 @@ const zoomOut = () => {
     mousemoveNavigation.toggle(false);
 };
 
+const hide = () => {
+  imageZoom.hide();
+  scaleModifier.value = 1;
+};
+
 watch(url, url => {
   if (url !== null) {
     scrollLock.lock();
@@ -88,6 +94,7 @@ watch(scaleModifier, modifier => {
 
   &__img {
     transition: all 200ms ease-out;
+    border-radius: 6px;
     width: 100%;
     user-select: none;
     cursor: zoom-in;

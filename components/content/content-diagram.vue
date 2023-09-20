@@ -22,8 +22,8 @@
         class="diagram__content"
         role="button"
         tabindex="0"
-        @click="hasZoomFeature && diagramZoom.show(scheme)"
-        @keydown.enter="hasZoomFeature && diagramZoom.show(scheme)"
+        @click="showZoomPreview"
+        @keydown.enter="showZoomPreview"
         v-html="scheme"
       />
     </Transition>
@@ -31,6 +31,8 @@
 </template>
 
 <script setup lang="ts">
+import type PointerEvent from "happy-dom/lib/event/events/PointerEvent";
+
 interface ContentSchemeProperties {
   src: string;
 }
@@ -39,8 +41,6 @@ const properties = defineProps<ContentSchemeProperties>();
 const requestURL = useRequestURL();
 const runtimeConfig = useRuntimeConfig();
 const diagramZoom = useDiagramZoom();
-
-
 
 // TODO: Make a composable with all features
 const hasZoomFeature = computed(() => {
@@ -53,6 +53,16 @@ const { pending, data: scheme, error } = await useAsyncData<string>(`${requestUR
   const response = await $fetch<Blob>(absoluteURL.href);
   return response.text();
 }, { lazy: true });
+
+const showZoomPreview = (event: PointerEvent) => {
+  if (!hasZoomFeature.value)
+    return;
+
+  if (event.pointerType !== "mouse")
+    return;
+
+  diagramZoom.show(scheme.value!);
+};
 </script>
 
 <style scoped lang="scss">
