@@ -4,7 +4,8 @@
 $z-index:
   header-menu,
   header,
-  header-control;
+  header-control,
+  zoom-image;
 
 @mixin zi($name) {
   $idx: list.index($z-index, $name);

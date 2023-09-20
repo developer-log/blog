@@ -33,6 +33,14 @@ interface ContentSchemeProperties {
 
 const properties = defineProps<ContentSchemeProperties>();
 const requestURL = useRequestURL();
+const runtimeConfig = useRuntimeConfig();
+
+
+// TODO: Make a composable with all features
+const hasZoomFeature = computed(() => {
+  return runtimeConfig.public.features.DIAGRAM_ZOOM;
+});
+console.log(hasZoomFeature);
 
 const { pending, data: scheme, error } = await useAsyncData<string>(`${requestURL.pathname}-${properties.src}`, async () => {
   // eslint-disable-next-line compat/compat

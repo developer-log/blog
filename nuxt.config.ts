@@ -1,7 +1,13 @@
 import type { NuxtConfig } from "nuxt/config";
 import { defineNuxtConfig } from "nuxt/config";
 
+const developmentMode = process.env.NODE_ENV === "development";
 const locales = [ "en", "ru", "ko", "be", "kk" ];
+
+const features = {
+  IMG_ZOOM: true,
+  DIAGRAM_ZOOM: developmentMode,
+};
 
 const alias: NuxtConfig["alias"] = {
   "@t": "./types",
@@ -154,6 +160,7 @@ const content: NuxtConfig["content"] = {
 const runtimeConfig: NuxtConfig["runtimeConfig"] = {
   public: {
     locales,
+    features,
   }
 };
 

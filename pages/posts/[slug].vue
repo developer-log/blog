@@ -59,6 +59,7 @@
         />
       </div>
     </div>
+    <ContentImageZoom />
   </div>
 </template>
 
