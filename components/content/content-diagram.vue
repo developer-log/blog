@@ -18,8 +18,12 @@
         />
       </div>
       <div
-        v-else
+        v-else-if="scheme"
         class="diagram__content"
+        role="button"
+        tabindex="0"
+        @click="hasZoomFeature && diagramZoom.show(scheme)"
+        @keydown.enter="hasZoomFeature && diagramZoom.show(scheme)"
         v-html="scheme"
       />
     </Transition>
@@ -34,13 +38,14 @@ interface ContentSchemeProperties {
 const properties = defineProps<ContentSchemeProperties>();
 const requestURL = useRequestURL();
 const runtimeConfig = useRuntimeConfig();
+const diagramZoom = useDiagramZoom();
+
 
 
 // TODO: Make a composable with all features
 const hasZoomFeature = computed(() => {
   return runtimeConfig.public.features.DIAGRAM_ZOOM;
 });
-console.log(hasZoomFeature);
 
 const { pending, data: scheme, error } = await useAsyncData<string>(`${requestURL.pathname}-${properties.src}`, async () => {
   // eslint-disable-next-line compat/compat

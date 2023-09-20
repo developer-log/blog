@@ -69,16 +69,6 @@ export default function (elementReference: Ref<HTMLElement | undefined>) {
     const centerMousePositionPercentage = getMouseCenterRelativePercentages(absoluteMousePositionPercentage);
 
     elementReference.value.style.translate = `${centerMousePositionPercentage.x}% ${centerMousePositionPercentage.y}%`;
-
-    console.log(centerMousePositionPercentage);
-
-    // elementReference.value!.offsetLeft;
-    // console.log({
-    //   x: event.x,
-    //   y: event.y
-    // });
-
-    // elementInformation;
   };
 
   watch(isActive, state => {
