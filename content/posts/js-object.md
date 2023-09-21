@@ -5,6 +5,7 @@ tags:
   - web
   - under-the-hood
 date: 5 Sep 2023
+_draft: true
 references:
   - name: "MDN: Working with objects"
     url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects

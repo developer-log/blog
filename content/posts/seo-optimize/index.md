@@ -5,6 +5,7 @@ tags:
   - html
   - css
 date: 14 Sep 2023
+_draft: true
 references:
   - name: Когда клиенты — твои коллеги. Оптимизация веб-производительности внутренних систем
     url: https://habr.com/ru/companies/timeweb/articles/544956/

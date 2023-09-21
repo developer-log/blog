@@ -5,6 +5,9 @@ tags:
   - frontend
   - pattern
 date: 16 Sep 2023
+origin:
+  type: vc
+  url: https://vc.ru/dev/846778-csr-ssr-ssg-isr-i-drugie-abbreviatury
 references:
   - name: What is the difference between SSR, ISR, CSR, SSG
     url: https://dev.to/mojodev/what-is-the-difference-between-ssr-isr-csr-ssg-2g9p

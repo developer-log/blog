@@ -4,6 +4,9 @@ tags:
   - javascript
   - frontend
 date: 12 Sep 2023
+origin:
+  type: Habr
+  url: https://habr.com/ru/articles/762618/
 references:
   - name: "Event loop under the hood"
     url: https://dev.to/_staticvoid/node-js-under-the-hood-3-deep-dive-into-the-event-loop-135d
