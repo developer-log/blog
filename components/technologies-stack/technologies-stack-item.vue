@@ -32,6 +32,7 @@ const { t } = useI18n();
     display: flex;
     justify-content: space-between;
     align-content: center;
+    gap: 12px;
 
     &:hover {
       border-color: var(--color-red-normal-hover);
@@ -40,6 +41,7 @@ const { t } = useI18n();
 
   &__value {
     color: var(--color-neutral-8);
+    white-space: nowrap;
   }
 }
 
