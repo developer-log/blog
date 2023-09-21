@@ -243,6 +243,11 @@ const isLinksVisible = computed(() => {
     flex-wrap: wrap;
   }
 
+  &__image {
+    max-width: 100%;
+    width: 100%;
+  }
+
   &__item {
     display: flex;
     justify-content: center;
@@ -252,6 +257,7 @@ const isLinksVisible = computed(() => {
     border: 1px solid var(--color-neutral-4);
     border-radius: 4px;
     padding: 8px;
+    overflow: hidden;
   }
 }
 
