@@ -39,7 +39,10 @@
         class="post__navigation post__navigation_mobile"
         :navigation="navigation"
       />
-      <article class="post__render">
+      <article
+        ref="articleReference"
+        class="post__render"
+      >
         <ContentRendererMarkdown
           :value="data"
         />
@@ -74,6 +77,7 @@ import type { MarkdownParsedContent } from "@nuxt/content/dist/runtime/types";
 const url = useRequestURL();
 const { t } = useI18n();
 const localePath = useLocalePath();
+const articleReference = ref<HTMLDivElement>();
 
 const { data } = await useAsyncData(() => queryContent<PostItemContent & MarkdownParsedContent>(getPostSlug(url)).findOne());
 
@@ -118,7 +122,7 @@ const navigation = computed<PostNavigationItem[]>(() => {
 });
 
 const activeAnchor = ref(decodeURI(url.hash).replace("#", ""));
-let observer: IntersectionObserver;
+let observer: IntersectionObserver | null;
 let onScroll = (entries: IntersectionObserverEntry[]) => {
   for (const entry of entries) {
     if (entry.isIntersecting) {
@@ -128,7 +132,7 @@ let onScroll = (entries: IntersectionObserverEntry[]) => {
 };
 
 onMounted(() => {
-  const titles = document.querySelectorAll(".title");
+  const titles = articleReference.value?.querySelectorAll(".title") ?? [];
   if (titles.length <= 0) {
     return;
   }
@@ -144,7 +148,11 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  observer?.disconnect();
+  if (observer !== null) {
+    observer.disconnect();
+  }
+
+  observer = null;
 });
 </script>
 
