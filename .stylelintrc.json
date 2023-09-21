@@ -2,5 +2,8 @@
   "extends": [
     "stylelint-config-recommended-scss",
     "stylelint-config-recommended-vue/scss"
+  ],
+  "ignoreFiles": [
+    ".artifacts/**/*"
   ]
 }
