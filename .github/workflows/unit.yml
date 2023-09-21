@@ -1,0 +1,41 @@
+name: Unit Test
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: "8.x"
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: BerniWittmann/background-server-action@v1
+        with:
+          build: "pnpm app:build"
+          start: "pnpm app:dev"
+          wait-on: 'http://localhost:8100'
+
+      - name: Run tests
+        run: "pnpm test:unit:run"
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: .artifacts/
+
