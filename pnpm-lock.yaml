@@ -12,9 +12,6 @@ dependencies:
   '@fontsource-variable/montserrat':
     specifier: ^5.0.9
     version: 5.0.9
-  '@fontsource/iosevka':
-    specifier: ^5.0.7
-    version: 5.0.7
   '@resvg/resvg-js':
     specifier: ^2.4.1
     version: 2.4.1
@@ -1218,10 +1215,6 @@ packages:
 
   /@fontsource-variable/montserrat@5.0.9:
     resolution: {integrity: sha512-TA18z95y4Oo8ABwKXUAVVXQSSqnZ3lTsz2+bBD1Vwl7XivQw8u1bFU/9tEDlSE0ipZhCYiiMxWn4cjUw7Awkcw==}
-    dev: false
-
-  /@fontsource/iosevka@5.0.7:
-    resolution: {integrity: sha512-X8s5hob/XEMPgY6JsgIwVRYsBMOxeSWlSXAWqZWeFcSF/ZyUsq/ut2fqgOlhUweBqS/ttiPBwJLXl7EPJsWqEg==}
     dev: false
 
   /@hapi/hoek@9.3.0:

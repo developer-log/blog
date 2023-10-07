@@ -87,6 +87,10 @@ const fontLoader: NuxtConfig["fontLoader"] = {
       src: "/fonts/virgil/Virgil.woff2",
       family: "Virgil",
     },
+    {
+      src: "/fonts/iosevka/iosevka-regular.woff2",
+      family: "Iosevka",
+    }
   ]
 };
 
@@ -174,7 +178,7 @@ export default defineNuxtConfig({
   router: {
     options: {
       sensitive: false,
-    }
+    },
   },
   css: [
     "normalize.css/normalize.css"
