@@ -11,6 +11,17 @@ const features = {
   COMMENTARIES: developmentMode,
 };
 
+const routeRules: NuxtConfig["routeRules"] = {
+  "/posts/**": {
+    // TODO: Figure out how to make Lazy SSR on post pages. For now we will only render CSR
+    ssr: false,
+    prerender: true,
+    cache: {
+      maxAge: 60 * 60
+    }
+  },
+};
+
 const alias: NuxtConfig["alias"] = {
   "@t": "./types",
   "@style": "./styles",
@@ -129,7 +140,6 @@ const i18n: NuxtConfig["i18n"] = {
   strategy: "prefix_except_default",
   detectBrowserLanguage: {
     useCookie: true,
-
   },
 };
 
@@ -187,6 +197,7 @@ export default defineNuxtConfig({
     port: Number.parseInt(process.env.PORT ?? "8100"),
   },
   app,
+  routeRules,
   modules,
   fontLoader,
   vite,
