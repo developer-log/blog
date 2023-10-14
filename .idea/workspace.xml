@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc18221-0e23-448d-bf01-5f30a0c39e13" name="Changes" comment="feat(readme): update readme">
-      <change afterPath="$PROJECT_DIR$/public/fonts/jetbrains-mono/OFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/jetbrains-mono/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/jetbrains-mono/jetbrains-mono-regular.ttf" afterDir="false" />
+    <list default="true" id="ecc18221-0e23-448d-bf01-5f30a0c39e13" name="Changes" comment="feat(features): add post navigation feature toggler">
       <change afterPath="$PROJECT_DIR$/tests/e2e/spec/post-navigation.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/content/prose-code-inline.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/content/prose-code-inline.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/content/prose-code.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/content/prose-code.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header/header-menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/header-menu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/post-navigation/post-navigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/post-navigation/post-navigation.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/post-source/post-source.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/post-source/post-source.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/content/license.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/content/license.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/posts/[slug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/posts/[slug].vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/iosevka/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/iosevka/iosevka-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/virgil/Virgil.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/virgil/virgil-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/postbuild/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/postbuild/fonts.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +99,7 @@
       <workItem from="1696700191922" duration="3475000" />
       <workItem from="1696774659400" duration="4667000" />
       <workItem from="1697294986597" duration="4238000" />
-      <workItem from="1697312334692" duration="1360000" />
+      <workItem from="1697312334692" duration="1547000" />
     </task>
     <task id="LOCAL-00001" summary="feat(iosevka): add iosevka font">
       <option name="closed" value="true" />
@@ -164,7 +149,31 @@
       <option name="project" value="LOCAL" />
       <updated>1697296504285</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat(fonts): remove iosevka; add jetbrains mono">
+      <option name="closed" value="true" />
+      <created>1697313793298</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697313793299</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat(features): add post navigation feature toggler">
+      <option name="closed" value="true" />
+      <created>1697313813507</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697313813507</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat(features): add post navigation feature toggler">
+      <option name="closed" value="true" />
+      <created>1697313826379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697313826379</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +196,8 @@
     <MESSAGE value="feat(app): optimized ssr" />
     <MESSAGE value="feat(readme): update readme and remove nuxt-font-loader" />
     <MESSAGE value="feat(readme): update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(readme): update readme" />
+    <MESSAGE value="feat(fonts): remove iosevka; add jetbrains mono" />
+    <MESSAGE value="feat(features): add post navigation feature toggler" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(features): add post navigation feature toggler" />
   </component>
 </project>
