@@ -104,7 +104,7 @@ You also can use next terminal commands:
     - `test:unit:watch`: Watch for unit tests;
   - `test:end`: Commands for end to end tests;
     - `test:end:run`: Run end to end tests in CLI;
-    - `test:end:ui`: Run end to end tests in GUI;
+    - `test:end:gui`: Run end to end tests in GUI;
     - `test:end:setup`: Setup browsers for testing;
     - `test:end:record`: Record End to end test;
 - `deploy`: Commands for deploying

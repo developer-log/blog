@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc18221-0e23-448d-bf01-5f30a0c39e13" name="Changes" comment="feat(app): optimized ssr">
+    <list default="true" id="ecc18221-0e23-448d-bf01-5f30a0c39e13" name="Changes" comment="feat(readme): update readme and remove nuxt-font-loader">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Test__End_to_end_GUI.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playwright.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,29 +33,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tokiory/Software/blog-archive/public/fonts/iosevka&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;/Users/tokiory/Software/blog-archive/node_modules/stylelint&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/tokiory/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/tokiory/Software/blog-archive/public/fonts/iosevka",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "/Users/tokiory/Software/blog-archive/node_modules/stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "ts.external.directory.path": "/Users/tokiory/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/fonts/iosevka" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.App: Development" />
+  <component name="RunManager" selected="npm.Test: End to end GUI">
+    <list>
+      <item itemvalue="Docker.Developer Log" />
+      <item itemvalue="npm.App: Build" />
+      <item itemvalue="npm.App: Development" />
+      <item itemvalue="npm.App: Run production server" />
+      <item itemvalue="npm.Deploy: Development Server" />
+      <item itemvalue="npm.Deploy: Production Server" />
+      <item itemvalue="npm.Lint: ESLint" />
+      <item itemvalue="npm.Lint: Stylelint" />
+      <item itemvalue="npm.Test: End to end" />
+      <item itemvalue="npm.Test: End to end GUI" />
+      <item itemvalue="npm.Test: Setup e2e browsers" />
+      <item itemvalue="npm.Test: Unit" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.Test: End to end GUI" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +94,7 @@
       <workItem from="1696623444712" duration="3123000" />
       <workItem from="1696700191922" duration="3475000" />
       <workItem from="1696774659400" duration="4667000" />
-      <workItem from="1697294986597" duration="1167000" />
+      <workItem from="1697294986597" duration="1511000" />
     </task>
     <task id="LOCAL-00001" summary="feat(iosevka): add iosevka font">
       <option name="closed" value="true" />
@@ -107,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697295066387</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(readme): update readme and remove nuxt-font-loader">
+      <option name="closed" value="true" />
+      <created>1697296342529</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697296342529</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +157,7 @@
     <MESSAGE value="feat(iosevka): add iosevka font" />
     <MESSAGE value="feat(posts): change render pattern to csr" />
     <MESSAGE value="feat(app): optimized ssr" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app): optimized ssr" />
+    <MESSAGE value="feat(readme): update readme and remove nuxt-font-loader" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(readme): update readme and remove nuxt-font-loader" />
   </component>
 </project>
