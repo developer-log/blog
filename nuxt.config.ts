@@ -5,10 +5,11 @@ const developmentMode = process.env.NODE_ENV === "development";
 
 const locales = [ "en", "ru", "ko", "be", "kk" ];
 
-const features = {
+export const features = {
   IMG_ZOOM: true,
   DIAGRAM_ZOOM: true,
   COMMENTARIES: developmentMode,
+  POST_NAVIGATION: false,
 };
 
 const routeRules: NuxtConfig["routeRules"] = {

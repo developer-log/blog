@@ -48,6 +48,7 @@ interface PostNavigationProperties {
 const properties = defineProps<PostNavigationProperties>();
 defineEmits<{"update:modelValue": [value: string]}>();
 
+const runtimeConfig = useRuntimeConfig();
 const containerReference = ref<HTMLElement>();
 const itemsReference = ref<HTMLDivElement[]>([]);
 const route = useRoute();
@@ -55,6 +56,10 @@ const getNavigationUrl = (id: string) => `${route.path}#${encodeURI(id)}`;
 const getNavId = (anchor: string) => `nav-${anchor}`;
 
 watch(() => properties.modelValue, anchor => {
+  if (!runtimeConfig.public.features.POST_NAVIGATION) {
+    return;
+  }
+
   if (!containerReference.value || itemsReference.value.length === 0) {
     return;
   }
