@@ -68,7 +68,7 @@ const copy = async () => {
   }
 
   &:deep(code) {
-    font-family: 'Iosevka', Fira Code, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: 'JetBrains Mono', Fira Code, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
     font-size: 14px;
     letter-spacing: 0.7px;
   }

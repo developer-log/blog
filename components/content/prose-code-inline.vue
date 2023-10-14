@@ -8,7 +8,7 @@
 .code {
   display: inline-block;
   line-height: 1;
-  font-family: 'Iosevka', Fira Code, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-family: 'JetBrains Mono', Fira Code, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-size: 16px;
   color: var(--color-red-dark);
   background: var(--color-neutral-3);
