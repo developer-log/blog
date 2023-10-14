@@ -92,27 +92,9 @@ const app: NuxtConfig["app"] = {
   }
 };
 
-// const fontLoader: NuxtConfig["fontLoader"] = {
-//   local: [
-//     {
-//       src: "/fonts/virgil/Virgil.woff2",
-//       family: "Virgil",
-//       display: "swap",
-//       weight: "400",
-//     },
-//     {
-//       src: "/fonts/iosevka/iosevka-regular.woff2",
-//       family: "Iosevka",
-//       display: "swap",
-//       weight: "400",
-//     }
-//   ]
-// };
-
 const modules: NuxtConfig["modules"] = [
   "@nuxtjs/i18n",
   "nuxt-simple-sitemap",
-  "nuxt-font-loader",
   "nuxt-content-assets",
   "@nuxt/content",
   "@nuxt/image",
@@ -203,7 +185,6 @@ export default defineNuxtConfig({
   app,
   routeRules,
   modules,
-  // fontLoader,
   vite,
   alias,
   i18n,

@@ -32,10 +32,12 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
 - [@typescript-eslint/eslint-plugin](https://typescript-eslint.io) - ESLint plugin for typescript;
 
 ### Stylelint modules ☄️
+- [stylelint-config-recommended-scss](https://www.npmjs.com/package/stylelint-config-recommended-scss) - Config for scss stylesheets;
+- [stylelint-config-recommended-vue](https://www.npmjs.com/package/stylelint-config-recommended-vue) - Config for vue stylesheets;
+
 ### Nuxt modules 💫
 - [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
 - [nuxt-simple-sitemap](https://nuxt.com/modules/simple-sitemap) - Adds sitemap;
-- [nuxt-font-loader](https://www.npmjs.com/package/nuxt-font-loader) - Optimized font loading for Nuxt 3+;
 - [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
 - [@nuxt/content](https://content.nuxtjs.org) - Adds content to the nuxt;
 - [@nuxt/devtools](https://nuxt.com/modules/devtools) - Devtools for Nuxt 3;
@@ -63,14 +65,6 @@ pnpm i
 Here is the template file for .env:
 
 ```dotenv
-# Sentry
-SENTRY_DSN=<SENTRY_DSN>
-
-# Supabase
-SUPABASE_URL=<SUPABASE_URL>
-SUPABASE_KEY=<SUPABASE_KEY>
-SUPABASE_SERVICE_KEY=<SUPABASE_SERVICE_KEY>
-
 # Nuxt
 PORT=8100
 PUBLIC_URL=https://developer-log.vercel.app
@@ -120,8 +114,8 @@ You also can use next terminal commands:
 
 ## Testing 🥰
 Testing is done thanks to two frameworks:
-- vitest
-- playwright
+- [vitest](https://vitest.dev/)
+- [playwright](https://playwright.dev/)
 
 Vitest is used for unit tests. It use happy dom to simulate browser DOM and
 `@nuxt/test-utils`.
@@ -166,43 +160,3 @@ This project has husky and [git hooks](https://gist.github.com/tokiory/5b99a6852
 For adaptive layout we use sass mixins, they are defined in `styles/prebuild/breakpoint.scss`.
 
 Blog also have a dark theme. Mixin for dark theme is defined in `styles/prebuild/theme.scss`.
-
-
-### Excalidraw ✍️
-Sometimes I use Excalidraw to illustrate a concept. The problem with Excalidraw is that it loads fonts from its resource.
-In order to reduce the delay before the fonts appear correctly in the diagrams,
-I downloaded the font that Excalidraw uses ([Virgil](https://virgil.excalidraw.com/)).
-
-The problem is that Excalidraw sets its own font in each of the svg we use.
-That is why when using the new svg file from Excalidraw we need to replace this code:
-
-```svg
-<defs>
-  <style class="style-fonts">
-    @font-face {
-    font-family: "Virgil";
-    src: url("https://excalidraw.com/Virgil.woff2");
-    }
-    @font-face {
-    font-family: "Cascadia";
-    src: url("https://excalidraw.com/Cascadia.woff2");
-    }
-  </style>
-</defs>
-```
-
-To this code:
-
-```svg
-<defs>
-  <style class="style-fonts">
-    @font-face {
-    font-family: "Virgil";
-    src: url("/fonts/virgil/Virgil.woff2"); // Use downloaded font
-    }
-  </style>
-</defs>
-```
-
-> **Note**
-> Later I plan to write a plugin for Vite to automatically link such font imports from third-party resources
