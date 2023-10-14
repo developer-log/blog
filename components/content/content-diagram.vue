@@ -47,12 +47,14 @@ const hasZoomFeature = computed(() => {
   return runtimeConfig.public.features.DIAGRAM_ZOOM;
 });
 
-const { pending, data: scheme, error } = await useAsyncData<string>(`${requestURL.pathname}-${properties.src}`, async () => {
+const { pending, data: scheme, error } = await useLazyAsyncData<string>(`${requestURL.pathname}-${properties.src}`, async () => {
   // eslint-disable-next-line compat/compat
   const absoluteURL = new URL(properties.src, requestURL);
   const response = await $fetch<Blob>(absoluteURL.href);
   return response.text();
-}, { lazy: true });
+}, {
+  server: false,
+});
 
 const showZoomPreview = (event: PointerEvent) => {
   if (!hasZoomFeature.value)

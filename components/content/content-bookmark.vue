@@ -76,10 +76,10 @@ interface BookmarkProperties {
 
 const properties = defineProps<BookmarkProperties>();
 
-const { data: meta, pending, error } = await useFetch("/api/meta",
+const { data: meta, pending, error } = await useLazyFetch("/api/meta",
   {
-    lazy: true,
     method: "POST",
+    server: false,
     body: {
       url: properties.url
     },

@@ -9,6 +9,7 @@
       <img
         class="content-svg__fallback"
         :src="src"
+        loading="lazy"
         :alt="alt"
       >
     </object>

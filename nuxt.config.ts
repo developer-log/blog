@@ -14,7 +14,7 @@ const features = {
 const routeRules: NuxtConfig["routeRules"] = {
   "/posts/**": {
     // TODO: Figure out how to make Lazy SSR on post pages. For now we will only render CSR
-    ssr: false,
+    ssr: true,
     prerender: true,
     cache: {
       maxAge: 60 * 60
@@ -92,18 +92,22 @@ const app: NuxtConfig["app"] = {
   }
 };
 
-const fontLoader: NuxtConfig["fontLoader"] = {
-  local: [
-    {
-      src: "/fonts/virgil/Virgil.woff2",
-      family: "Virgil",
-    },
-    {
-      src: "/fonts/iosevka/iosevka-regular.woff2",
-      family: "Iosevka",
-    }
-  ]
-};
+// const fontLoader: NuxtConfig["fontLoader"] = {
+//   local: [
+//     {
+//       src: "/fonts/virgil/Virgil.woff2",
+//       family: "Virgil",
+//       display: "swap",
+//       weight: "400",
+//     },
+//     {
+//       src: "/fonts/iosevka/iosevka-regular.woff2",
+//       family: "Iosevka",
+//       display: "swap",
+//       weight: "400",
+//     }
+//   ]
+// };
 
 const modules: NuxtConfig["modules"] = [
   "@nuxtjs/i18n",
@@ -199,7 +203,7 @@ export default defineNuxtConfig({
   app,
   routeRules,
   modules,
-  fontLoader,
+  // fontLoader,
   vite,
   alias,
   i18n,

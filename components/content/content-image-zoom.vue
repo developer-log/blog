@@ -16,6 +16,7 @@
       aria-label="Zoom of the image"
       :src="url"
       alt="Zoom of the image"
+      loading="lazy"
       @keydown.enter="zoomIn"
       @keydown.esc="zoomOut"
       @click.stop="zoomIn"
