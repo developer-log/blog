@@ -102,30 +102,11 @@ useSeoMeta({
 
 // Navigation section
 const navigation = computed<PostNavigationItem[]>(() => {
-  if (!data.value) {
-    return [];
-  }
-
   if (!hasNavigationEnabled) {
     return [];
   }
 
-  return data.value.body.children
-    .filter(node => {
-      const headerRegex = /^h\d$/g;
-      const text = node.children?.at(0)?.type === "text" ? node.children?.at(0)?.value : "";
-      return node.tag && headerRegex.test(node.tag) && text;
-    })
-    .map((node, id) => {
-      const title = node.children?.at(0)?.value ?? "";
-      const level = Number.parseInt(node.tag?.replaceAll(/\D/g, "") ?? "");
-      return {
-        title,
-        level: Number.isNaN(level) ? 0 : level - 1,
-        anchor: node.props?.id,
-        id
-      };
-    });
+  return data.value?.toc ?? [];
 });
 
 const activeAnchor = ref(decodeURI(url.hash).replace("#", ""));
