@@ -82,7 +82,8 @@ const articleReference = ref<HTMLDivElement>();
 const runtimeConfig = useRuntimeConfig();
 const hasNavigationEnabled = runtimeConfig.public.features.POST_NAVIGATION;
 
-const { data } = await useAsyncData(() => queryContent<PostItemContent & MarkdownParsedContent>(getPostSlug(url)).findOne());
+const contentQuery = queryContent<PostItemContent & MarkdownParsedContent>(getPostSlug(url));
+const { data } = await useAsyncData(() => contentQuery.findOne());
 
 const shortDescription = (description: string) => {
   return description.split(".").slice(0, 1).join(".");
