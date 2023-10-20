@@ -76,9 +76,7 @@ const locale =  getLocaleCookie() ?? "ru";
 
 // Watch
 watch(() => route.query?.search, (v) => {
-  if (typeof v === "string") {
-    search.value = v;
-  }
+  search.value = v ?? "";
 });
 
 // Methods
