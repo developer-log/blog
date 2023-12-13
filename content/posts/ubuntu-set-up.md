@@ -12,7 +12,7 @@ date: 3 Jul 2021
 
 По умолчанию в Ubuntu используется только английский язык. Для того чтобы подключить русский нужно ввести *Settings*, а затем найти вкладку *Region & Language*, после того как вы найдете нужную вкладку нужно нажать плюсик:
 
-![](./assets/language.png)
+![](/posts/ubuntu-set-up/language.png)
 
 Находим слово *Russian*.
 Всё, русский язык теперь есть.
@@ -22,24 +22,24 @@ date: 3 Jul 2021
 Также можно перевести и всю систему на русский язык.
 Для этого мы нажимаем на кнопку *Manage Installed Languages*, и откроется следующее окно:
 
-![](./assets/language-support.png)
+![](/posts/ubuntu-set-up/language-support.png)
 
 Нажимаем кнопку *Install & Remove Languages* и открывается ещё одно окно:
 
-![](./assets/language-install.png)
+![](/posts/ubuntu-set-up/language-install.png)
 
 Тут нужно найти опять Russian и скачать локаль (пакет для того чтобы в системе был русский язык).
 
 Далее в первом окне перетаскиваем локаль «русский» вверх всего списка:
 
-![](./assets/language-rus.png)
+![](/posts/ubuntu-set-up/language-rus.png)
 
 Нажимаем кнопку Apply System-Wide, вводим пароль в открывшемся диалоге.
 
 В окне настроек выбираем пункт Language и выбираем «русский». После перезагрузки система переведёт всё на русский язык.
 При перезагрузке вам может вывестись следующее сообщение:
 
-![](./assets/language-warn.png)
+![](/posts/ubuntu-set-up/language-warn.png)
 
 Тут говорится о том, что папки, которые были созданы с английской локалью не соответствуют
 текущей локали (русской). Я рекомендую сохранять оригинальные имена папок
@@ -106,7 +106,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggl
 
 Выбираем любую тему, которая вам понравилась и нажимаем на вкладку Export:
 
-![](assets/terminal-sexy.png)
+![](/posts/ubuntu-set-up/terminal-sexy.png)
 
 Нажимаем на кнопку Export внизу и записываем данный текст (на самом деле это скрипт на Bash) в файл с расширением «.sh», у меня это будет material_theme.sh
 
@@ -116,7 +116,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['grp:alt_shift_toggl
 3. Нажимаем на "параметры"
 4. Клонируем дефолтный профиль
 
-![](assets/gnome-terminal-profile.png)
+![](/posts/ubuntu-set-up/gnome-terminal-profile.png)
 
 Переименовымаем имя профиля в терминале, а затем выполняем скрипт с помощью следующих команд (находимся в одной папке с скриптом):
 

@@ -95,7 +95,6 @@ const app: NuxtConfig["app"] = {
 const modules: NuxtConfig["modules"] = [
   "@nuxtjs/i18n",
   "nuxt-simple-sitemap",
-  "nuxt-content-assets",
   "@nuxt/content",
   "@nuxt/image",
   "nuxt-icon",

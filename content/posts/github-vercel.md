@@ -18,7 +18,7 @@ tags:
 Мы также должны взять `Project ID` и `Organization ID`, для того чтобы деплоить с помощью Github Actions.
 Так будут выглядеть токены в Github Secrets:
 
-![](./assets/github.png)
+![](/posts/github-vercel/github.png)
 
 ## Создание экшена
 Теперь нам нужно написать экшен для Github Actions, который при пуше в ветку main будет заливать наш проект на продакшен:
@@ -58,4 +58,4 @@ Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date w
 (переустановка зависимостей, удаление `pnpm-lock.yaml`, удаление `.npmrc`), поэтому пока что поставил специальную команду
 для установки зависимостей в Vercel:
 
-![](./assets/build-vercel.png)
+![](/posts/github-vercel/build-vercel.png)
