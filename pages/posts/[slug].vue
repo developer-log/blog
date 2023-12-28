@@ -149,7 +149,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   if (observer !== null) {
-    observer.disconnect();
+    observer?.disconnect();
   }
 
   observer = null;
