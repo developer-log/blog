@@ -3,6 +3,7 @@ title: Хоткеи для Webstorm из Vim
 tags:
   - webstorm
   - vim
+_draft: true
 date: 11 Dec 2023
 ---
 
