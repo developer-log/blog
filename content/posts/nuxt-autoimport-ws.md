@@ -18,7 +18,7 @@ date: 14 Sep 2023
 Первое что я сделал - настроил Webstorm, чтобы он использовал Typescript который
 находится в проекте, а не тот что поставляется вместе с WebStorm:
 
-![](./assets/ws.png)
+![](/posts/nuxt-autoimport-ws/ws.png)
 
 # Отключение no-undef в ESLint
 

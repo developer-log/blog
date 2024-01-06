@@ -38,8 +38,6 @@ In the bustling realm of technology, where innovation is the heartbeat, "Develop
 ### Nuxt modules 💫
 - [@nuxtjs/i18n](https://nuxt.com/modules/i18n) - Adds ability for translation;
 - [nuxt-simple-sitemap](https://nuxt.com/modules/simple-sitemap) - Adds sitemap;
-- [nuxt-content-assets](https://nuxt.com/modules/content-assets) - Add relative paths for content
-- [@nuxt/content](https://content.nuxtjs.org) - Adds content to the nuxt;
 - [@nuxt/devtools](https://nuxt.com/modules/devtools) - Devtools for Nuxt 3;
 - [@nuxt/image](https://nuxt.com/modules/image) - Adds a11y image component;
 - [nuxt-icon](https://nuxt.com/modules/icon) - Adds component for various icons;

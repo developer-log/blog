@@ -40,7 +40,7 @@ let anotherAcc = acc;
 console.log(anotherAcc, acc); // 3 3
 ```
 
-::ContentDiagram{src="./assets/loop.svg"}
+::ContentDiagram{src="/posts/event-loop-details/loop.svg"}
 ::
 
 # Асинхронный код
@@ -76,19 +76,19 @@ Call 3: 3
 ## Проходимся по коду как интерпретатор
 Давайте рассмотрим все более подробно. Мы объявляем все наши переменные и проделываем с ними какие-то операции. Все синхронные операции будут выполняться как только интерпретатор дойдет до них:
 
-::ContentDiagram{src="./assets/event-loop-1.svg"}
+::ContentDiagram{src="/posts/event-loop-details/event-loop-1.svg"}
 ::
 
 Другое дело обстоит с таймером, время которое ожидает таймаут будет считаться на стороне браузера, поэтому операция как бы "пропадет" из очереди.
 Таймер попал в Event Loop, где будет ждать покуда браузер не пришлет сигнал, о том что время для таймаута вышло и коллбэк внутри таймера можно выполнять.
 
-::ContentDiagram{src="./assets/event-loop-2.svg"}
+::ContentDiagram{src="/posts/event-loop-details/event-loop-2.svg"}
 ::
 
 Теперь самое неочевидное: даже если таймаут выполнился, а функция в которой мы выполняем все синхронные операции еще не выполнилась, Event Loop будет держать все что в нем содержится,
 покуда у нас не очистится Call Stack. **Только после того как все синхронные операции в функции выполнились** Event Loop отдаст нам наш таймер, который мы сможем выполнить:
 
-::ContentDiagram{src="./assets/event-loop-3.svg"}
+::ContentDiagram{src="/posts/event-loop-details/event-loop-3.svg"}
 ::
 
 # Лезем в дебри
@@ -257,7 +257,7 @@ Step 5: In another setTimeout
 Следует заметить что задачи из каждой очереди реализованы по принципу FIFO (First In, First Out) (Первый вошел, первый вышел),
 именно поэтому в списке макрозадач вывелось `Step 2`, а затем `Step 5`.
 
-::ContentDiagram{src="./assets/steps-1.svg"}
+::ContentDiagram{src="/posts/event-loop-details/steps-1.svg"}
 ::
 
 ## Два then
@@ -290,7 +290,7 @@ Step 6: In another setTimeout
 Как мы можем увидеть, особо ничего не поменялось. Просто добавилась еще одна микрозадача,
 в целом список выводимых строк никак не поменялся, просто после `Step 4` добавился `Step 5`.
 
-::ContentDiagram{src="./assets/steps-2.svg"}
+::ContentDiagram{src="/posts/event-loop-details/steps-2.svg"}
 ::
 
 ## Два промиса с двумя then
@@ -333,14 +333,14 @@ Step 6: In another setTimeout
 вместо того чтобы выполнить `console.log` в последовательности `Step 4`, `Step 5`, `Step 8`, `Step 9`, он выполнился в последовательности
 `Step 4`, `Step 8`, `Step 5`, `Step 9`. Сейчас разберемся почему так случилось.
 
-::ContentDiagram{src="./assets/steps-3-1.svg"}
+::ContentDiagram{src="/posts/event-loop-details/steps-3-1.svg"}
 ::
 
 Дело в том, что интерпретатор JavaScript выполняет код шаг за шагом. Он увидел что у нас есть `then` и поместил их в очередь микрозадач,
 когда пришла микрозадачи отработали - интерпретатор увидел еще один `then` и опять поместил его в очередь микрозадач. Таким образом все `then`, которые были после первых `then`
 выполнялись в ряд после того как первичные `then` отработали.
 
-::ContentDiagram{src="./assets/steps-3-2.svg"}
+::ContentDiagram{src="/posts/event-loop-details/steps-3-2.svg"}
 ::
 
 ## Микрозадача, внутри которой макрозадача
@@ -407,5 +407,5 @@ Event Loop проверяет нет ли у нас активных задач 
 Как только новая задача находится и Call Stack пустой - она сразу же выполняется. Вот почему `Step 3` выполнился
 сразу же после `Step 2`.
 
-::ContentDiagram{src="./assets/steps-5.svg"}
+::ContentDiagram{src="/posts/event-loop-details/steps-5.svg"}
 ::
