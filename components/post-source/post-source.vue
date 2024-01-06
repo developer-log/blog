@@ -1,6 +1,8 @@
 <template>
   <ALink
     v-if="!error"
+    :href="url"
+    target="_blank"
     class="source"
   >
     <ALoader
