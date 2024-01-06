@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc18221-0e23-448d-bf01-5f30a0c39e13" name="Changes" comment="feat(optimization): remove nuxt-content-assets">
+    <list default="true" id="ecc18221-0e23-448d-bf01-5f30a0c39e13" name="Changes" comment="fix(posts-page): fixed observer error with disconnect method">
       <change afterPath="$PROJECT_DIR$/content/posts/sql.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nvmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/posts/[slug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/posts/[slug].vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/post-source/post-source.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/post-source/post-source.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/webstorm-keybindings-vim.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/webstorm-keybindings-vim.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,11 @@
     <option name="activeAccountId" value="VXNlcjo2Mjg5NA==" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -37,26 +42,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.CodyProjectSettingsMigration": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/tokiory/Software/blog-archive/public/fonts/iosevka",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "/Users/tokiory/Projects/blog/node_modules/stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "ts.external.directory.path": "/Users/tokiory/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tokiory/Software/blog-archive/public/fonts/iosevka&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;/Users/tokiory/Projects/blog/node_modules/stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/tokiory/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/fonts/iosevka" />
@@ -97,7 +102,9 @@
       <workItem from="1697294986597" duration="1511000" />
       <workItem from="1702306365223" duration="811000" />
       <workItem from="1702470354143" duration="1014000" />
-      <workItem from="1703780228690" duration="476000" />
+      <workItem from="1703780228690" duration="733000" />
+      <workItem from="1703796399062" duration="1104000" />
+      <workItem from="1704564135040" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="feat(iosevka): add iosevka font">
       <option name="closed" value="true" />
@@ -147,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702470646373</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix(posts-page): fixed observer error with disconnect method">
+      <option name="closed" value="true" />
+      <created>1703780745131</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703780745131</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +185,7 @@
     <MESSAGE value="feat(app): optimized ssr" />
     <MESSAGE value="feat(readme): update readme and remove nuxt-font-loader" />
     <MESSAGE value="feat(optimization): remove nuxt-content-assets" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(optimization): remove nuxt-content-assets" />
+    <MESSAGE value="fix(posts-page): fixed observer error with disconnect method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(posts-page): fixed observer error with disconnect method" />
   </component>
 </project>
