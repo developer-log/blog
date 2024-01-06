@@ -5,10 +5,11 @@ const developmentMode = process.env.NODE_ENV === "development";
 
 const locales = [ "en", "ru", "ko", "be", "kk" ];
 
-const features = {
+export const features = {
   IMG_ZOOM: true,
   DIAGRAM_ZOOM: true,
   COMMENTARIES: developmentMode,
+  POST_NAVIGATION: true,
 };
 
 const routeRules: NuxtConfig["routeRules"] = {
@@ -153,8 +154,14 @@ const content: NuxtConfig["content"] = {
   },
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  anchorLinks: {
-    depth: 4,
+  markdown: {
+    anchorLinks: {
+      depth: 3
+    },
+    toc: {
+      depth: 3,
+      searchDepth: 5,
+    }
   },
 };
 

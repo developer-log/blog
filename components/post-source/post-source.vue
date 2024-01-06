@@ -2,8 +2,8 @@
   <ALink
     v-if="!error"
     :href="url"
-    target="_blank"
     class="source"
+    target="_blank"
   >
     <ALoader
       v-if="pending"
@@ -35,9 +35,8 @@ interface PostSourceProperties {
 
 const properties = defineProps<PostSourceProperties>();
 
-const { data: meta, pending, error } = await useFetch<SiteMetaResponse>("/api/meta",
+const { data: meta, pending, error } = await useLazyFetch<SiteMetaResponse>("/api/meta",
   {
-    lazy: true,
     method: "POST",
     body: {
       url: properties.url

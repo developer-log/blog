@@ -45,9 +45,9 @@ const packages: LicenseContent = [
 
 const fonts: LicenseContent = [
   {
-    title: "Iosevka",
-    source: "https://github.com/be5invis/Iosevka",
-    license: "https://github.com/be5invis/Iosevka/blob/main/LICENSE.md",
+    title: "Jetbrains Mono",
+    source: "https://www.jetbrains.com/lp/mono/",
+    license: "https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt"
   },
   {
     title: "Montserrat",

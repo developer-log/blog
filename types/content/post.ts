@@ -1,3 +1,5 @@
+import type { PostNavigationItem } from "@t/posts";
+
 interface NuxtContentMeta {
   _id: string;
   _path: string;
@@ -9,7 +11,6 @@ type OriginType = "habr"
 | "medium"
 | "vk"
 | "telegram";
-
 
 interface Origin {
   type: OriginType;
@@ -30,6 +31,7 @@ export interface PostItemContent extends NuxtContentMeta {
   origin?: Origin;
   references?: Reference[];
   keywords?: string[];
+  toc: PostNavigationItem[];
 }
 
 export type PostContent = PostItemContent[];

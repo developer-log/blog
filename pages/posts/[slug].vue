@@ -1,6 +1,7 @@
 <template>
   <div class="post">
     <PostNavigation
+      v-if="hasNavigationEnabled"
       v-model="activeAnchor"
       class="post__navigation post__navigation_desktop"
       :navigation="navigation"
@@ -78,8 +79,11 @@ const url = useRequestURL();
 const { t } = useI18n();
 const localePath = useLocalePath();
 const articleReference = ref<HTMLDivElement>();
+const runtimeConfig = useRuntimeConfig();
+const hasNavigationEnabled = runtimeConfig.public.features.POST_NAVIGATION;
 
-const { data } = await useAsyncData(() => queryContent<PostItemContent & MarkdownParsedContent>(getPostSlug(url)).findOne());
+const contentQuery = queryContent<PostItemContent & MarkdownParsedContent>(getPostSlug(url));
+const { data } = await useAsyncData(() => contentQuery.findOne());
 
 const shortDescription = (description: string) => {
   return description.split(".").slice(0, 1).join(".");
@@ -99,26 +103,11 @@ useSeoMeta({
 
 // Navigation section
 const navigation = computed<PostNavigationItem[]>(() => {
-  if (!data.value) {
+  if (!hasNavigationEnabled) {
     return [];
   }
 
-  return data.value.body.children
-    .filter(node => {
-      const headerRegex = /^h\d$/g;
-      const text = node.children?.at(0)?.type === "text" ? node.children?.at(0)?.value : "";
-      return node.tag && headerRegex.test(node.tag) && text;
-    })
-    .map((node, id) => {
-      const title = node.children?.at(0)?.value ?? "";
-      const level = Number.parseInt(node.tag?.replaceAll(/\D/g, "") ?? "");
-      return {
-        title,
-        level: Number.isNaN(level) ? 0 : level - 1,
-        anchor: node.props?.id,
-        id
-      };
-    });
+  return data.value?.toc ?? [];
 });
 
 const activeAnchor = ref(decodeURI(url.hash).replace("#", ""));
@@ -137,13 +126,15 @@ onMounted(() => {
     return;
   }
 
-  // eslint-disable-next-line compat/compat
-  observer = new IntersectionObserver(onScroll, { rootMargin: "-5% 0% -85% 0%" });
-  for (const item of titles) {
-    if (!item.id) {
-      continue;
+  if (hasNavigationEnabled) {
+    // eslint-disable-next-line compat/compat
+    observer = new IntersectionObserver(onScroll, { rootMargin: "-5% 0% -85% 0%" });
+    for (const item of titles) {
+      if (!item.id) {
+        continue;
+      }
+      observer.observe(item);
     }
-    observer.observe(item);
   }
 });
 
