@@ -48,7 +48,10 @@
           :value="data"
         />
       </article>
-      <ContentNeighboursNavigation :url="postSlug" />
+      <ContentNeighboursNavigation
+        class="post__neighbours"
+        :url="postSlug"
+      />
       <div
         v-if="data?.references"
         class="post__references references"
@@ -165,14 +168,8 @@ onUnmounted(() => {
     flex-shrink: 2;
   }
 
-  &__next {
-    width: 100%;
-    padding: 32px 12px;
-
-    &:hover {
-      background: var(--color-neutral-4) !important;
-      filter: brightness(0.95);
-    }
+  &__neighbours {
+    margin: 32px 0;
   }
 
   &__navigation {
