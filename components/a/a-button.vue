@@ -63,12 +63,11 @@ withDefaults(defineProps<ButtonProperties>(), {
 
     &:hover {
       filter: brightness(0.97);
-      //background-color: var(--color-neutral-3);
       border-color: var(--color-red-normal-hover);
     }
 
     &:active {
-      background: var(--color-red-normal-active);
+      filter: brightness(0.95);
     }
   }
 }
@@ -86,6 +85,22 @@ withDefaults(defineProps<ButtonProperties>(), {
 
       &:active {
         background: var(--color-green-normal-active);
+      }
+    }
+
+    &.tertiary {
+      border-color: var(--color-green-dark);
+      border-width: 2px;
+      background-color: var(--color-neutral-11);
+      color: inherit;
+
+      &:hover {
+        filter: brightness(0.97);
+        border-color: var(--color-green-normal-hover);
+      }
+
+      &:active {
+        filter: brightness(0.95);
       }
     }
   }

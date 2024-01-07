@@ -10,6 +10,7 @@
       <AButton
         class="neighbours__button"
         theme="tertiary"
+        @click="onNeighbourButtonClick"
       >
         <div class="neighbours__navigation">
           <Icon name="uil:angle-left-b" />
@@ -33,6 +34,7 @@
       <AButton
         class="neighbours__button"
         theme="tertiary"
+        @click="onNeighbourButtonClick"
       >
         <div class="neighbours__navigation">
           <AText class="neighbours__text">
@@ -68,6 +70,10 @@ const query = queryContent()
 const { data: neighbours } = await useAsyncData(() => {
   return query.findSurround(properties.url);
 });
+
+const onNeighbourButtonClick = () => {
+  scrollTo({ top: 0, behavior: "smooth" });
+};
 </script>
 
 <style lang="scss" scoped>
