@@ -35,7 +35,7 @@
         theme="tertiary"
       >
         <div class="neighbours__navigation">
-          <AText>
+          <AText class="neighbours__text">
             Следующая статья
           </AText>
           <Icon name="uil:angle-right-b" />
@@ -74,20 +74,38 @@ const { data: neighbours } = await useAsyncData(() => {
 .neighbours {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+
+  @include from-md {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
 
   &__link {
-    &_right {
-      margin-left: auto;
+    width: 100%;
+
+    @include from-md {
+      width: fit-content;
+      &_right {
+        margin-left: auto;
+      }
     }
   }
 
   &__button {
+    width: 100%;
     padding: 12px 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    align-items: center;
+
+    @include from-md {
+      align-items: flex-start;
+      width: fit-content;
+    }
   }
 
   &__navigation {
@@ -97,12 +115,15 @@ const { data: neighbours } = await useAsyncData(() => {
   }
 
   &__title {
-    &_left {
-      margin-left: auto;
-    }
+    @include from-md {
+      text-align: left;
+      &_left {
+        margin-left: auto;
+      }
 
-    &_right {
-      margin-right: auto;
+      &_right {
+        margin-right: auto;
+      }
     }
   }
 }
