@@ -55,6 +55,12 @@ export default defineI18nLocale(async () => {
       }
     },
     page: {
+      post: {
+        neighbours: {
+          next: "Наступны артыкул",
+          previous: "Папярэдні артыкул",
+        }
+      },
       license: {
         tabTitle: "Ліцэнзія",
         title: "Ліцэнзіі",
