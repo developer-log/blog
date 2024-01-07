@@ -55,6 +55,12 @@ export default defineI18nLocale(async () => {
       }
     },
     page: {
+      post: {
+        neighbours: {
+          next: "Next article",
+          previous: "Previous article",
+        }
+      },
       license: {
         tabTitle: "License",
         title: "Licenses",

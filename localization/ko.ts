@@ -49,6 +49,12 @@ export default defineI18nLocale(async () => {
       }
     },
     page: {
+      post: {
+        neighbours: {
+          next: "다음 기사",
+          previous: "이전 기사",
+        }
+      },
       license: {
         tabTitle: "특허",
         title: "라이센스",

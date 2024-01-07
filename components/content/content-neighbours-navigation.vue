@@ -5,7 +5,7 @@
     <NuxtLink
       v-if="neighbours[0]"
       class="neighbours__link"
-      :to="neighbours[0]._path"
+      :to="localePath(neighbours[0]._path)"
     >
       <AButton
         class="neighbours__button"
@@ -15,7 +15,7 @@
         <div class="neighbours__navigation">
           <Icon name="uil:angle-left-b" />
           <AText>
-            Предыдущая статья
+            {{ $t("page.post.neighbours.previous") }}
           </AText>
         </div>
         <AText
@@ -29,7 +29,7 @@
     <NuxtLink
       v-if="neighbours[1]"
       class="neighbours__link neighbours__link_right"
-      :to="neighbours[1]._path"
+      :to="localePath(neighbours[1]._path)"
     >
       <AButton
         class="neighbours__button"
@@ -38,7 +38,7 @@
       >
         <div class="neighbours__navigation">
           <AText class="neighbours__text">
-            Следующая статья
+            {{ $t("page.post.neighbours.next") }}
           </AText>
           <Icon name="uil:angle-right-b" />
         </div>
@@ -54,10 +54,13 @@
 </template>
 
 <script lang="ts" setup>
+import { useLocalePath } from "#i18n";
+
 interface NeighboursNavigationProperties {
   url: string;
 }
 
+const localePath = useLocalePath();
 const properties = defineProps<NeighboursNavigationProperties>();
 
 const query = queryContent()

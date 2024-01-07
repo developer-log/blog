@@ -99,6 +99,12 @@ export default defineI18nLocale(async () => {
         stubInfo: "По вашему запросу ничего не найдено.",
         stubTryAgain: "Проверьте поле поиска на опечатки или напишите другой запрос."
       },
+      post: {
+        neighbours: {
+          next: "Следующая статья",
+          previous: "Предыдушая статья",
+        }
+      },
       author: {
         tabTitle: "Автор",
         hello: "Привет!",
