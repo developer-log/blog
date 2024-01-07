@@ -4,7 +4,7 @@ tags:
   - javascript
   - web
   - under-the-hood
-date: 5 Sep 2023
+date: 2023-09-05
 _draft: true
 references:
   - name: "MDN: Working with objects"

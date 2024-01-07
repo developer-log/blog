@@ -5,7 +5,7 @@ tags:
   - web
   - note
 description: В данной статье рассмотрим как с помощью алиасов сократить пути для импортов.
-date: 01 Apr 2023
+date: 2023-04-01
 origin:
   type: vc
   url: https://vc.ru/dev/661503-sokrashchenie-putey-s-pomoshchyu-aliasov

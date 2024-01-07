@@ -4,7 +4,7 @@ tags:
   - html
   - web
 description: Гайд для HTML, в котором описываются все основные правила для освоения HTML + важные теги.
-date: 05 Jan 2023
+date: 2023-01-05
 _draft: true
 ---
 

@@ -6,7 +6,7 @@ tags:
 keywords:
   - xterm
   - fedora
-date: 15 May 2021
+date: 2021-05-15
 ---
 
 **Минимализм**.

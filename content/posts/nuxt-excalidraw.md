@@ -3,7 +3,7 @@ title: Интеграция Excalidraw в блог
 tags:
   - note
   - nuxt
-date: 19 Sep 2023
+date: 2023-09-19
 ---
 
 Первое что я заметил - Excallidraw внутри svg-файлов подтягивает шрифты.

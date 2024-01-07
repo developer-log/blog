@@ -4,7 +4,7 @@ tags:
   - javascript
   - web
   - under-the-hood
-date: 6 Sep 2023
+date: 2023-09-06
 exclusive: true
 keywords:
   - commonjs

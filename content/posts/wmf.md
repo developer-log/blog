@@ -2,7 +2,7 @@
 title: Module Federation
 tags:
   - vue
-date: 04 Oct 2023
+date: 2023-10-04
 _draft: true
 ---
 # Module Federation

@@ -4,7 +4,7 @@ tags:
 - zig
 - rust
 - note
-date: 01 Jun 2023
+date: 2023-06-01
 ---
 
 

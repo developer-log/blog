@@ -3,7 +3,7 @@ title: Установка и настройка husky + commitlint
 tags:
   - nuxt
   - note
-date: 05 Jun 2023
+date: 2023-06-05
 ---
 
 [Husky](https://www.npmjs.com/package/husky) нужен для того чтобы цепляться к хукам в Git,

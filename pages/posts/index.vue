@@ -115,13 +115,9 @@ const { data: posts, pending } = useAsyncData(async () => {
 
   const posts = await queryContent<PostItemContent>("posts").where({
     _draft: { $ne: true },
-  }).only(fields).find();
+  }).sort({ date: -1 }).only(fields).find();
 
-  const sortedPosts = posts.sort((a, b) => {
-    return Date.parse(b.date) - Date.parse(a.date);
-  });
-
-  return groupPostsByDate(sortedPosts);
+  return groupPostsByDate(posts);
 });
 
 const filteredPosts = computed(() => {
