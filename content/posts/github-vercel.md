@@ -1,6 +1,6 @@
 ---
 title: Создание и добавление токена Vercel
-date: 8 Sep 2022
+date: 2022-09-08
 tags:
   - github
   - ci/cd

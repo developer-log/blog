@@ -9,8 +9,9 @@
 
 <script lang="ts" setup>
 interface ButtonProperties {
-  theme?: "primary" | "secondary"
+  theme?: "primary" | "secondary" | "tertiary";
 }
+
 withDefaults(defineProps<ButtonProperties>(), {
   theme: "primary",
 });
@@ -45,12 +46,29 @@ withDefaults(defineProps<ButtonProperties>(), {
     background: var(--color-neutral-4);
 
     &:hover {
+      filter: brightness(0.95);
       border-color: var(--color-neutral-5);
     }
 
     &:active {
-      background: var(--color-neutral-5);
+      filter: brightness(0.92);
       border-color: var(--color-neutral-5);
+    }
+  }
+
+  &.tertiary {
+    border-color: var(--color-red-dark);
+    border-width: 2px;
+    background-color: var(--color-neutral-1);
+
+    &:hover {
+      filter: brightness(0.97);
+      //background-color: var(--color-neutral-3);
+      border-color: var(--color-red-normal-hover);
+    }
+
+    &:active {
+      background: var(--color-red-normal-active);
     }
   }
 }

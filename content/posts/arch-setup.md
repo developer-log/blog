@@ -1,6 +1,6 @@
 ---
 title: 'Установка Arch Linux + KDE'
-date: 3 Feb 2021
+date: 2021-02-03
 keywords:
   - arch
   - kde

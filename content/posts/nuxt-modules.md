@@ -5,7 +5,7 @@ tags:
   - typescript
   - web
   - nuxt
-date: 12 Sep 2023
+date: 2023-09-12
 references:
   - name: "Nuxt Docs: Module Author Guide"
     url: https://nuxt.com/docs/guide/going-further/modules

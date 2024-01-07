@@ -5,7 +5,7 @@ tags:
   - backend
 description: >
   В данной статье подробно расскажу чем слайс отличается от массива в Go, а также что делают функции copy и append
-date: 04 Jun 2023
+date: 2023-06-04
 origin:
   type: Habr
   url: https://habr.com/ru/articles/739754/

@@ -8,7 +8,7 @@ tags:
 description: >
   В данном туториале разберемся с фреймворком для E2E
   (End-to-end) тестирования Playwright, который пришел на замену Cypress и Selenium.
-date: 3 Jun 2023
+date: 2023-06-03
 origin:
   type: vc
   url: https://vc.ru/dev/715790-playwright-freymvork-dlya-bystrogo-e2e-testirovaniya

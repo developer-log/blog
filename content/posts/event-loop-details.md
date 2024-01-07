@@ -3,7 +3,7 @@ title: "Event Loop в деталях"
 tags:
   - javascript
   - frontend
-date: 12 Sep 2023
+date: 2023-09-12
 origin:
   type: Habr
   url: https://habr.com/ru/articles/762618/

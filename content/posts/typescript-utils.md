@@ -5,7 +5,7 @@ tags:
   - web
 description: >
   Поговорим о том как можно сократить код для типизации данных с помощью Util Types в Typescript.
-date: 21 Apr 2023
+date: 2023-04-21
 origin:
   type: Habr
   url: https://habr.com/ru/articles/730906/

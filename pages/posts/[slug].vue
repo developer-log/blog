@@ -48,6 +48,7 @@
           :value="data"
         />
       </article>
+      <ContentNeighboursNavigation :url="postSlug" />
       <div
         v-if="data?.references"
         class="post__references references"
@@ -82,7 +83,8 @@ const articleReference = ref<HTMLDivElement>();
 const runtimeConfig = useRuntimeConfig();
 const hasNavigationEnabled = runtimeConfig.public.features.POST_NAVIGATION;
 
-const contentQuery = queryContent<PostItemContent & MarkdownParsedContent>(getPostSlug(url));
+const postSlug = computed(() => getPostSlug(url));
+const contentQuery = queryContent<PostItemContent & MarkdownParsedContent>(postSlug.value);
 const { data } = await useAsyncData(() => contentQuery.findOne());
 
 const shortDescription = (description: string) => {
@@ -161,6 +163,16 @@ onUnmounted(() => {
     width: 100%;
     max-width: 1024px;
     flex-shrink: 2;
+  }
+
+  &__next {
+    width: 100%;
+    padding: 32px 12px;
+
+    &:hover {
+      background: var(--color-neutral-4) !important;
+      filter: brightness(0.95);
+    }
   }
 
   &__navigation {

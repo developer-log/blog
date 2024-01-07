@@ -4,7 +4,7 @@ tags:
   - network
   - backend
   - note
-date: 19 Jun 2023
+date: 2023-06-19
 references:
   - name: Модель OSI | Курс "Компьютерные сети"
     url: https://www.youtube.com/watch?v=Tt8BTkxz_Vc&list=PLtPJ9lKvJ4oiNMvYbOzCmWy6cRzYAh9B1&index=7

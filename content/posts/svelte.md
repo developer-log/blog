@@ -4,7 +4,7 @@ tags:
   - svelte
   - web
 description: Гайд для Svelte, нового фреймворка для построения реактивных интерфейсов.
-date: 11 Feb 2023
+date: 2023-02-11
 origin:
   type: vc
   url: https://vc.ru/dev/605614-krupnyy-gayd-po-svelte

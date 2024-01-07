@@ -4,7 +4,7 @@ tags:
   - nuxt
   - note
   - under-the-hood
-date: 16 Oct 2023
+date: 2023-10-16
 references:
   - url: https://content.nuxt.com/recipes/hooks
     name: "Nuxt content: Hooks"

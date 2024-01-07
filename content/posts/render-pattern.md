@@ -4,7 +4,7 @@ tags:
   - backend
   - frontend
   - pattern
-date: 16 Sep 2023
+date: 2023-09-16
 origin:
   type: vc
   url: https://vc.ru/dev/846778-csr-ssr-ssg-isr-i-drugie-abbreviatury
