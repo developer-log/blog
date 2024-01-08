@@ -2,10 +2,10 @@
   <div
     class="neighbours"
   >
-    <NuxtLink
+    <a
       v-if="neighbours[0]"
       class="neighbours__link"
-      :to="localePath(neighbours[0]._path)"
+      :href="localePath(neighbours[0]._path)"
     >
       <AButton
         class="neighbours__button"
@@ -25,11 +25,11 @@
           {{ neighbours[0]?.title }}
         </AText>
       </AButton>
-    </NuxtLink>
-    <NuxtLink
+    </a>
+    <a
       v-if="neighbours[1]"
       class="neighbours__link neighbours__link_right"
-      :to="localePath(neighbours[1]._path)"
+      :href="localePath(neighbours[1]._path)"
     >
       <AButton
         class="neighbours__button"
@@ -49,7 +49,7 @@
           {{ neighbours[1]?.title }}
         </AText>
       </AButton>
-    </NuxtLink>
+    </a>
   </div>
 </template>
 
