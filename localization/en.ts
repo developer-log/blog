@@ -21,6 +21,12 @@ export default defineI18nLocale(async () => {
       }
     },
     projects: {
+      neovimBoilerplate: {
+        short: "Template for creating Neovim configurations",
+        long: {
+          1: "I wrote configurations for Vim/Neovim quite often and each time I noticed how the patterns for structuring the configuration were repeated. This is exactly why Neovim Boilerplate was created - a simple and well-documented template for writing your own configuration.",
+        }
+      },
       interquesty: {
         short: "An app that helps interviewers choose questions",
         long: {

@@ -15,6 +15,12 @@ export default defineI18nLocale(async () => {
     },
     time: { year: { less: "{n}년 미만 | {n}년 미만", fact: "{n}년 | {n}년 | {2 년", more: "{n}년 이상 | {n}년 이상" } },
     projects: {
+      neovimBoilerplate: {
+        short: "Neovim 구성 생성을 위한 템플릿",
+        long: {
+          1: "저는 Vim/Neovim에 대한 구성을 꽤 자주 작성했고 매번 구성을 구조화하는 패턴이 어떻게 반복되는지 확인했습니다. 이것이 바로 사용자 고유의 구성을 작성하기 위한 간단하고 잘 문서화된 템플릿인 Neovim Boilerplate가 만들어진 이유입니다.",
+        }
+      },
       interquesty: {
         short: "면접관이 질문을 선택하는 데 도움이 되는 앱",
         long: {

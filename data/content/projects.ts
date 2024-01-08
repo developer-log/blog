@@ -33,6 +33,28 @@ const projects: ProjectContent = {
       ]
     },
     {
+      name: "Neovim Boilerplate",
+      stack: {
+        primary: [
+          "vim",
+          "lua",
+        ],
+        additional: [],
+      },
+      description: {
+        short: "projects.neovimBoilerplate.short",
+        long: [
+          "projects.neovimBoilerplate.long.1",
+        ]
+      },
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/tokiory/neovim-boilerplate"
+        }
+      ],
+    },
+    {
       name: "Interquesty",
       stack: {
         primary: [
