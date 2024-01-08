@@ -28,7 +28,7 @@ const projects: ProjectContent = {
       links: [
         {
           type: "github",
-          url: "https://github.com/tokiory-blog/blog"
+          url: "https://github.com/developer-log/blog"
         }
       ]
     },

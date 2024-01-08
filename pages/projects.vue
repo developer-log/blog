@@ -102,13 +102,7 @@
               :key="item"
               class="links__item"
             >
-              <ALink
-                class="links__link"
-                color
-                :href="item.url"
-              >
-                {{ item.url }}
-              </ALink>
+              <ContentBookmark :url="item.url" />
             </li>
           </ul>
         </div>
@@ -266,24 +260,10 @@ const isLinksVisible = computed(() => {
 
   &__list {
     margin-top: 12px;
-    padding-left: 20px;
   }
 
   &__item {
     position: relative;
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      background: var(--color-red-dark);
-      border-radius: 50%;
-      width: 8px;
-      height: 8px;
-      left: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
   }
 }
 
@@ -376,10 +356,6 @@ const isLinksVisible = computed(() => {
         border-color: var(--color-green-normal);
       }
     }
-  }
-
-  .links__item::before {
-    background: var(--color-green-dark);
   }
 
   .stack__item {
