@@ -1,4 +1,4 @@
-type ProjectProvider = "github" | "gitlab" | "codepen" | "bitbucket";
+type ProjectProvider = "github" | "gitlab" | "codepen" | "bitbucket" | "other";
 
 interface Stack {
   primary: string[];

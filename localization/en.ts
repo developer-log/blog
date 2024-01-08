@@ -21,6 +21,13 @@ export default defineI18nLocale(async () => {
       }
     },
     projects: {
+      interquesty: {
+        short: "An app that helps interviewers choose questions",
+        long: {
+          1: "Interquesty is an application that I made for my own use a couple of days ago. The fact is that during an interview it is not always convenient to quickly come up with new questions for a candidate; keeping a list of questions in notes turned out to be not as convenient as I thought. It was at that moment that the idea came to me to come up with an application that would have a varied list of questions with short answers to them.",
+          2: "This application contains a large list of front-end questions, which will be expanded in the future. In addition, the ability to share questions asked (and their answers) via a link has been added, so that the candidate can view all the questions that the interviewer asked during the interview and find the correct short questions for them.",
+        }
+      },
       developerLog: {
         short: "One of my biggest projects",
         long: {

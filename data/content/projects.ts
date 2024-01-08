@@ -33,6 +33,38 @@ const projects: ProjectContent = {
       ]
     },
     {
+      name: "Interquesty",
+      stack: {
+        primary: [
+          "typescript",
+          "react",
+          "sass"
+        ],
+        additional: [
+          "eslint",
+          "vite",
+          "playwright",
+        ]
+      },
+      description: {
+        short: "projects.interquesty.short",
+        long: [
+          "projects.interquesty.long.1",
+          "projects.interquesty.long.2",
+        ]
+      },
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/interquesty-app/interquesty"
+        },
+        {
+          type: "other",
+          url: "https://interquesty.vercel.app"
+        }
+      ]
+    },
+    {
       name: "Capybara",
       stack: {
         primary: [
